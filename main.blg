@@ -1,0 +1,150 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: abntex2-alf.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated field_info (elt_size=4) to 13142 items from 5000.
+Database file #1: abntex2-options.bib
+Database file #2: bib/pb-bibliography.bib
+Database file #3: bib/bibliography.bib
+Database file #4: bib/referencias.bib
+Repeated entry---line 128 of file bib/referencias.bib
+ : @article{Kim2011
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 177 of file bib/referencias.bib
+ : @incollection{Waal2014
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 186 of file bib/referencias.bib
+ : @inproceedings{Passant2008
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 228 of file bib/referencias.bib
+ : @article{Mika2007
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 243 of file bib/referencias.bib
+ : @article{Grubber2007
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 252 of file bib/referencias.bib
+ : @inproceedings{Umbrich2015
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 280 of file bib/referencias.bib
+ : @article{Harispe2015
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 291 of file bib/referencias.bib
+ : @inproceedings{Marchetti2007
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 303 of file bib/referencias.bib
+ : @article{Knerr2006
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 312 of file bib/referencias.bib
+ : @inproceedings{Colpaert2013
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 320 of file bib/referencias.bib
+ : @inproceedings{Halpin2007
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 345 of file bib/referencias.bib
+ : @inproceedings{Kim2008
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 488 of file bib/referencias.bib
+ : @techreport{Beghin2014
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 498 of file bib/referencias.bib
+ : @inproceedings{Davies2012
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 507 of file bib/referencias.bib
+ : @techreport{Renzio2015
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 516 of file bib/referencias.bib
+ : @article{Mkude2014
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 693 of file bib/referencias.bib
+ : @techreport{Caplan2014
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 732 of file bib/referencias.bib
+ : @techreport{Granickas2013
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 752 of file bib/referencias.bib
+ : @article{Huijboom2011
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 763 of file bib/referencias.bib
+ : @misc{Berners-Lee2010
+ :                      ,
+I'm skipping whatever remains of this entry
+Database file #5: bib/abntex2-modelo-references.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
++---------------------------------------------------------+
+| Estilo bibliográfico abntex2-alf.bst versão v<VERSION>           |
+| Em caso de dúvidas ou problemas com este estilo procure |
+| http://www.abntex.net.br/                               |
++---------------------------------------------------------+
+You've used 118 entries,
+            6714 wiz_defined-function locations,
+            2008 strings with 33064 characters,
+and the built_in function-call counts, 147518 in all, are:
+= -- 15315
+> -- 3725
+< -- 2776
++ -- 4022
+- -- 1119
+* -- 9967
+:= -- 18492
+add.period$ -- 526
+call.type$ -- 118
+change.case$ -- 1253
+chr.to.int$ -- 243
+cite$ -- 117
+duplicate$ -- 12395
+empty$ -- 7539
+format.name$ -- 5377
+if$ -- 31341
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 2084
+newline$ -- 604
+num.names$ -- 591
+pop$ -- 2656
+preamble$ -- 1
+purify$ -- 473
+quote$ -- 0
+skip$ -- 12676
+stack$ -- 1
+substring$ -- 6170
+swap$ -- 4887
+text.length$ -- 171
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 45
+warning$ -- 0
+while$ -- 914
+width$ -- 0
+write$ -- 1916
+(There were 20 error messages)

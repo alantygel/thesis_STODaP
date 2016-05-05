@@ -1,0 +1,800 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v<VERSION> }
+
+\bibitem[Adams e Streck 2010]{Adams2010}
+\abntrefinfo{Adams e Streck}{ADAMS; STRECK}{2010}
+{ADAMS, T.; STRECK, D.~R. {Educa{\c{c}}{\~{a}}o Popular e novas tecnologias}.
+\emph{Educa{\c{c}}{\~{a}}o}, v.~33, n.~2, p. 119--127, 2010.}
+
+\bibitem[Allahyari 2016]{Allahyari2016}
+\abntrefinfo{Allahyari}{ALLAHYARI}{2016}
+{ALLAHYARI, M. {Semantic Tagging Using Topic Models Exploiting Wikipedia
+  Category Network}. In:  \emph{Proc. of the 10th International Conference on
+  Semantic Computing}. [S.l.: s.n.], 2016.
+ISBN 9781509006625.}
+
+\bibitem[Alvear 2014]{Alvear2014}
+\abntrefinfo{Alvear}{ALVEAR}{2014}
+{ALVEAR, C. A.~S. de.
+\emph{{Tecnologia e participa{\c{c}}{\~{a}}o: sistemas de
+  informa{\c{c}}{\~{a}}o e a constru{\c{c}}{\~{a}}o de propostas coletivas para
+  movimentos sociais e processos de desenvolvimento local}}.
+299~p. Tese (Tese de Doutorado) --- Universidade Federal do Rio de Janeiro,
+  2014.}
+
+\bibitem[Angeletou 2008]{Angeletou2008}
+\abntrefinfo{Angeletou}{ANGELETOU}{2008}
+{ANGELETOU, S. {Semantic Enrichment of Folksonomy Tagspaces}.
+In:  \underline{\ \ \ \ \ \ \ \ }. \emph{ISWC}. Berlin, Heidelberg: Springer
+  Berlin Heidelberg, 2008. p. 889--894.
+ISBN 978-3-540-88564-1.}
+
+\bibitem[Angeletou, Sabou e Motta 2008]{Angeletou2008a}
+\abntrefinfo{Angeletou, Sabou e Motta}{ANGELETOU; SABOU; MOTTA}{2008}
+{ANGELETOU, S.; SABOU, M.; MOTTA, E. {Semantically enriching folksonomies with
+  FLOR}.
+\emph{Workshop of Collective Semantics}, v.~351, p. 65--79, 2008.
+ISSN 16130073.}
+
+\bibitem[Atkinson e Hammersley 1994]{Atkinson1994}
+\abntrefinfo{Atkinson e Hammersley}{ATKINSON; HAMMERSLEY}{1994}
+{ATKINSON, P.; HAMMERSLEY, M. {Ethnography and Participant Observation}. In:
+  DENZIN, N.~K.; LINCOLN, Y.~S. (Ed.). \emph{Handbook of qualitative research}.
+  Thousand Oaks: Sage, 1994. p. 248--260.}
+
+\bibitem[Attard, Orlandi e Auer 2016]{Attard2016}
+\abntrefinfo{Attard, Orlandi e Auer}{ATTARD; ORLANDI; AUER}{2016}
+{ATTARD, J.; ORLANDI, F.; AUER, S. {Value Creation on Open Government Data}.
+  In:  \emph{Proc. of the 49th Hawaii International Conference on System
+  Sciences}. Kauai: [s.n.], 2016. p.~10.}
+
+\bibitem[Attard et al. 2015]{Attard2015}
+\abntrefinfo{Attard et al.}{ATTARD et al.}{2015}
+{ATTARD, J. et al. {A Systematic Review of Open Government Data Initiatives}.
+\emph{Government Information Quarterly}, v.~32, n.~4, p. 399--418, 2015.
+ISSN 0740-624X.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.5281/zenodo.18592}.}
+
+\bibitem[Auer, Bryl e Tramp 2014]{Auer2014}
+\abntrefinfo{Auer, Bryl e Tramp}{AUER; BRYL; TRAMP}{2014}
+{AUER, S.; BRYL, V.; TRAMP, S. \emph{{Linked Open Data -- Creating Knowledge
+  Out of Interlinked Data}}. Cham: Springer International Publishing, 2014.
+  v.~8661.  (Lecture Notes in Computer Science, v.~8661).
+ISBN 978-3-319-09845-6. Dispon{\'\i}vel em:
+  \url{http://link.springer.com/10.1007/978-3-319-09846-3}.}
+
+\bibitem[Barato 1984]{Barato1984}
+\abntrefinfo{Barato}{BARATO}{1984}
+{BARATO, J.~N.
+\emph{{Codification/decodification: an experimental investigation on the adult
+  education theory of Paulo Freire}}.
+Tese (Thesis) --- San Diego State University, 1984.
+Dispon{\'\i}vel em:
+  \url{https://jarbas.wordpress.com/048-codificacaodecodificacao-em-paulo-freire/}.}
+
+\bibitem[Bargh, Choenni e Meijer 2016]{Bargh2016}
+\abntrefinfo{Bargh, Choenni e Meijer}{BARGH; CHOENNI; MEIJER}{2016}
+{BARGH, M.~S.; CHOENNI, S.; MEIJER, R. {Meeting Open Data Halfway: On Semi-Open
+  Data Paradigm}. In:  \emph{Proc. of the 9th International Conference on
+  Theory and Practice of Electronic Governance - ICEGOV}. Montevideo: [s.n.],
+  2016.}
+
+\bibitem[Beghin e Zigoni 2014]{Beghin2014}
+\abntrefinfo{Beghin e Zigoni}{BEGHIN; ZIGONI}{2014}
+{BEGHIN, N.; ZIGONI, C. \emph{{Measuring Open Data's Impact of Brazilian
+  National and Sub-National Budget Transparency Websites and its Impacts on
+  Peoples's rights}}.
+Bras{\'{i}}lia, 2014.}
+
+\bibitem[Berners-Lee 2006]{Berners-Lee2006}
+\abntrefinfo{Berners-Lee}{BERNERS-LEE}{2006}
+{BERNERS-LEE, T. {Linked Data - Design Issues}.
+\emph{W3C Website}, 2006.
+Dispon{\'\i}vel em: \url{http://www.w3.org/DesignIssues/LinkedData.html}.}
+
+\bibitem[Berners-Lee 2010]{Berners-Lee2010}
+\abntrefinfo{Berners-Lee}{BERNERS-LEE}{2010}
+{BERNERS-LEE, T. \emph{{5 Stars Open Data}}. 2010.
+Dispon{\'\i}vel em: \url{http://5stardata.info/}.}
+
+\bibitem[Berners-Lee, Hendler e Lassila 2001]{Berners-Lee2001}
+\abntrefinfo{Berners-Lee, Hendler e Lassila}{BERNERS-LEE; HENDLER;
+  LASSILA}{2001}
+{BERNERS-LEE, T.; HENDLER, J.; LASSILA, O. {The Semantic Web}.
+\emph{Scientific American}, v.~284, n.~5, p. 34--43, 2001.
+ISSN 0036-8733.}
+
+\bibitem[Bhargava 2013]{Bhargava2013}
+\abntrefinfo{Bhargava}{BHARGAVA}{2013}
+{BHARGAVA, R. \emph{{Towards a Concept of “Popular Data”}}. 2013.
+Dispon{\'\i}vel em:
+  \url{https://datatherapy.org/2013/11/18/towards-a-concept-of-popular-data/}.}
+
+\bibitem[Bhargava e Ignazio 2015]{Bhargava2015}
+\abntrefinfo{Bhargava e Ignazio}{BHARGAVA; IGNAZIO}{2015}
+{BHARGAVA, R.; IGNAZIO, C.~D. {Designing Tools and Activities for Data Literacy
+  Learners}. In:  \emph{I Data Literacy Workshop}. Oxford: [s.n.], 2015.}
+
+\bibitem[Bird, Loper e Klein 2009]{Bird2009}
+\abntrefinfo{Bird, Loper e Klein}{BIRD; LOPER; KLEIN}{2009}
+{BIRD, S.; LOPER, E.; KLEIN, E. \emph{{Natural Language Processing with
+  Python}}. [S.l.]: O'Reilly Media Inc., 2009.}
+
+\bibitem[Brand{\~{a}}o 1985]{Brandao1985}
+\abntrefinfo{Brand{\~{a}}o}{BRAND{\~{A}}O}{1985}
+{BRAND{\~{A}}O, C.~R. \emph{{O que {\'{e}} o m{\'{e}}todo Paulo Freire}}.
+  S{\~{a}}o Paulo: Brasiliense, 1985.}
+
+\bibitem[Caplan et al. 2014]{Caplan2014}
+\abntrefinfo{Caplan et al.}{CAPLAN et al.}{2014}
+{CAPLAN, R. et al. \emph{{Towards common methods for assessing open data:
+  workshop report {\&} draft framework}}.
+New York, 2014. v.~31, 1--15~p.}
+
+\bibitem[Carlson et al. 2011]{Carlson2011}
+\abntrefinfo{Carlson et al.}{CARLSON et al.}{2011}
+{CARLSON, J. et al. {Determining Data Information Literacy Needs: A Study of
+  Students and Research Faculty}.
+\emph{Libraries Faculty and Staff Scholarship and Research}, v.~11, n.~2, p.
+  629--657, 2011.
+ISSN 1530-7131.}
+
+\bibitem[Cattuto et al. 2008]{Cattuto2008}
+\abntrefinfo{Cattuto et al.}{CATTUTO et al.}{2008}
+{CATTUTO, C. et al. {Semantic grounding of tag relatedness in social
+  bookmarking systems}. In:  \emph{Lecture Notes in Computer Science (including
+  subseries Lecture Notes in Artificial Intelligence and Lecture Notes in
+  Bioinformatics)}. [S.l.: s.n.], 2008. v. 5318 LNCS, p. 615--631.
+ISBN 3540885633.
+ISSN 03029743.}
+
+\bibitem[Chemudugunta et al. 2008]{Chemudugunta2008}
+\abntrefinfo{Chemudugunta et al.}{CHEMUDUGUNTA et al.}{2008}
+{CHEMUDUGUNTA, C. et al. {Modeling documents by combining semantic concepts
+  with unsupervised statistical learning}. In:  \emph{The Semantic Web - ISWC}.
+  [S.l.: s.n.], 2008. p. 229--244.
+ISBN 3540885633.
+ISSN 03029743.}
+
+\bibitem[Cheng, Hu e Heidorn 2010]{Cheng2010}
+\abntrefinfo{Cheng, Hu e Heidorn}{CHENG; HU; HEIDORN}{2010}
+{CHENG, J.; HU, X.; HEIDORN, P.~B. {New measures for the evaluation of
+  interactive information retrieval systems: Normalized task completion time
+  and normalized user effectiveness}. In:  \emph{Proceedings of the ASIST
+  Annual Meeting}. [S.l.: s.n.], 2010. v.~47, n. April 2016.
+ISBN 1450470114.
+ISSN 15508390.}
+
+\bibitem[Chignard 2013]{Chignard2013}
+\abntrefinfo{Chignard}{CHIGNARD}{2013}
+{CHIGNARD, S. \emph{{A Brief History of Open Data}}. 2013.
+Dispon{\'\i}vel em:
+  \url{http://www.paristechreview.com/2013/03/29/brief-history-open-data/}.}
+
+\bibitem[Cilibrasi e Vitanyi 2007]{Cilibrasi2007}
+\abntrefinfo{Cilibrasi e Vitanyi}{CILIBRASI; VITANYI}{2007}
+{CILIBRASI, R.~L.; VITANYI, P. M.~B. {The Google similarity distance}.
+\emph{IEEE Transactions on Knowledge and Data Engineering}, v.~19, n.~3, p.
+  370--383, 2007.
+ISSN 10414347.}
+
+\bibitem[Colpaert et al. 2013]{Colpaert2013}
+\abntrefinfo{Colpaert et al.}{COLPAERT et al.}{2013}
+{COLPAERT, P. et al. {The 5 stars of open data portals}. In:  \emph{7th
+  international conference on methodologies, technologies and tools enabling
+  e-Government (MeTTeG)}. [S.l.: s.n.], 2013. p. 61--67.}
+
+\bibitem[Colpaert et al. 2014]{Colpaert2014}
+\abntrefinfo{Colpaert et al.}{COLPAERT et al.}{2014}
+{COLPAERT, P. et al. {Quantifying the interoperability of open government
+  datasets}.
+\emph{Computer}, v.~47, n.~10, p. 50--56, 2014.
+ISSN 00189162.}
+
+\bibitem[Corazza 2003]{Corazza2003}
+\abntrefinfo{Corazza}{CORAZZA}{2003}
+{CORAZZA, S.~M. \emph{{Tema Gerador: concep{\c{c}}{\~{a}}o e pr{\'{a}}tica}}.
+  Iju{\'{i}}: Editora Uniju{\'{i}}, 2003.}
+
+\bibitem[Cyganiak, Maali e Peristeras 2010]{conf/i-semantics/CyganiakMP10}
+\abntrefinfo{Cyganiak, Maali e Peristeras}{CYGANIAK; MAALI; PERISTERAS}{2010}
+{CYGANIAK, R.; MAALI, F.; PERISTERAS, V. {Self-service linked government data
+  with dcat and gridworks.} In:  PASCHKE, A.; HENZE, N.; PELLEGRINI, T. (Ed.).
+  \emph{I-SEMANTICS}. [S.l.]: ACM, 2010.
+ISBN 978-1-4503-0014-8.}
+
+\bibitem[{Data Revolution Group} 2014]{DataRevolutionGroup2014}
+\abntrefinfo{{Data Revolution Group}}{{Data Revolution Group}}{2014}
+{{Data Revolution Group}. \emph{{A World That Counts - Mobilising the Data
+  Revolution for Sustainable Development}}.
+[S.l.], 2014. 32~p. Dispon{\'\i}vel em:
+  \url{http://www.undatarevolution.org/wp-content/uploads/2014/12/A-World-That-Counts2.pdf}.}
+
+\bibitem[Davies 2010]{Davies2010}
+\abntrefinfo{Davies}{DAVIES}{2010}
+{DAVIES, T.
+\emph{{Open data, democracy and public sector reform.}}
+1--47~p. Tese (Dissertation) --- University of Oxford, 2010.}
+
+\bibitem[Davies 2012]{Davies2012}
+\abntrefinfo{Davies}{DAVIES}{2012}
+{DAVIES, T. {Supporting open data use through active engagement}. In:
+  \emph{Proceedings of the W3C Using Open Data Workshop}. Brussels: [s.n.],
+  2012. p.~1--5.}
+
+\bibitem[Davies, Sharif e Alonso 2015]{Davies2015}
+\abntrefinfo{Davies, Sharif e Alonso}{DAVIES; SHARIF; ALONSO}{2015}
+{DAVIES, T.; SHARIF, R.~M.; ALONSO, J.~M. \emph{{Open Data Barometer - Global
+  Report - 2nd Edition}}.
+The World Wide Web Foundation, 2015. 1--62~p. Dispon{\'\i}vel em:
+  \url{http://www.opendataresearch.org/dl/odb2013/Open-Data-Barometer-2013-Global-Report.pdf}.}
+
+\bibitem[Davies e Bawa 2012]{Davies2012a}
+\abntrefinfo{Davies e Bawa}{DAVIES; BAWA}{2012}
+{DAVIES, T.~G.; BAWA, Z.~A. (Ed.). \emph{{Community Informatics and Open
+  Government Data}}. Vol 8, no. [S.l.]: Journal of Community Informatics,
+  2012.}
+
+\bibitem[Ding et al. 2011]{Ding2011}
+\abntrefinfo{Ding et al.}{DING et al.}{2011a}
+{DING, L. et al. {TWC LOGD: A portal for linked open government data
+  ecosystems}.
+\emph{Journal of Web Semantics}, Elsevier B.V., v.~9, n.~3, p. 325--333, sep
+  2011.
+ISSN 15708268.}
+
+\bibitem[Ding et al. 2011]{Ding2011325}
+\abntrefinfo{Ding et al.}{DING et al.}{2011b}
+{DING, L. et al. {\{TWC\} LOGD: A portal for linked open government data
+  ecosystems}.
+\emph{Web Semantics: Science, Services and Agents on the World Wide Web}, v.~9,
+  n.~3, p. 325--333, 2011.
+ISSN 1570-8268.
+Dispon{\'\i}vel em:
+  \url{http://www.sciencedirect.com/science/article/pii/S1570826811000382}.}
+
+\bibitem[Eaves 2009]{Eaves2009}
+\abntrefinfo{Eaves}{EAVES}{2009}
+{EAVES, D. \emph{{The Three Laws of Open Government Data}}. 2009.
+Dispon{\'\i}vel em:
+  \url{http://eaves.ca/2009/09/30/three-law-of-open-government-data/}.}
+
+\bibitem[Ermilov, Auer e Stadler 2013]{DBLP:conf/i-semantics/ErmilovAS13}
+\abntrefinfo{Ermilov, Auer e Stadler}{ERMILOV; AUER; STADLER}{2013a}
+{ERMILOV, I.; AUER, S.; STADLER, C. {User-driven semantic mapping of tabular
+  data}. In:  SABOU, M. et al. (Ed.). \emph{I-SEMANTICS 2013}. ACM, 2013. p.
+  105--112.
+ISBN 978-1-4503-1972-0. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/2506182.2506196}.}
+
+\bibitem[Ermilov, Auer e Stadler 2013]{Ermilov2013}
+\abntrefinfo{Ermilov, Auer e Stadler}{ERMILOV; AUER; STADLER}{2013b}
+{ERMILOV, I.; AUER, S.; STADLER, C. {User-driven semantic mapping of tabular
+  data}. In:  SABOU, M. et al. (Ed.). \emph{I-SEMANTICS 2013 - 9th
+  International Conference on Semantic Systems, ISEM '13, Graz, Austria,
+  September 4-6, 2013}. ACM, 2013. p. 105--112.
+ISBN 978-1-4503-1972-0. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/2506182.2506196}.}
+
+\bibitem[Fals-Borda e Rahman 1991]{FalsBorda1991}
+\abntrefinfo{Fals-Borda e Rahman}{FALS-BORDA; RAHMAN}{1991}
+{FALS-BORDA, O.; RAHMAN, M.~A. \emph{{Action and knowledge: breaking the
+  monopoly with participatory action-research}}. [S.l.]: Appex Press, 1991.}
+
+\bibitem[Fellbaum 1998]{Fellbaum1998}
+\abntrefinfo{Fellbaum}{FELLBAUM}{1998}
+{FELLBAUM, C. \emph{{WordNet: An Electronic Lexical Database}}. 1998. 423~p.}
+
+\bibitem[Ferraro e Kreidlow 2004]{Ferraro2004}
+\abntrefinfo{Ferraro e Kreidlow}{FERRARO; KREIDLOW}{2004}
+{FERRARO, A.~R.; KREIDLOW, D. {Analfabetismo no Brasil:
+  configura{\c{c}}{\~{a}}o e g{\^{e}}nese das desigualdades regionais}.
+\emph{Educa{\c{c}}{\~{a}}o e Realidade}, v.~29, n.~2, p. 179--200, 2004.}
+
+\bibitem[Ferreira e Santos 2002]{Ferreira2002}
+\abntrefinfo{Ferreira e Santos}{FERREIRA; SANTOS}{2002}
+{FERREIRA, S. d.~L.; SANTOS, E.~O. dos. {Forma{\c{c}}{\~{a}}o de professores e
+  cibercutltura: novas pr{\'{a}}ticas curriculares na educa{\c{c}}{\~{a}}o
+  presencial e a dist{\^{a}}ncia}. In:  \emph{IV ANPED-Sul Semin{\'{a}}rio de
+  Pesquisa em Educa{\c{c}}{\~{a}}o da Regi{\~{a}}o Sul}. Florian{\'{o}}polis:
+  UFSC, 2002. v.~1.}
+
+\bibitem[Fioretti 2011]{Fioretti2011}
+\abntrefinfo{Fioretti}{FIORETTI}{2011}
+{FIORETTI, M. \emph{{A proposal to promote Open Data from and for the
+  schools}}. 2011.
+Dispon{\'\i}vel em:
+  \url{http://mfioretti.com/2011/10/warsaw-open-data-and-education/}.}
+
+\bibitem[Freire 1979]{Freire1979}
+\abntrefinfo{Freire}{FREIRE}{1979}
+{FREIRE, P. \emph{{Educa{\c{c}}{\~{a}}o e Mudan{\c{c}}a}}. 12. ed. Rio de
+  Janeiro: Paz e Terra, 1979.}
+
+\bibitem[Freire 1987]{Freire1987}
+\abntrefinfo{Freire}{FREIRE}{1987}
+{FREIRE, P. \emph{{Pedagogia do Oprimido}}. 11. ed. [S.l.]: Editora Paz e
+  Terra, 1987.}
+
+\bibitem[Freire 2005]{Freire2005}
+\abntrefinfo{Freire}{FREIRE}{2005}
+{FREIRE, P. \emph{{Pedagogy of the Oppressed}}. 30. ed. New York: Continuum,
+  2005.
+ISBN 8521902433. Dispon{\'\i}vel em:
+  \url{http://www.infed.org/thinkers/et-freir.htm}.}
+
+\bibitem[Gadotti 1996]{Gadotti1996}
+\abntrefinfo{Gadotti}{GADOTTI}{1996}
+{GADOTTI, M. \emph{{Paulo Freire: Uma Biobibliografia}}. S{\~{a}}o Paulo:
+  Cortez Editora/Instituto Paulo Freire, 1996.}
+
+\bibitem[Ghiso 2011]{Ghiso2011}
+\abntrefinfo{Ghiso}{GHISO}{2011}
+{GHISO, A.~M. {Sistematizaci{\'{o}}n: un pensar el hacer que se resiste a
+  perder su autonomia}.
+\emph{Decisio}, v.~1, n.~28, p.~3--8, 2011.}
+
+\bibitem[Granickas 2013]{Granickas2013}
+\abntrefinfo{Granickas}{GRANICKAS}{2013}
+{GRANICKAS, K. \emph{{Understanding the impact of releasing and re-using
+  open}}.
+[S.l.], 2013. 1--29~p.}
+
+\bibitem[Grey, Bounegru e Chambers 2012]{Grey2012}
+\abntrefinfo{Grey, Bounegru e Chambers}{GREY; BOUNEGRU; CHAMBERS}{2012}
+{GREY, J.; BOUNEGRU, L.; CHAMBERS, L. \emph{{Data Journalism Handbook}}.
+  [S.l.]: OKFN, 2012.}
+
+\bibitem[Grubber 2007]{Grubber2007}
+\abntrefinfo{Grubber}{GRUBBER}{2007}
+{GRUBBER, T. {Ontology of Folksonomy: A Mash Up of Apples and Organges}.
+\emph{Int'l Journal on Semantic Web {\&} Information Systems}, v.~3, n.~2,
+  2007.
+Dispon{\'\i}vel em:
+  \url{http://tomgruber.org/writing/ontology-of-folksonomy.htm}.}
+
+\bibitem[Gurstein 2011]{Gurstein2011}
+\abntrefinfo{Gurstein}{GURSTEIN}{2011}
+{GURSTEIN, M.~B. {Open data: Empowering the empowered or effective data use for
+  everyone?}
+\emph{First Monday}, v.~16, n.~2, p.~1--7, 2011.}
+
+\bibitem[Gurstein 2015]{Gurstein2015}
+\abntrefinfo{Gurstein}{GURSTEIN}{2015}
+{GURSTEIN, M.~B. {Why I'm Giving Up on the Digital Divide}.
+\emph{Journal Of Community Informatics}, v.~11, n.~1, 2015.
+Dispon{\'\i}vel em:
+  \url{http://ci-journal.net/index.php/ciej/article/view/1210/1139}.}
+
+\bibitem[Halpin, Robu e Shepherd 2007]{Halpin2007}
+\abntrefinfo{Halpin, Robu e Shepherd}{HALPIN; ROBU; SHEPHERD}{2007}
+{HALPIN, H.; ROBU, V.; SHEPHERD, H. {The complex dynamics of collaborative
+  tagging}. In:  \emph{International World Wide Web Conference}. [s.n.], 2007.
+  p. 211--220.
+ISBN 9781595936547. Dispon{\'\i}vel em:
+  \url{http://portal.acm.org/citation.cfm?id=1242602}.}
+
+\bibitem[Harispe et al. 2014]{Harispe2014}
+\abntrefinfo{Harispe et al.}{HARISPE et al.}{2014a}
+{HARISPE, S. et al. {The semantic measures library and toolkit: fast
+  computation of semantic similarity and relatedness using biomedical
+  ontologies}.
+\emph{Bioinformatics}, v.~30, n.~5, p. 740--742, 2014.
+Dispon{\'\i}vel em:
+  \url{http://bioinformatics.oxfordjournals.org/content/30/5/740.abstract}.}
+
+\bibitem[Harispe et al. 2014]{Harispe01032014}
+\abntrefinfo{Harispe et al.}{HARISPE et al.}{2014b}
+{HARISPE, S. et al. {The semantic measures library and toolkit: fast
+  computation of semantic similarity and relatedness using biomedical
+  ontologies}.
+\emph{Bioinformatics}, v.~30, n.~5, p. 740--742, 2014.
+Dispon{\'\i}vel em:
+  \url{http://bioinformatics.oxfordjournals.org/content/30/5/740.abstract}.}
+
+\bibitem[Harispe et al. 2015]{Harispe2015}
+\abntrefinfo{Harispe et al.}{HARISPE et al.}{2015}
+{HARISPE, S. et al. {Semantic Similarity from Natural Language and Ontology
+  Analysis}.
+\emph{Synthesis Lectures on Human Language Technologies}, v.~8, n.~1, p.
+  1--254, 2015.
+Dispon{\'\i}vel em: \url{http://dx.doi.org/10.2200/S00639ED1V01Y201504HLT027}.}
+
+\bibitem[Hern 2014]{Hern2014}
+\abntrefinfo{Hern}{HERN}{2014}
+{HERN, A. \emph{{New York taxi details can be extracted from anonymised data}}.
+  2014.
+Dispon{\'\i}vel em:
+  \url{http://www.theguardian.com/technology/2014/jun/27/new-york-taxi-details-anonymised-data-researchers-warn}.}
+
+\bibitem[Huijboom e Broek 2011]{Huijboom2011}
+\abntrefinfo{Huijboom e Broek}{HUIJBOOM; BROEK}{2011}
+{HUIJBOOM, N.; BROEK, T. V.~D. {Open data: an international comparison of
+  strategies}.
+\emph{European Journal of ePractice}, v.~1, n.~12, p. 1--13, 2011.}
+
+\bibitem[Jara 1998]{Jara1998}
+\abntrefinfo{Jara}{JARA}{1998}
+{JARA, O. {Los desaf{\'{i}}os de la educaci{\'{o}}n popular}. In:
+  \emph{Metodolog{\'{i}}a de La Educaci{\'{o}}n Popular}. La Habana:
+  Asociaci{\'{o}}n de Pedagogos de Cuba, 1998.}
+
+\bibitem[Jetzek, Avital e Bj{\o}rn-Andersen 2013]{Jetzek2013}
+\abntrefinfo{Jetzek, Avital e Bj{\o}rn-Andersen}{JETZEK; AVITAL;
+  BJ{\O}RN-ANDERSEN}{2013}
+{JETZEK, T.; AVITAL, M.; BJ{\O}RN-ANDERSEN, N. {Generating Value from Open
+  Government Data}.
+\emph{ICIS 2013 Proceedings}, p. 1--20, 2013.
+Dispon{\'\i}vel em:
+  \url{http://aisel.aisnet.org/icis2013/proceedings/GeneralISTopics/5}.}
+
+\bibitem[Kim et al. 2008]{Kim2008}
+\abntrefinfo{Kim et al.}{KIM et al.}{2008}
+{KIM, H.~L. et al. {The State of the Art in Tag Ontologies: A Semantic Model
+  for Tagging and Folksonomies}. In:  \emph{Proc. Int'l Conf. on Dublin Core
+  and Metadata Applications}. [s.n.], 2008. p. 128--137.
+ISBN 3940344494.
+ISSN 3940344494. Dispon{\'\i}vel em:
+  \url{http://dcpapers.dublincore.org/ojs/pubs/article/view/925}.}
+
+\bibitem[Kim et al. 2011]{Kim2011}
+\abntrefinfo{Kim et al.}{KIM et al.}{2011}
+{KIM, H.~L. et al. {Integrating tagging into the web of data: Overview and
+  combination of existing tag ontologies}.
+\emph{Journal of Internet Technology}, v.~12, n.~4, p. 561--572, 2011.
+ISSN 16079264.}
+
+\bibitem[Knerr 2006]{Knerr2006}
+\abntrefinfo{Knerr}{KNERR}{2006}
+{KNERR, T. \emph{{Tagging ontology-towards a common ontology for
+  folksonomies}}.
+[S.l.], 2006. 3--8~p. Dispon{\'\i}vel em:
+  \url{https://tagont.googlecode.com/files/TagOntPaper.pdf}.}
+
+\bibitem[Krötzsch et al. 2007]{Kroetzsch2007}
+\abntrefinfo{Krötzsch et al.}{KRöTZSCH et al.}{2007}
+{KRöTZSCH, M. et al. Semantic wikipedia.
+\emph{Journal of Web Semantics}, December 2007.
+Dispon{\'\i}vel em:
+  \url{hhttp://www.aifb.uni-karlsruhe.de/Publikationen/showPublikation\_english?publ\_id=1551}.}
+
+\bibitem[Laniado e Mika 2010]{Laniado2010}
+\abntrefinfo{Laniado e Mika}{LANIADO; MIKA}{2010}
+{LANIADO, D.; MIKA, P. {Making sense of Twitter}. In:  \emph{ISWC}. [S.l.:
+  s.n.], 2010.}
+
+\bibitem[Lawler et al. 2012]{Lawler2012}
+\abntrefinfo{Lawler et al.}{LAWLER et al.}{2012}
+{LAWLER, R. et al. {Open Reconcile: A practical open-sourced ontology-driven
+  webservice}.
+\emph{Proceedings of the 2012 IEEE 16th International Enterprise Distributed
+  Object Computing Conference Workshops, EDOCW 2012}, n.~1, p. 124--131, 2012.
+Dispon{\'\i}vel em:
+  \url{http://ieeexplore.ieee.org/xpls/abs{\\_}all.jsp?arnumber=6406217
+  http://ieeexplore.ieee.org/xpls/abs{\\_}all.jsp?arnumber=6406217}.}
+
+\bibitem[Limpens, Gandon e Buffa 2013]{Limpens2013}
+\abntrefinfo{Limpens, Gandon e Buffa}{LIMPENS; GANDON; BUFFA}{2013}
+{LIMPENS, F.; GANDON, F.; BUFFA, M. {A complete life-cycle for the semantic
+  enrichment of folksonomies}. In:  GUILLET, F. et al. (Ed.). \emph{Advances In
+  Knowledge Discovery and Management}. [S.l.]: Springer Berlin Heidelberg,
+  2013. p. 127--150.
+ISBN 9783642358548.}
+
+\bibitem[Lohmann, D\'{\i}az e Aedo 2011]{Lohmann2011}
+\abntrefinfo{Lohmann, D\'{\i}az e Aedo}{LOHMANN; D\'{I}AZ; AEDO}{2011}
+{LOHMANN, S.; D\'{I}AZ, P.; AEDO, I. {MUTO: the modular unified tagging
+  ontology}. In:  \emph{Proceedings of the 7th International Conference on
+  Semantic Systems - I-Semantics '11}. [s.n.], 2011. p. 95--104.
+ISBN 9781450306218.
+ISSN <null>. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=2063531}.}
+
+\bibitem[Marchetti e Rosella 2007]{Marchetti2007}
+\abntrefinfo{Marchetti e Rosella}{MARCHETTI; ROSELLA}{2007}
+{MARCHETTI, A.; ROSELLA, M. {SemKey : A Semantic Collaborative Tagging System}.
+  In:  \emph{Proceedings of the 16th international conference on World Wide Web
+  - WWW '07}. [S.l.: s.n.], 2007. v.~7, p. 8--12.}
+
+\bibitem[Melo 2013]{Melo2013}
+\abntrefinfo{Melo}{MELO}{2013}
+{MELO, G.~D. {Lexvo . org : Language-Related Information for the Linguistic
+  Linked Data Cloud}.
+\emph{Semantic Web Journal}, v.~7, p.~1--5, 2013.}
+
+\bibitem[Mika 2007]{Mika2007}
+\abntrefinfo{Mika}{MIKA}{2007}
+{MIKA, P. {Ontologies are us: A unified model of social networks and
+  semantics}.
+\emph{Journal of Web Semantics}, v.~5, n.~1, p. 5--15, 2007.
+ISSN 15708268.}
+
+\bibitem[Mkude, P{\'{e}}rez-Esp{\'{e}}s e Wimmer 2014]{Mkude2014}
+\abntrefinfo{Mkude, P{\'{e}}rez-Esp{\'{e}}s e Wimmer}{MKUDE;
+  P{\'{E}}REZ-ESP{\'{E}}S; WIMMER}{2014}
+{MKUDE, C.~G.; P{\'{E}}REZ-ESP{\'{E}}S, C.; WIMMER, M.~a. {Participatory
+  budgeting: A framework to analyze the value-add of citizen participation}.
+\emph{Proceedings of the Annual Hawaii International Conference on System
+  Sciences}, p. 2054--2062, 2014.
+ISSN 15301605.}
+
+\bibitem[Murray-Rust 2008]{Murray-Rust2008}
+\abntrefinfo{Murray-Rust}{MURRAY-RUST}{2008}
+{MURRAY-RUST, P. {Open Data in Science}.
+\emph{Serials Review}, v.~34, p. 52--64, 2008.
+ISSN 00987913.}
+
+\bibitem[Newman 2005]{Newman2005}
+\abntrefinfo{Newman}{NEWMAN}{2005}
+{NEWMAN, R. \emph{{Tag ontology design}}. 2005.
+Dispon{\'\i}vel em: \url{http://www.holygoat.co.uk/projects/tags/}.}
+
+\bibitem[Nu{\~{n}}ez 1998]{Nunez1998}
+\abntrefinfo{Nu{\~{n}}ez}{NU{\~{N}}EZ}{1998}
+{NU{\~{N}}EZ, C. {Educar para transformar, transformar para educar}. In:
+  \emph{Metodolog{\'{i}}a de La Educaci{\'{o}}n Popular}. La Habana:
+  Asociaci{\'{o}}n de Pedagogos de Cuba, 1998.}
+
+\bibitem[Obama 2009]{Obama2009}
+\abntrefinfo{Obama}{OBAMA}{2009}
+{OBAMA, B. \emph{{Memorandum for the Heads of Executive Departments and
+  Agencies}}. The White House, 2009.
+Dispon{\'\i}vel em:
+  \url{https://www.whitehouse.gov/the{\\_}press{\\_}office/TransparencyandOpenGove}.}
+
+\bibitem[Ochoa e Duval 2006]{Ochoa2006}
+\abntrefinfo{Ochoa e Duval}{OCHOA; DUVAL}{2006}
+{OCHOA, X.; DUVAL, E. {Quality Metrics for Learning Object Metadata}. In:
+  \emph{World Conference on Educational Multimedia, Hypermedia and
+  Telecommunications}. [S.l.: s.n.], 2006.
+ISBN 1-880094-60-6.}
+
+\bibitem[{Open Knowledge Foundation} 2015]{OpenKnowledgeFoundation2015}
+\abntrefinfo{{Open Knowledge Foundation}}{{Open Knowledge Foundation}}{2015}
+{{Open Knowledge Foundation}. \emph{{Open Data Handbook}}. [S.l.]: OKFN, 2015.}
+
+\bibitem[OpenSpending 2014]{OpenSpending}
+\abntrefinfo{OpenSpending}{OPENSPENDING}{2014}
+{OPENSPENDING. \emph{{Budget Data Package}}.
+[S.l.], 2014. Dispon{\'\i}vel em:
+  \url{https://github.com/openspending/budget-data-package}.}
+
+\bibitem[Parycek, Sch{\"{o}}llhammer e Schossb{\"{o}}ck 2016]{Parycek2016}
+\abntrefinfo{Parycek, Sch{\"{o}}llhammer e Schossb{\"{o}}ck}{PARYCEK;
+  SCH{\"{O}}LLHAMMER; SCHOSSB{\"{O}}CK}{2016}
+{PARYCEK, P.; SCH{\"{O}}LLHAMMER, R.; SCHOSSB{\"{O}}CK, J. {“Each in Their
+  Own Garden”: Obstacles for the Implementation of Open Government in the
+  Public Sector of the German-speaking Region}. In:  \emph{Proc. of the 9th
+  International Conference on Theory and Practice of Electronic Governance -
+  ICEGOV}. Montevideo: [s.n.], 2016.}
+
+\bibitem[Passant 2008]{Passant2008}
+\abntrefinfo{Passant}{PASSANT}{2008}
+{PASSANT, A. {Linked Data tagging with LODr}. In:  \emph{Semantic Web Challenge
+  (International Semantic Web Conferrence)2}. [S.l.: s.n.], 2008. p.~1--8.}
+
+\bibitem[Reiche e Hofig 2013]{Reiche2013}
+\abntrefinfo{Reiche e Hofig}{REICHE; HOFIG}{2013}
+{REICHE, K.~J.; HOFIG, E. {Implementation of metadata quality metrics and
+  application on public government data}. In:  \emph{Proceedings -
+  International Computer Software and Applications Conference}. [S.l.: s.n.],
+  2013. p. 236--241.
+ISBN 9780769549873.
+ISSN 07303157.}
+
+\bibitem[Renzio e Wehner 2015]{Renzio2015}
+\abntrefinfo{Renzio e Wehner}{RENZIO; WEHNER}{2015}
+{RENZIO, P.~D.; WEHNER, J. \emph{{The Impacts Openness: A Review of the
+  Evidence}}.
+[S.l.], 2015. 35~p.}
+
+\bibitem[Robu, Halpin e Shepherd 2009]{Robu2009}
+\abntrefinfo{Robu, Halpin e Shepherd}{ROBU; HALPIN; SHEPHERD}{2009}
+{ROBU, V.; HALPIN, H.; SHEPHERD, H. {Emergence of consensus and shared
+  vocabularies in collaborative tagging systems}.
+\emph{ACM Transactions on the Web}, v.~3, n.~4, 2009.
+ISSN 15591131.
+Dispon{\'\i}vel em: \url{http://eprints.soton.ac.uk/268192/}.}
+
+\bibitem[Roseira 2016]{Roseira2016}
+\abntrefinfo{Roseira}{ROSEIRA}{2016}
+{ROSEIRA, C. {Exploring the Barriers in the Commercial Use of Open Government
+  Data}. In:  \emph{Proc. of the 9th International Conference on Theory and
+  Practice of Electronic Governance - ICEGOV}. Montevideo: [s.n.], 2016.}
+
+\bibitem[Santos 2006]{Santos2006}
+\abntrefinfo{Santos}{SANTOS}{2006}
+{SANTOS, B. d.~S. \emph{{A Gram{\'{a}}tica do Tempo - Para uma Nova Cultura
+  Pol{\'{i}}tica - Col. Para um Novo Senso Comum - Vol. 4}}. [S.l.]: Cortez,
+  2006.}
+
+\bibitem[Schield 2004]{Schield2004}
+\abntrefinfo{Schield}{SCHIELD}{2004}
+{SCHIELD, M. {Information Literacy, Statistical Literacy and Data Literacy}.
+\emph{IASSIST Quarterly Summer/Fall}, v.~28, n.~2/3, p. 6--11, 2004.
+Dispon{\'\i}vel em:
+  \url{http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.144.6309}.}
+
+\bibitem[{School of Data} 2014]{SchoolofData2014}
+\abntrefinfo{{School of Data}}{{School of Data}}{2014}
+{{School of Data}. \emph{{School of Data Report 2014}}. 2014.
+Dispon{\'\i}vel em: \url{http://2014.schoolofdata.org/}.}
+
+\bibitem[Schugurensky 2014]{Schugurensky2014}
+\abntrefinfo{Schugurensky}{SCHUGURENSKY}{2014}
+{SCHUGURENSKY, D. \emph{{Paulo Freire}}. London: Bloomsbury Publishing, 2014.}
+
+\bibitem[Schuler e Namioka 1993]{SCHULER1993}
+\abntrefinfo{Schuler e Namioka}{SCHULER; NAMIOKA}{1993}
+{SCHULER, D.; NAMIOKA, A. \emph{{Participatory Design: Principles and
+  Practices}}. [S.l.]: Lawrence Erlbaum Associates, 1993.}
+
+\bibitem[Sigurbj\"{o}rnsson e Zwol 2008]{Sigurbjornsson2008}
+\abntrefinfo{Sigurbj\"{o}rnsson e Zwol}{SIGURBJ\"{o}RNSSON; ZWOL}{2008}
+{SIGURBJ\"{o}RNSSON, B.; ZWOL, R.~V. {Flickr tag recommendation based on
+  collective knowledge}.
+\emph{Proceedings of the 17th international conference on World Wide Web - WWW
+  '08}, v.~6, p. 327--336, 2008.
+ISSN 08963207.
+Dispon{\'\i}vel em: \url{http://dl.acm.org/citation.cfm?id=1367542}.}
+
+\bibitem[Smith 2003]{Smith2003}
+\abntrefinfo{Smith}{SMITH}{2003}
+{SMITH, B. {Ontology}.
+\emph{Blackwell Guide to the Philosophy of Computing and Information}, n.~1964,
+  p. 155--166, 2003.
+ISSN 1943-4723.}
+
+\bibitem[Specia et al. 2007]{Specia2007}
+\abntrefinfo{Specia et al.}{SPECIA et al.}{2007}
+{SPECIA, L. et al. {Integrating Folksonomies with the Semantic Web}.
+\emph{Lecture Notes in Computer Science -The Semantic Web: Research and
+  Applications}, v.~4519, n. September 2006, p. 624--639, 2007.
+ISSN 0302-9743.
+Dispon{\'\i}vel em:
+  \url{http://www.springerlink.com/content/413285327hj53234/}.}
+
+\bibitem[Tauberer 2014]{Tauberer2014}
+\abntrefinfo{Tauberer}{TAUBERER}{2014}
+{TAUBERER, J. \emph{{Open Government Data: The Book (2nd Edition)}}. [S.l.]:
+  Author's Edition, 2014.}
+
+\bibitem[Trillo et al. 2007]{Trillo2007}
+\abntrefinfo{Trillo et al.}{TRILLO et al.}{2007}
+{TRILLO, R. et al. {Discovering the Semantics of User Keywords}.
+\emph{Journal of Universal Computer Science}, v.~13, n.~12, p. 1908--1935,
+  2007.
+ISSN 0948-695X.}
+
+\bibitem[Tygel et al. 2016]{Tygel2016}
+\abntrefinfo{Tygel et al.}{TYGEL et al.}{2016a}
+{TYGEL, A.~F. et al. {“How much?” Is Not Enough An Analysis of Open Budget
+  Initiatives}. In:  \emph{Proc. of the 9th International Conference on Theory
+  and Practice of Electronic Governance - ICEGOV}. Montevideo: [s.n.], 2016.
+  p.~10.}
+
+\bibitem[Tygel et al. 2016]{Tygel2016a}
+\abntrefinfo{Tygel et al.}{TYGEL et al.}{2016b}
+{TYGEL, A.~F. et al. {Towards Cleaning-up Open Data Portals: A Metadata
+  Reconciliation Approach}. In:  \emph{Proc. of the 10th International
+  Conference on Semantic Computing}. Laguna Hills, California: [s.n.], 2016.
+  p.~8. Dispon{\'\i}vel em: \url{http://arxiv.org/abs/1510.04501}.}
+
+\bibitem[Tygel, Campos e Alvear 2015]{Tygel2015}
+\abntrefinfo{Tygel, Campos e Alvear}{TYGEL; CAMPOS; ALVEAR}{2015}
+{TYGEL, A.~F.; CAMPOS, M. L.~M.; ALVEAR, C. A.~S. de. {Teaching Open Data for
+  Social Movements - a Research Methodology}.
+\emph{Journal of Community Informatics}, v.~11, n.~3, 2015.
+Dispon{\'\i}vel em:
+  \url{http://ci-journal.net/index.php/ciej/article/view/1220/1165}.}
+
+\bibitem[Tygel e Kirsch 2015]{Tygel2015a}
+\abntrefinfo{Tygel e Kirsch}{TYGEL; KIRSCH}{2015}
+{TYGEL, A.~F.; KIRSCH, R. {Contributions of Paulo Freire for a critical data
+  literacy}. In:  \emph{I Data Literacy Workshop}. Oxford: [s.n.], 2015. p.~5.}
+
+\bibitem[Umbrich, Neumaier e Polleres 2015]{Umbrich2015}
+\abntrefinfo{Umbrich, Neumaier e Polleres}{UMBRICH; NEUMAIER; POLLERES}{2015}
+{UMBRICH, J.; NEUMAIER, S.; POLLERES, A. {Quality assessment {\&} evolution of
+  Open Data portals}. In:  \emph{The International Conference on Open and Big
+  Data}. [S.l.: s.n.], 2015.}
+
+\bibitem[Vafopoulos et al. 2013]{Vafopoulos2013}
+\abntrefinfo{Vafopoulos et al.}{VAFOPOULOS et al.}{2013}
+{VAFOPOULOS, M. et al. {Insights in global public spending}. In:
+  \emph{Proceedings of the 9th International Conference on Semantic Systems -
+  I-SEMANTICS '13}. [s.n.], 2013. p. 135--139.
+ISBN 9781450319720. Dispon{\'\i}vel em:
+  \url{http://dl.acm.org/citation.cfm?id=2506182.2506201}.}
+
+\bibitem[Vahey, Yarnall e Patton 2006]{Vahey2006}
+\abntrefinfo{Vahey, Yarnall e Patton}{VAHEY; YARNALL; PATTON}{2006}
+{VAHEY, P.; YARNALL, L.; PATTON, C. {Mathematizing middle school: Results from
+  a cross-disciplinary study of data literacy}. In:  \emph{American Educational
+  Research Association Annual Conference}. [S.l.: s.n.], 2006. p. 1--15.}
+
+\bibitem[{Van Hooland} et al. 2013]{VanHooland2013}
+\abntrefinfo{{Van Hooland} et al.}{{Van Hooland} et al.}{2013}
+{{Van Hooland}, S. et al. {Evaluating the success of vocabulary reconciliation
+  for cultural heritage collections}.
+\emph{Journal of the American Society for Information Science and Technology},
+  v.~64, n.~3, p. 464--479, 2013.
+ISSN 15322882.}
+
+\bibitem[Vaughan 2004]{Vaughan2004}
+\abntrefinfo{Vaughan}{VAUGHAN}{2004}
+{VAUGHAN, L. {New measurements for search engine evaluation proposed and
+  tested}.
+\emph{Information Processing and Management}, v.~40, n.~4, p. 677--691, 2004.
+ISSN 03064573.}
+
+\bibitem[Vlasov e Parkhimovich 2014]{Vlasov2014}
+\abntrefinfo{Vlasov e Parkhimovich}{VLASOV; PARKHIMOVICH}{2014}
+{VLASOV, V.; PARKHIMOVICH, O. {Development of the Open Budget Format}. In:
+  \emph{Proceedings of the 16th conference of fruct association association}.
+  Oulu: [s.n.], 2014. p. 129--136.}
+
+\bibitem[Vleugels 2012]{Vleugels2012}
+\abntrefinfo{Vleugels}{VLEUGELS}{2012}
+{VLEUGELS, R. {Overview of all FOI laws}.
+\emph{Fringe Special}, p. 1--28, 2012.}
+
+\bibitem[Waal et al. 2014]{Waal2014}
+\abntrefinfo{Waal et al.}{WAAL et al.}{2014}
+{WAAL, S. van~der et al. {Lifting Open Data Portals to the Data Web}. In:
+  AUER, S.; BRYL, V.; TRAMP, S. (Ed.). \emph{Linked Open Data – Creating
+  Knowledge Out of Interlinked Data}. [S.l.]: Springer, 2014. cap.~9.}
+
+\bibitem[Wei et al. 2013]{Wei2013}
+\abntrefinfo{Wei et al.}{WEI et al.}{2013}
+{WEI, B. et al. {A survey of faceted search}.
+\emph{Journal of Web Engineering}, v.~12, n.~1{\&}2, p. 41--64, 2013.
+ISSN 1540-9589.}
+
+\bibitem[Wolff, Kortuem e Cavero 2015]{Wolff2015}
+\abntrefinfo{Wolff, Kortuem e Cavero}{WOLFF; KORTUEM; CAVERO}{2015}
+{WOLFF, A.; KORTUEM, G.; CAVERO, J. {Urban Data in the primary classroom:
+  bringing data literacy to the UK curriculum}. In:  \emph{I Data Literacy
+  Workshop}. Oxford: [s.n.], 2015. Dispon{\'\i}vel em:
+  \url{http://oro.open.ac.uk/43855/1/webSci - CR.pdf}.}
+
+\bibitem[Worthy 2013]{Worthy2013}
+\abntrefinfo{Worthy}{WORTHY}{2013}
+{WORTHY, B. \emph{{David Cameron's Transparency Revolution? The Impact of Open
+  Data in the UK}}.
+London, 2013.}
+
+\bibitem[Wu, Zhang e Yu 2006]{Wu2006}
+\abntrefinfo{Wu, Zhang e Yu}{WU; ZHANG; YU}{2006}
+{WU, X.; ZHANG, L.; YU, Y. {Exploring social annotations for the semantic web}.
+\emph{Proceedings of the 15th international conference on World Wide Web - WWW
+  '06}, p.~417, 2006.
+Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/1135777.1135839$\backslash$nhttp://portal.acm.org/citation.cfm?id=1135777.1135839$\backslash$nhttp://portal.acm.org/citation.cfm?doid=1135777.1135839$\backslash$nhttp://dl.acm.org/citation.cfm?id=1135777.1135839}.}
+
+\bibitem[Xu e Mease 2009]{Xu2009}
+\abntrefinfo{Xu e Mease}{XU; MEASE}{2009}
+{XU, Y.; MEASE, D. {Evaluating Web Search Using Task Completion Time}. In:
+  \emph{Proceedings of the 32Nd International ACM SIGIR Conference on Research
+  and Development in Information Retrieval}. [S.l.: s.n.], 2009. p. 676--677.
+ISBN 978-1-60558-483-6.}
+
+\bibitem[Zuiderwijk e Janssen 2014]{Zuiderwijk2014a}
+\abntrefinfo{Zuiderwijk e Janssen}{ZUIDERWIJK; JANSSEN}{2014}
+{ZUIDERWIJK, A.; JANSSEN, M. {The Negative Effects of Open Government Data -
+  Investigating the Dark Side of Open Data}. In:  \emph{Proceedings of the 15th
+  Annual International Conference on Digital Government Research}.
+  Aguascalientes, Mexico: [s.n.], 2014. p. 147--152.
+ISBN 978-1-4503-2901-9. Dispon{\'\i}vel em:
+  \url{http://doi.acm.org/10.1145/2612733.2612761}.}
+
+\bibitem[Zuiderwijk et al. 2012]{Zuiderwijk2012}
+\abntrefinfo{Zuiderwijk et al.}{ZUIDERWIJK et al.}{2012}
+{ZUIDERWIJK, A. et al. {Socio-technical Impediments of Open Data}.
+\emph{Electronic Journal of e-Government}, v.~10, n.~2, p. 156--172, 2012.}
+
+\end{thebibliography}

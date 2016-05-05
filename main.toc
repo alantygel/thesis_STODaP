@@ -1,0 +1,128 @@
+\changetocdepth {4}
+\select@language {brazil}
+\select@language {english}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {1}\MakeTextUppercase {Introduction}}{15}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{15}{section.1.1}
+\contentsline {section}{\numberline {1.2}Not Only Advantages -- Open Data Impediments}{16}{section.1.2}
+\contentsline {section}{\numberline {1.3}Hypothesis}{17}{section.1.3}
+\contentsline {section}{\numberline {1.4}Objective}{17}{section.1.4}
+\contentsline {section}{\numberline {1.5}Methodology}{17}{section.1.5}
+\contentsline {section}{\numberline {1.6}Structure of the thesis}{18}{section.1.6}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Open Data -- An Overview}}{19}{chapter.2}
+\contentsline {section}{\numberline {2.1}Motivation: Why Open Data?}{19}{section.2.1}
+\contentsline {section}{\numberline {2.2}Historical Notes}{21}{section.2.2}
+\contentsline {section}{\numberline {2.3}Definitions}{22}{section.2.3}
+\contentsline {section}{\numberline {2.4}The Open Data Landscape}{25}{section.2.4}
+\contentsline {section}{\numberline {2.5}Open Budget Data}{26}{section.2.5}
+\contentsline {section}{\numberline {2.6}Evaluating Open Data Impacts}{29}{section.2.6}
+\contentsline {section}{\numberline {2.7}Open Data Value}{29}{section.2.7}
+\contentsline {section}{\numberline {2.8}The Problems of Open Data}{30}{section.2.8}
+\contentsline {subsection}{\numberline {2.8.1}The Missing Focus on Use of Open Data}{30}{subsection.2.8.1}
+\contentsline {subsection}{\numberline {2.8.2}The Problem of Open Data Capacities and Data Divide}{31}{subsection.2.8.2}
+\contentsline {section}{\numberline {2.9}Linked Data towards Semantic Organization of Open Data}{33}{section.2.9}
+\contentsline {section}{\numberline {2.10}Conclusion}{35}{section.2.10}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {Open Data Research Through Data Literacy}}{37}{chapter.3}
+\contentsline {section}{\numberline {3.1}An Overview on Data Literacy}{38}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Data Literacy and Popular Education}{40}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Contributions of Paulo Freire for a Critical Data Literacy}{41}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Paulo Freire, Literacy and Popular Education}{41}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}Investigation Stage}{42}{subsubsection.3.2.1.1}
+\contentsline {subsubsection}{\numberline {3.2.1.2}Thematisation Stage}{43}{subsubsection.3.2.1.2}
+\contentsline {subsubsection}{\numberline {3.2.1.3}Problematisation Stage}{43}{subsubsection.3.2.1.3}
+\contentsline {subsubsection}{\numberline {3.2.1.4}Systematisation Stage}{44}{subsubsection.3.2.1.4}
+\contentsline {subsection}{\numberline {3.2.2}Parallels between Literacy Education and Data Literacy}{44}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}A Freirean Inspired Critical Data Literacy}{45}{subsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.3.1}The Emancipatory Character of Data Literacy}{46}{subsubsection.3.2.3.1}
+\contentsline {subsubsection}{\numberline {3.2.3.2}Data Literacy Process}{46}{subsubsection.3.2.3.2}
+\contentsline {subsubsection}{\numberline {3.2.3.3}Data Literacy Stages}{47}{subsubsection.3.2.3.3}
+\contentsline {subsubsection}{\numberline {3.2.3.4}Definition}{50}{subsubsection.3.2.3.4}
+\contentsline {subsection}{\numberline {3.2.4}Conclusions}{50}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Teaching Open Data for Social Movements: action and research for open data engagement}{51}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}First Stage \IeC {\textendash } Introduction}{52}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Second Stage \IeC {\textendash } Data Sources}{53}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Third Stage \IeC {\textendash } Tools}{56}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Fourth Stage \IeC {\textendash } Final Work}{56}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Open Data Clues from the Field}{57}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Questionnaire based analysis}{58}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Observation based analysis}{59}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Synthesis}{61}{subsection.3.4.3}
+\contentsline {section}{\numberline {3.5}Conclusion}{63}{section.3.5}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Semantic Metadata for Open Data Description}}{65}{chapter.4}
+\contentsline {section}{\numberline {4.1}A Literature Review on Semantic Metadata}{65}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Characterization of the Contribution}{68}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Metadata Assessment}{69}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Metadata Clean-up}{69}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}Metadata Reconciliation}{70}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Structure Emergence}{71}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Automatic semantic tagging}{72}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}Semantic Lifting in ODPs}{72}{subsection.4.1.7}
+\contentsline {section}{\numberline {4.2}An analysis of metadata in ODPs}{72}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Local Metrics}{74}{subsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Tag Reuse}{74}{subsubsection.4.2.1.1}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Tags per dataset}{75}{subsubsection.4.2.1.2}
+\contentsline {subsubsection}{\numberline {4.2.1.3}Tag similarity}{75}{subsubsection.4.2.1.3}
+\contentsline {subsection}{\numberline {4.2.2}Global Metrics}{76}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Coincident tags between portals}{76}{subsubsection.4.2.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Tag expressiveness}{77}{subsubsection.4.2.2.2}
+\contentsline {section}{\numberline {4.3}Our contribution regarding the state of the art}{78}{section.4.3}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Semantic Tags for Open Data Portals}}{81}{chapter.5}
+\contentsline {section}{\numberline {5.1}Motivation}{81}{section.5.1}
+\contentsline {section}{\numberline {5.2}Definition of an Open Data Portal}{83}{section.5.2}
+\contentsline {section}{\numberline {5.3}Overview of the STODaP Approach}{84}{section.5.3}
+\contentsline {section}{\numberline {5.4}Building the STODaP server}{86}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Local Processing - Clean Up and Reconcile}{86}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Global Processing - Interlinking Portals}{88}{subsection.5.4.2}
+\contentsline {section}{\numberline {5.5}Use and Maintenance of the STODaP server}{90}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Local Part - Cleaning up tags}{90}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Global Part - Semantifying Tags}{91}{subsection.5.5.2}
+\contentsline {subsection}{\numberline {5.5.3}STODaP Server - Interlinking Portals}{92}{subsection.5.5.3}
+\contentsline {section}{\numberline {5.6}Implementation}{93}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Building Global Tags}{93}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}CKAN Tag Manager Plugin}{93}{subsection.5.6.2}
+\contentsline {subsection}{\numberline {5.6.3}CKAN Semantic Tags Plugin}{93}{subsection.5.6.3}
+\contentsline {subsection}{\numberline {5.6.4}Semantic Tag Server}{94}{subsection.5.6.4}
+\contentsline {section}{\numberline {5.7}Results}{94}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}STODaP Server}{94}{subsection.5.7.1}
+\contentsline {subsection}{\numberline {5.7.2}Local Level}{95}{subsection.5.7.2}
+\contentsline {section}{\numberline {5.8}Conclusions}{95}{section.5.8}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Evaluation}}{99}{chapter.6}
+\contentsline {section}{\numberline {6.1}Methodology evaluation background}{99}{section.6.1}
+\contentsline {section}{\numberline {6.2}Experimental Setup}{100}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Subjects}{100}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Tasks}{101}{subsection.6.2.2}
+\contentsline {section}{\numberline {6.3}Procedure}{101}{section.6.3}
+\contentsline {section}{\numberline {6.4}Results}{102}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Validation}{102}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Analysis}{102}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}Conclusions}{102}{section.6.5}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\contentsline {chapter}{\chapternumberline {7}\MakeTextUppercase {Conclusions}}{103}{chapter.7}
+\vspace {\cftbeforechapterskip }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\contentsline {chapter}{\uppercase {Bibliography}}{105}{section*.9}
+\renewcommand *{\cftappendixname }{APPENDIX \space }
+\setlength {\cftpartindent }{\cftlastnumwidth } \setlength {\cftpartnumwidth }{2em}
+\cftinsert {A}
+\contentsline {part}{\uppercase {Appendix}}{115}{section*.10}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {A}\MakeTextUppercase {List of Publications}}{117}{appendix.A}
+\contentsline {section}{\numberline {A.1}Peer-reviewed conferences}{117}{section.A.1}
+\contentsline {section}{\numberline {A.2}Peer-reviewed journals}{117}{section.A.2}
+\contentsline {section}{\numberline {A.3}Book chapters}{117}{section.A.3}
+\setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
+\setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
+\cftinsert {A}
+\contentsline {appendix}{\chapternumberline {B}\MakeTextUppercase {Results of Open Data Research}}{119}{appendix.B}
+\vspace {\cftbeforechapterskip }

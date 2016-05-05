@@ -1,0 +1,112 @@
+\chapter{Introduction}
+
+This thesis is essentially about open data.
+Given the growing importance of the topic, open data is discussed through several points of views.
+Although looking at it from a Computer Science perspective, it was not possible to skip political, social and economical aspects while discussing the topic.
+This work should thus be regarded as a multidisciplinary effort to contribute to a field that is heavily related to Computer Science, but far from being restricted to it.
+
+This introductory chapter briefly exposes some motivations behind the topic of open data, highlighting selected problems observed in the literature.
+The hypothesis from where this thesis starts are posed, as well as the objectives that we aim to achieve with this work.
+We further explain the methodology used in order to develop this thesis, and finally describe the structure of the rest of this text.
+
+\section{Motivation}
+% * crescimento do open data
+Current numbers about the open data scene leave no doubt about the central importance of this topic in contemporary society.
+The \href{http://index.okfn.org/place/}{Open Data Index} monitored in 2015 open datasets published by 122 countries all over the world, on topics related to budget, national statistics, procurements, maps and many others.
+Regarding the European landscape, the \href{http://opendatamonitor.eu/}{Open Data Monitor} counts 173 open data catalogues in the continent, which sums an amount of 1472 GB of data.
+
+The movement towards opening datasets is based in a series of access to information laws. 
+According to the \href{http://right2info.org}{right2info.org} platform, these are laws that ``establish the right and procedures for the public to request and receive government-held information''.
+\citeonline{Vleugels2012} presents a comprehensive list of 273 Freedom of Information Acts (FOIA), being 93 of national, 180 of sub-national and 3 of international scope.
+Even though the first occurrence of this kind of law dates from 1766, in Sweden, the vast majority of them were created after the year 2000.
+
+It is no coincidence that 9 years later, United States and United Kingdom launched their Open Data Portals (ODPs), a one-stop-shop for publishing and consuming government data.
+Nowadays, several countries already implemented their ODPs, together with numerous states and municipalities.
+Universities and research centres are also joining strategies for putting data available on the Web.
+More than 1600 ODPs were surveyed by \href{https://www.opendatasoft.com}{OpenDataSoft}.
+The potential of changing the very basis of democratical processes took the United Nations to start using the term \emph{Data Revolution} to designate ``the new world of data, a world in which data are bigger, faster and more detailed than ever before''~\cite{DataRevolutionGroup2014}.
+
+If the numbers about open data scenario generate an enthusiastic hope that this movement will solve many problems of the society, an opposite direction claims that the promises are still from being realised, and also that there are some hidden threats that should be alerted.
+
+\section{Not Only Advantages -- Open Data Impediments}
+
+Despite its recent popularity, Open Data and Open Data Portals still face significant impediments, as richly described by~\citeonline{Zuiderwijk2012}.
+The authors collected 118 socio-technical impediments for use of open data from interviews, workshops and literature.
+Some cited impediments were ``absence of commonly agreed metadata'', ``insufficiency of metadata'', ``the lack of interoperability'' and ``difficulty in searching and browsing data'', showing that a great challenge for ODPs is the organization of data.
+
+The open data organization challenge can be subdivided into two aspects: 1) structuring and organizing the datasets themselves and 2) providing well-structured and organized metadata for the datasets.
+The first aspect was, for example, tackled by approaches for semantic lifting of data by~\citeonline{DBLP:conf/i-semantics/ErmilovAS13} and~\citeonline{Ding2011325}, who tried to build general strategies for putting large open government datasets in the Link Data cloud.
+For the standardized structuring metadata, the Data Catalog Vocabulary (DCAT)\footnote{Available at \url{http://www.w3.org/TR/vocab-dcat/}}~\cite{conf/i-semantics/CyganiakMP10} was developed.
+However, the cross-portal metadata alignment and reconciliation can not be addressed by DCAT.
+
+Besides the data organization challenge, another very much cited impediment to the use of open data is the lack of capacity of individuals and groups for dealing with open data.
+There has been a recently growing consensus on defining this individual and collective capacity for dealing with data under the concept of \emph{Data Literacy}.
+
+As observed by~\citeonline{Bhargava2015}, one of the first mentions of the term \emph{Data Literacy} called the attention for its importance on the context of evaluation of information, together with  Information Literacy and Statistical Literacy. 
+In 2004, Schield reinforced the important of teaching these three literacies for ``students who need to critically evaluate information in arguments'' \cite{Schield2004}.
+
+Although not mentioning directly the term Data Literacy, the above cited collection of impediments of open data~\cite{Zuiderwijk2012} dedicates a section for problems related to \emph{understand ability}.
+Among them we find, for example, ``Lack of skills and capabilities to use the data and'' and ``Lack of knowledge about how to interpret the data'', which relates directly to the topic of Data Literacy.
+
+\section{Hypothesis}
+
+In the light of the theoretical benefits of open data, and the impediments that hinder the achievement of these benefits, we formulate two hypothesis in order to guide the development of this thesis:
+
+\noindent\textbf{\hypothesis{hyp:tagging}:} Enhancing the organization of open data repositories leads to better use of open data;
+
+\noindent\textbf{\hypothesis{hyp:dataliteracy}:} Increasing the level of data literacy on the society leads to better use of open data (which in turn motivates better publishing).
+
+\section{Objective}
+
+To develop approaches both from user perspective and from publisher perspective in order to advance towards the benefits of open data. Specifically:
+\begin{itemize}
+	\item From the publisher perspective, and recognizing that the lack of organization of ODPs is a problem, to develop an approach for cleaning, reconciliation, and semantic lifting of metadata;
+	\item From the user perspective, and recognizing the lack of abilities for dealing with data, to develop a data literacy approach
+\end{itemize}
+
+\section{Methodology}
+The methodology used to develop this thesis is composed by several steps.
+\begin{itemize}
+	\item Literature revision, described in chapter \ref{chap:opendata}
+	\item Participatory research, described in chapter \ref{chap:dataliteracy}
+	\item Objective alignment
+	\item New and deeper literature revision, described in chapter \ref{chap:relworks}
+	\item System development
+	\item Validation: In order to validate our approach, experiments and objective metrics were developed. Specifically:
+\begin{itemize}
+	\item Hypothesis \ref{hyp:tagging} was validated by measuring the ODP metadata related parameters;
+	\item Regarding Hypothesis \ref{hyp:dataliteracy}, the developed data literacy method was applied and results were analysed. 
+\end{itemize}
+
+\end{itemize}
+
+
+%% ver tese Kelly e Tiago
+
+
+
+
+\section{Structure of the thesis}
+
+The remaining of this thesis is organized as follows:
+
+Chapter~\ref{chap:opendata} presents an introduction to the main subject of this thesis, i.e., open data.
+After an overview on the topic, we present some current research challenges in this field, with a special focus on the lack of people's capacity for dealing with data, and the lack of organization and linking possibilities on Open Government Data Portals. 
+For some parts of this chapter, the work published in~\citeonline{Tygel2016} will be used.
+
+Chapter~\ref{chap:dataliteracy} has a twofold objective: on the one hand, we present the results of a participatory research with open data users about their main motivations and impediments, and the wanted improvements on open data platforms. 
+On the other hand, we systematise the research method into an open data course inspired in the principles of Popular Education.
+The course methodology is presented, as well as some contributions on critical data literacy.
+As a result of the research, the problem of linking and organizing data in ODPs appears as an outstanding impediment for using open data.
+In this chapter, we will use the results published in~\citeonline{Tygel2015} and~\citeonline{Tygel2015a}.
+
+Chapter~\ref{chap:relworks} goes deeper in analysing how previous research dealt with enhancement of metadata in ODPs.
+A special focus is given on methods for extracting semantics of metadata, specially when dealing with tags.
+
+Chapter~\ref{chap:tagging} presents the STODaP -- Semantic Tags for Open Data Portals -- approach.
+The main purpose of this approach is to tackle the issue of OGD organization and linking, by cleaning up tags in ODPs, and creating a central repository for semantically annotated metadata.
+The approach is composed by several strategies, both in the context of individual ODPs and between them.
+As shown by our use case, ...
+In this section, we will benefit from the work published in~\citeonline{Tygel2016a}.
+
+Chapter~\ref{chap:conclusions} will present the concluding remarks of this thesis, signalling ways for researchers willing to continue this work.

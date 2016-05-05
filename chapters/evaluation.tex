@@ -1,0 +1,159 @@
+%#########################################################################################
+\chapter{Evaluation}
+%#########################################################################################
+
+In the previous chapter, STODaP approach was presented in details, as well as the supporting tools and their implementation choices.
+Practical results were also characterized, showing concrete achievements on the open data organization problem.
+
+In this chapter, the evaluation of STODaP server is described.
+The system was compared to other mechanisms on the task of searching for open datasets.
+We first present a theoretical background on search engine evaluation methodologies in \autoref{sec:lit_review}.
+Then, we show the experimental setup in \autoref{sec:setup} and the results in \autoref{sec:results}.
+Some concluding remarks are driven on the final section.
+
+\section{Methodology evaluation background}
+\label{sec:lit_review}
+
+As the amount of online available data gets bigger and bigger, search methodologies are increasingly necessary to allow users accessing relevant content.
+Thus, it is crucial to develop evaluation techniques that allows researchers to compare different algorithms and find the most adequate ones for each context.
+
+\citeonline{Cheng2010} developed two measures for assessing \emph{user satisfaction} and \emph{user effectiveness} on Interactive Information Retrieval systems.
+The first one is called Normalized Task Completion Time (NT), and is calculated as the relation between task completion times for novices and experts.
+Following the same reasoning, the Normalized User Effectiveness (NUE) evaluates the relation between relevant documents retrieved by novices and experts, proportional to NT.
+Authors claim that this normalization procedure turns the measures more stable against task complexity variations.
+Results show that the NT is highly correlated to user satisfaction, while NUE is a better indicator for effectiveness when compared to simple task completion time.
+The learning curve was also better explained by NT and NUE than by task completion time.
+
+In a contrary direction, \citeonline{Xu2009} defend the use of task completion time as a robust measure to assess in which extent the search engine helps users to complete a task.
+Additionally, these authors found a negative correlation between user satisfaction and task completion time.
+An important result of this study is a mathematical development which shows that a cross-over design reduces significantly the variance of the experiment.
+Cross-over design means that, when comparing systems A and B on several tasks, every user tests both systems and completes all tasks once, half of them in A, and the other half in B.
+
+%config 1: metade dos usuarios usam um sistema, metade outro, todos fazem todas as tarefas
+%config 2: todos fazem todas as tarefas nos dois sistemas > problema : curva de aprendizado - solução - crossover - todos usuarios vao usar os dois sistemas, mas para tarefas diferentes : metade dos usuarios faz metade das tarefas no A e metade no B, e vice-versa
+
+In a survey dealing specifically with faceted search, \citeonline{Wei2013} presents a review about relevance and cost-based metrics on the faceted search context.
+Regarding relevance metrics, authors go through a number of works which use precision, recall or F-measure in the same way as on non-faceted search evaluation.
+Cost-based metrics look at the time needed to complete a search task, and memory usage.
+These metrics were used to compare performance between faceted and non-faceted engines.
+
+Although the Web and search engines have dramatically changed in the last 10 years, the perspective brought by \citeonline{Vaughan2004} is still relevant.
+The focus in this work relies on the quality of ranking, i.e., the order in which results are presented.
+Both works presented previously rely on the task completion time, which brings with it factors that do not depend on the system, e.g., users ability, and factor not directly related to the search-engine, such as usability.
+By looking specifically at the ranking quality, the evaluation methodology may ignore these aspects, and keeps full attention on the search mechanism.
+In this work, author proposes non-binary counterparts to the traditional precision and recall measures, with the intention of adding human relevance judgement aspects to the evaluation.
+Specifically, two measures are proposed: (i) \emph{Quality of result ranking}, as counterpart of precision and (ii) \emph{Ability to retrieve top ranked pages}, as counterpart measure of recall.
+Both measures rely on a human driven ranking of results, which is correlated with the search engine one in the first case.
+The second measure evaluates in which extent the top-results are present in each search engine, for the same query.
+
+\section{Experimental Setup}
+\label{sec:setup}
+
+% \citeonline{Cheng2010}
+% entry questionaire to make sure the users were able to make the test
+% novices received a basic training, reading instructions and questions we answered
+% The researchers ran a pilot study before finalizing the search tasks to make sure that LexisNexis Academic could retrieve the relevant documents for all these search tasks. Each
+% For each search task, the subject stopped the search session when either the information need was satisfied or he or she gave up the task. The researchers observed the subjects performing their searches in order to ensure that the correct procedures were being followed. The researchers also recorded the task completion time of each task, and asked the subjects to answer a questionnaire after each task. As
+% 4. Task completion time (T): The time from the start until the completion of a retrieval task. The task completion time is recorded in seconds, but note that the minute was the unit in the calculations. The subjects stopped each search session by themselves, either once their search needs were satisfied or when they gave up.
+% 5. User satisfaction (S): An ordinal number indicating the level of user satisfaction. A questionnaire was provided to the users after each search was complete. It asked the subjects to rate their satisfaction level towards the system in regard to supporting the accomplishment of the search task, using a scale from 1 (not satisfied at all) to 5 (extremely satisfied).
+
+In this section, we describe in details our experimental setup.
+First of all, we define the evaluation goals:
+\begin{itemize}
+	\item When searching for open data, how does STODaP compares to other data-specific and general search engines?
+	\item What is the usability degree of STODaP server?
+\end{itemize}
+
+\subsection{Subjects}
+
+The aim of STODaP server is to facilitate access to open data to the general public.
+We consider that experts already have their own strategies and sources for finding adequate data.
+Thus, we do not require experience in open data.
+However, users must have some previous knowledge on internet navigation. 
+Knowledge on basic data processing tools such as spreadsheet processors is also desired, so that subjects can at least imagine a potential use of data.
+
+In our experiment, participants were students attending a class on the topic Information Retrieval at the Federal University of Rio de Janeiro, in Brazil.
+An entry-questionnaire was filled by the participants, whose answers are summarized in \autoref{tab:eval_summary}.
+Participation was not mandatory and there was no reward for participants.
+
+\begin{table}[]
+\ABNTEXfontereduzida
+\centering
+\caption{STODaP evaluation - summary of subjects profile}
+\label{tab:eval_summary}
+\begin{tabular}{|p{8cm}|p{2cm}|}
+\hline
+Participants & \\ \hline
+Age & \\ \hline
+Internet knowledge (1 - Never Used; 5 - Always use) & \\ \hline
+Open Data Experience (1 - Never heard about; 5 - I work often with open data) & \\ \hline
+Use of data (1 - I've never used any data processing tool; 5 - I'm an expert in advanced data processing tools) & \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Tasks}
+
+By design, STODaP server is a tool for interlinking different Open Data Portals.
+Thus, in this evaluation we aim to assess the ability of gathering similar information from several ODPs, rather than finding specific datasets on the Web.
+
+The evaluation tasks where selected based on: (i) topic relevance of datasets on the open data community, based on criteria defined by Open Data Index\footnote{http://index.okfn.org/} (ii) the existence of search results on STODaP server.
+This restriction allows us only to make assertions about the performance of STODaP server on the topics covered by the system, which consists of large base of open data portals, as described in \autoref{sec:stodap_building}.
+Broader conclusion would require large scale evaluations, which are over the scope of this thesis.
+Defined tasks are:
+
+\begin{itemize}
+	\item Find open datasets containing budget information from 5 different countries.
+	\item Find open datasets containing procurement information in 3 different idioms.
+	\item Find open datasets about Water Quality on 10 different rivers.
+\end{itemize}
+
+\section{Procedure}
+
+The following procedure was driven during the evaluation process:
+
+\begin{itemize}
+	\item Participants filled the entry-questionnaire (5 minutes);
+	\item The main idea of the project was explained, followed by an explanation about (10 minutes)
+	\item Participants were assigned numbers and asked to enter this number on the form. 
+	\item Three tasks were sequentially presented. 
+	Each one was demanded to be completed either using STODaP server, the Exversion Data Search Engine\footnote{Available at \url{https://www.exversion.com/search/}} or conventional search engines \cite{Xu2009}.
+	The combination between search method, task and ordering was randomly chosen for participants.
+	\item For each task, the challenge was presented with the appropriate number of text fields for pasting the results links.
+	\item The time taken for each task was automatically calculated. The search string used in STODaP server were also captured.
+	\item An evaluation questionnaire was filled by the subjects, containing questions about usability and satisfaction.
+\end{itemize}
+
+\section{Results}
+\label{sec:eval_results}
+
+\subsection{Validation}
+Each entry-questionnaire was analysed in order to determine if it is valid to our evaluation, in terms of internet experience.
+
+The answers were also checked in order to confirm if the dataset links provided are really valid answers to the assigned task.
+
+\subsection{Analysis}
+\begin{itemize}
+	\item Task completion time for each task (and variance) \cite{Xu2009}
+	\item Task completion time for each search method (and variance) \cite{Xu2009}
+	\item Correlation between satisfaction and completion time for STODaP server \cite{Xu2009}
+	\item Correlation between results found in the different search methods \cite{Vaughan2004}
+
+\end{itemize}
+
+
+\section{Conclusions}
+\label{sec:conclusion}
+
+
+
+% The main objective of the STODaP approach is to facilitate the access of open data by the general public.
+% Thus, in order to test our approach we defined an use case.
+
+% John is a journalist.
+% He has to write an article about openness of health data around the world.
+% Apart of writing about specific cases using national reports, he want's to give the readers a global overview.
+% His first approach is to access search engines.
+% However, he faces hundreds of open data portals, in different languages, which turns the task of retrieving health data into a difficult task.
+% Using the STODaP server, John is able to access datasets of 87 open data portals related to the concept of health, and also other connected concepts.
+
+
