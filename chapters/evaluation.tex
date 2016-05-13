@@ -102,7 +102,7 @@ Broader conclusion would require large scale evaluations, which are over the sco
 Defined tasks are:
 
 \begin{itemize}
-	\item Find open datasets containing budget information from 5 different countries.
+	\item Find open datasets containing 2015 budget data from locations in 5 different countries.
 	\item Find open datasets containing procurement information in 3 different idioms.
 	\item Find open datasets about Water Quality on 10 different rivers.
 \end{itemize}
@@ -123,8 +123,106 @@ The following procedure was driven during the evaluation process:
 	\item An evaluation questionnaire was filled by the subjects, containing questions about usability and satisfaction.
 \end{itemize}
 
+\section{Pre-Evaluation}
+In order to test and adjust our evaluation setup, we ran the process with a group of seven students of an Information Retrieval graduate course, at the Federal University of Rio de Janeiro.
+The results of this first round can be seen in \autoref{tab:pre_eval_questionnaire} and \autoref{tab:pre_eval_results}.
+Although the main target of this pre-evaluation process was to assess the evaluation procedure (and not the STODaP server), it is useful to look at the results to have the first impressions.
+
+\begin{table}[h]
+\ABNTEXfontereduzida
+\centering
+\caption[Answers to the entry and evaluations questionnaires.]{Answers to the entry and evaluations questionnaires. The first four questions correspond to the entry-questionnaire, applied before the evaluation. The two remaining questions were answered after completing the evaluation tasks.}
+\label{tab:pre_eval_questionnaire}
+\begin{tabular}{|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{1.cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+\hline
+& 	Age & Internet Ability (1 - low; 5 - high) & Data Ability (1 - low; 5 - high) & Open Data Ability  (1 - low; 5 - high) &	Do you think STODaP is a useful tool for finding data on the web?  (1 - not useful; 5 - very useful) &	How easy is it was get the data you need using the STDOaP in comparison with the other methods?  (1 - harder; 5 - easier) & 	Average TCT (seconds) \\ \hline
+1& 	27& 	5& 	3& 	1& 	4& 	2& 	295.7 +/- 98.8 \\ \hline
+2& 	23& 	5& 	4& 	3& 	5& 	3& 	833.3 +/- 151.8 \\ \hline
+3& 	27& 	5& 	5& 	5& 	2& 	2& 	560.0 +/- 103.2 \\ \hline
+4& 	23& 	5& 	4& 	3& 	5& 	4& 	845.0 +/- 523.9 \\ \hline
+5&	26& 	5& 	3& 	2& 	5& 	5& 	625.3 +/- 269.5 \\ \hline
+6& 	29& 	5& 	5& 	3& 	4& 	4& 	527.0 +/- 287.5 \\ \hline
+7& 	22& 	5& 	4& 	1& 	5& 	5& 	351.0 +/- 121.2 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[]
+\ABNTEXfontereduzida
+\centering
+\caption[Task Completion Time of the pre-evaluation test, in seconds.]{Task Completion Time of the pre-evaluation test, in seconds. 
+Each cell contains the number of seconds that one or more subjects took to complete the task with the correspondent search method.}
+\label{tab:pre_eval_results}
+\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+\textbf{Tasks / Search Methods} & \textbf{Water Quality} & 	\textbf{Budget information} &	\textbf{Procurement} &	\textbf{Average and Standard Deviation} \\ \hline
+\textbf{Exversion} &	723, 884, 468 &	235, 382 &	558, 518 &	538.3 +/- 198.5 \\ \hline
+\textbf{STODaP} &	435, 493, 460 &	397, 184, 517, 1048 & -	&	504.9 +/- 244.0 \\ \hline
+\textbf{Free} &	1580 &	702 &	401, 217, 180, 1001, 729 &	687.1 +/- 456.3 \\ \hline
+\textbf{Average and Standard Deviation} &	720.4 +/- 383.7 &	495.0 +/- 276.7 &	514.9 +/- 266.7 &\\ \hline
+\end{tabular}
+\end{table}
+
+\autoref{tab:pre_eval_questionnaire} shows the answers of each subject to the questions both before and after running the evaluation.
+As expected, all subjects are frequent internet users.
+Use of data in daily work or study is also high, but the only one declared himself an open data expert.
+Coincidently or not, this subject was the only who did not considered STOaP an useful tool for finding data on the web.
+Four out of seven considered that completing the tasks with STODaP was easier than with other methods.
+The average Task Completion Time had a huge variation, with a minimum of 295 seconds and a maximum of 845 seconds.
+
+\autoref{tab:pre_eval_results} shows the Task Completion Times for each task and search method.
+We can easily notice that a choosing a random generator for attributing tasks, search methods and orders was a mistake, specially with a small number of rounds.
+There were 36 possibilities (6 orderings for tasks $\times$ 6 orderings for search methods) but only 7 rounds were used.
+Thus, the number of combinations between tasks and search methods ended up quite unbalanced, and there was no combination of STODaP search method with the procurement task.
+
+After running the procedure, a conversation round was driven with the students on order to get insights both about the tool and the evaluation procedure.
+The following suggestions and comments were made:
+
+Regarding the evaluations interface:
+
+\begin{itemize}
+	\item Alert that search engines should be open in another tab;
+	\item Write the tasks more clearly and specific (e.g., asking budget 2015 may include 2014-16?)
+	\item On the final questions, positive answers to the system were at the left side, which is not usual and confused some subjects;
+	\item State more clearly that only the link to the dataset should be answered;
+	\item Makes clear that users are allowed to use auxiliary tools such as translators or Wikipedia in order to better understand the tasks;
+	\item State more clearly that users should only look to the dataset title, and there is no need to open it;
+	\item Explain that only some specific portals are indexed, not all open data in the world.
+\end{itemize}
+
+Regarding the evaluations procedure:
+\begin{itemize}
+	\item On the evaluation questionnaire, ask the English proficiency and other languages, and ask if the English language hampered the performance;
+	\item To few questions - do not evaluate learning curve.
+\end{itemize}
+	
+Regarding the STODaP faceted search interface:
+\begin{itemize}
+	\item There should be an explanation about faceted search and how does it work;
+	\item Regarding the Portal facet, it was suggested to write portals name in spite of url, when this metadata is available
+	\item One participant reported that he took a while to realize the language facet; after seeing it, it was very quick.
+	\item It was suggested to include the possibility of making the query broader by including facets with OR.
+\end{itemize}	
+
+There were some positive comments:
+\begin{itemize}
+	\item It was noted that results presented by STODaP had a higher quality in relation to Exversion, mainly because the latter automatically uses an OR logic between two terms.
+	This results in many unwanted outputs.
+	\item The possibility of searching English keywords and getting multi-language results was also positively mentioned, because no other tool presents such feature.
+	\item The STODaP interface, in its search results, exhibits datasets with all its tags.
+	This was positively noted, because it helps to decide quicker if a dataset is of interest or not.
+\end{itemize}	
+
+Analysing students while they were completing their tasks was also show some new perspectives.
+It was noticed that some subjects tried to look deep at datasets in order to verify if they met the task criteria.
+It should be harder stressed in the explanation that this is not necessary, since the our objective is only to find dataset, and not to verify their quality.
+Some students tried to use analytic tools such as Google Public Data.
+Their focus is rather on analysing (open) data sets than on making them available for download in machine readable formats.
+Thus, for our intentions, this is not considered open data and it should also be stated in the explanation.
+
+
 \section{Results}
 \label{sec:eval_results}
+
 
 \subsection{Validation}
 Each entry-questionnaire was analysed in order to determine if it is valid to our evaluation, in terms of internet experience.
