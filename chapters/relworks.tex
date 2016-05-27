@@ -3,10 +3,11 @@
 
 In the previous chapter, the issue of building open data skills was tackled through the development of a data literacy course as part of a participatory research.
 One of the results of this research points out a significant problem related to the organization of ODPs.
-Following this motivation, we divide this chapter in two parts, covering:
+Following this motivation, we tackle in this chapter the issue of metadata for open data. 
+The chapter is divided in two parts, covering:
 
 \begin{itemize}
-	\item A literature investigation over the possible strategies to deal with semantic open data organization;
+	\item A literature investigation over the possible strategies to deal with semantic metadata for open data organization;
 	\item An analysis of the current status of metadata in ODPs.
 \end{itemize}
 
@@ -16,11 +17,16 @@ Then, a characterization of our contribution is driven, in order to delimit the 
 After this characterization, we present in each section one processing step, highlighting the main related works, their gaps and relations to this work.
 We start with Assessment of Metadata in \autoref{sec:metadata_assessment}, followed by Metadata Cleanup in \autoref{sec:metadata_cleanup}, Metadata Reconciliation in \autoref{sec:metadata_reconciliation} and finally with Structure Emergence in \autoref{sec:emergence}.
 
-The second section aims to bring light over the current state of metadata use in Open Data Portals.
-Based on the CKAN Census, we profile 87 portals and analyse several aspects regarding metadata.
-The analysis embraces not only local aspects, such as use, reuse and similarity within a portal (\autoref{sec:local_metrics}), but also global features between portals, such as coincident metadata and expressiveness (\autoref{sec:global_metrics}).
+The second section aims to bring light over the current status of metadata use in Open Data Portals.
+Based on the CKAN Census of ODPs, we profile 87 portals and analyse several aspects regarding metadata.
+The analysis embraces not only local aspects regarding individual portals, such as use, reuse and similarity within a portal (\autoref{sec:local_metrics}), but also global features between portals, such as coincident metadata and expressiveness (\autoref{sec:global_metrics}).
 
-\section{A Literature Review on Semantic Metadata}
+We conclude in the last section with an evaluation of the literature gaps and the actual problems detected in ODPs, pointing out our strategies to tackle some of these issues.
+
+\section{Semantic Metadata: A Literature Review}
+\label{sec:semantic_metadata}
+
+\subsection{Introduction}
 
 It is unnecessary to argue that good metadata are crucial for making data usable.
 By \emph{good} we can give as example a series of quality attributes as clean, well organized, detailed, complete, accessible, and meaningful.
@@ -28,7 +34,7 @@ Intuitively, metadata is meaningful if it brings new information -- meaning -- f
 If a consumer asks: ``Which banana do you have?'', and the seller answers: ``The yellow one!'', this is barely meaningful, since almost all types of banana are yellow.
 However, if the seller answers: ``I have \emph{Cavendish}, \emph{Gros Michel}, \emph{Latacan}, and \emph{Cambuta}, which one do you prefer?'', there is much more information accessible through the types of bananas, including colour, size, countries origin, among others.
 
-On the Web context, the way of enhancing the meaning of an object is to connect it to the Semantic Web, through the Linked Open Data Cloud, as detailed in Section~\ref{sec:LOD}.
+On the Web context, the way of enhancing the meaning of an object is to connect it to the Semantic Web, through the Linked Open Data Cloud, as detailed in \autoref{sec:LOD}.
 This procedure is also called Semantic Enrichment or Semantic Lifting.
 \citeonline{Limpens2013} state a series of motivations for semantically enriching tags in the context of folksonomies, considering data generators, data curators and end-users:
 \begin{enumerate}
@@ -68,13 +74,13 @@ In order to justify it, the author cites a set of broad ontology definitions, an
 In the sequence of these papers, several authors tried to define tagging ontologies.
 \citeonline{Wu2006} added a time dimension to the tagging model.
 And to the best of our knowledge, \citeonline{Newman2005} was the first work to propose an ontology for tagging.
-This work was further extended by \citeonline{Knerr2006}, who proposed the Tagging Ontology, depicted in Figure~\ref{fig:tagging_ontology}.
+This work was further extended by \citeonline{Knerr2006}, who proposed the Tagging Ontology, depicted in \autoref{fig:tagging_ontology}.
 All the dimensions proposed by \citeonline{Wu2006} and \citeonline{Grubber2007} are present and further detailed in the ontology.
 
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/tagging_ontology.png}
-\caption{Tagging Ontology~\cite{Knerr2006} }
+\caption[Tagging Ontology.]{Tagging Ontology. Source: \citeonline{Knerr2006} }
 \label{fig:tagging_ontology}
 \end{center}
 \end{figure}
@@ -87,13 +93,13 @@ The MOAT architecture was the first to explicitly include the concept of tag mea
 
 A review about semantic tagging initiatives by \citeonline{Kim2008} compared the different types and relations proposed by the works until 2008, and was updated by \citeonline{Kim2011}.
 
-The most recent attempt to build a tag ontology is the Modular Unified Tagging Ontology (MUTO)\footnote{\url{http://muto.socialtagging.org/core/v1.html}}, shown in Figure~\ref{fig:muto}, and described by~\citeonline{Lohmann2011}.
+The most recent attempt to build a tag ontology is the Modular Unified Tagging Ontology (MUTO)\footnote{\url{http://muto.socialtagging.org/core/v1.html}}, shown in \autoref{fig:muto}, and described by~\citeonline{Lohmann2011}.
 It incorporates suggestions of several previous models into a unified model, and is strongly based on wide used ontologies, such as Dublin Core, SKOS and SIOC. 
 
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/muto.png}
-\caption{MUTO Ontology}
+\caption[MUTO Ontology.]{MUTO Ontology. Source: \citeonline{Lohmann2011}}
 \label{fig:muto}
 \end{center}
 \end{figure}
@@ -107,18 +113,19 @@ To the best of our knowledge, none of the proposed tagging ontologies incorporat
 The main contribution of this thesis is a semantic approach for organizing metadata in Open Data Portals, specifically regarding tags.
 Thus, the following topics are considered to be related works, and will be analysed in the following:
 \begin{itemize}
-	\item Metadata assessment;
-	\item Metadata Clean Up: spell-checking, detection of similar words, special characters equalization;
-	\item Metadata Reconciliation: synonym detection, automatic translation, vocabulary connection;
-	\item Structure emergence: finding relation between tags.
+	\item Metadata assessment: how to assess the use and quality of metadata;
+	\item Metadata clean-up: how to enhance the quality of the metadata using strategies such as spell-checking, detection of similar words, special characters equalization, and others;
+	\item Metadata reconciliation: how to align metadata with standard vocabularies, thesauri and ontologies;
+	\item Structure emergence: how find semantic relation between metadata.
 \end{itemize}
 
-Regarding the related bibliography, it is necessary to highlight that the vast majority of scientific works about tagging and semantics focus on a different kind of context in relation to ours.
-In this folksonomy case, tags are attributed to resources by the crowd, passing through a crowd-selection mechanism, which can enhance the tagging quality, but inserts some inherent noise.
+Regarding the related bibliography, it is necessary to highlight that the vast majority of scientific works about tagging and semantics focus on a different context in relation to ours.
+It is normally assumed a folksonomy environment, where tags are attributed to resources by the crowd, passing through a crowd-selection mechanism, which may enhance the tagging quality, but can also insert some inherent noise.
 This is applicable to platforms such as del.icio.us of flicker, where several users can tag the same resource.
 However, in the open data portals context, tags are only attributed by system managers.
 Although less noisy, this procedure is biased by few taggers.
-%The tag server approach described in this paper adds collaborative reconciliation layer over the ODPs.
+
+In the following subsections, we analyse the literature contributions regarding the above cited topics that relate to our work.
 
 \subsection{Metadata Assessment}
 \label{sec:metadata_assessment}
@@ -143,13 +150,13 @@ The metric developed by the authors take into account if the same identifiers we
 
 These works are taken into account in \autoref{sec:analysis}, where we derive an extensive analysis over ODP metadata.
 
-\subsection{Metadata Clean-up}
+\subsection{Metadata Clean-Up}
 \label{sec:metadata_cleanup}
 
 When dealing with metadata of large datasets, a cleaning up procedure is always necessary.
 There are several strategies for cleaning up tags described in the literature.
 
-\citeonline{Angeletou2008} describes a Lexical Processing procedure to clean up tags containing special characters, numbers, concatenated tags or tags with spaces.
+\citeonline{Angeletou2008} describes a Lexical Processing procedure to clean-up tags containing special characters, numbers, concatenated tags or tags with spaces.
 Two steps are proposed in this work: the first is called Lexical Isolation, which uses a set of heuristics to determine if tags have a potential to become semantic identifiers.
 The following step is called Lexical Normalisation, which aims to produce a list of possible lexical representations for each tag, considering plural and singular forms, different verb tenses, and others.
 
@@ -216,18 +223,18 @@ The hierarchical structure of WordNet allows to determine broader and narrower r
 
 A very interesting point-of-view on this topic is brought by \citeonline{Limpens2013}.
 In this work, a complete model for the semantic enrichment of folksonomies is presented including a socio-technical approach for managing diverging points of view, e.g., ``Kevin agrees with the fact that soil pollution is a more specific term than pollution but Alex disagrees''.
-Figure \ref{fig:srtag} shows the proposed model.
+\autoref{fig:srtag} shows the proposed model.
 After driving an automatic reconciliation and structuring strategy, which is then validated or corrected by users, the divergences are managed by a conflict solving module.
 
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/SRTag.png}
-\caption{SRTag RDF schema \cite{Limpens2013}}
+\caption[SRTag RDF schema.]{SRTag RDF schema. Source: \citeonline{Limpens2013}}
 \label{fig:srtag}
 \end{center}
 \end{figure}
 
-\subsection{Automatic semantic tagging}
+\subsection{Automatic Semantic Tagging}
 \label{sec:automatic_semtags}
 Although this is not the main objective of this work, it is worth mentioning some strategies for automatic semantic tagging of documents.
 \citeonline{Allahyari2016} proposes a probabilistic model based on DBPedi hierarchical model to automatically determine categories to documents.
@@ -243,7 +250,7 @@ In~\citeonline{Waal2014}, a strategy for lifting datasets in ODPs to the Linked 
 In all these works, however, the semantic lifting refers to the datasets, and not to metadata.
 
 %#########################################################################################
-\section{An analysis of metadata in ODPs}
+\section{An Analysis of Metadata in ODPs}
 \label{sec:analysis} 
 %#########################################################################################
 
@@ -271,7 +278,7 @@ The number of datasets in each portals varies from 4 to 194,592, and the number 
 Regarding the quality of the portals, although there is no general benchmark, \emph{\href{http://opendatamonitor.eu}{Open Data Monitor}} attests a high heterogeneity within European ODPs.
 An informal quality assessment using the Five Stars of ODPs~\cite{Colpaert2013} also shows that portals vary from simple data registries (one star) to a common data hub (five stars).
 
-A summary of the experiment data is shown in Table \ref{tab:summary}. 
+A summary of the experiment data is shown in \autoref{tab:summary}. 
 The code used to collect and analyse the data is available as an open-source project\footnote{\url{https://github.com/alantygel/StodAp}}.
 
 \begin{table}[]
@@ -313,7 +320,7 @@ Datasets without tag & 172,157 \\
 
 The analysis is divided in two groups: local metrics, to analyse the quality of tags in a particular ODP, and global metrics, looking at the interrelations between portals, and with the Linked Open Data (LOD) cloud.
 
-Regarding the other main tool for organizing ODPs -- groups -- Table~\ref{tab:summary} also shows the number of groups per portal, and the number of datasets inside each one.
+Regarding the other main tool for organizing ODPs -- groups -- \autoref{tab:summary} also shows the number of groups per portal, and the number of datasets inside each one.
 While the tags are attributed to an average 3.88 datasets, groups contain a mean value of 67.45 datasets.
 This makes groups less selective than tags, which justifies our decision to focus on tags in this work.
 Moreover, while all 87 portals use tags, 18 do not use groups to organize data.
@@ -325,7 +332,7 @@ Moreover, while all 87 portals use tags, 18 do not use groups to organize data.
 The objective of this metric is to assess whether a single tag is being used to characterize several datasets, just a few or even only one.
 Creating new tags for each dataset can be considered a bad tagging practice.
 If tags are reused for several datasets, tag-based information retrieval will be more effective.
-Figure~\ref{fig:tags_once} shows the distribution of the percentage of tags used only once for each portal. 
+\autoref{fig:tags_once} shows the distribution of the percentage of tags used only once for each portal. 
 The graphic shows a peak around 70\% of the tags used only once.
 From the 87 portals, 75 use more than 50\% of the tags only once.
 As a conclusion, tag reuse can be considered very low, thus effectively preventing the tags to be a suitable means to improve navigation, exploration and retrieval of datasets from ODPs.
@@ -335,32 +342,32 @@ As a conclusion, tag reuse can be considered very low, thus effectively preventi
 
 \begin{figure}[tb]
 \begin{center}
-\includegraphics[scale=1.2]{images/tag_once_dist.png}
-\caption{Re-use of tags inside a portal. The graphic shows the distribution of the percentage of tags used only once.}
+\includegraphics[width=\columnwidth]{images/tag_once_dist.png}
+\caption[Re-use of tags inside an ODP.]{Re-use of tags inside an ODP. The graphic shows the distribution of the percentage of tags used only once.}
 \label{fig:tags_once}
 \end{center}
 \end{figure}
 
-\subsubsection{Tags per dataset}
+\subsubsection{Tags per Dataset}
 This metric assesses the number of tags used per dataset.
 %rephrase
-The goal is to verify, as in~\cite{Umbrich2015}, if the tag metadata is being actively used in the portals.
-However, the results of this metric cannot lead to further conclusions, since there is no optimal value for the number of tags per dataset. 
+The goal is to verify, as in~\citeonline{Umbrich2015}, if the tag metadata is being actively used in the portals.
+We must note that the results of this metric cannot lead to further conclusions, since we do not intend to define an optimal value for the number of tags per dataset. 
 Using few and consistently used tags may support the organization of datasets better than many incoherently used ones.
 On the other hand, few tags may not label the content adequately.
-Figure~\ref{fig:tags_per_ds} shows the distribution of the average tags per dataset for each portal. 
+\autoref{fig:tags_per_ds} shows the distribution of the average tags per dataset for each portal. 
 We can see that most ODPs apply between 1 and 7 tags to each dataset, with a peak around the value of 3.
 In general, we can affirm that describing datasets with tags is a common procedure in ODPs.
 
 \begin{figure}[tb]
 \begin{center}
-\includegraphics[scale=1.2]{images/tags_per_dataset.png}
-\caption{Distribution of the average number of tags used per dataset in Open Data Portals.}
+\includegraphics[width=\columnwidth]{images/tags_per_dataset.png}
+\caption[Average number of tags per dataset.]{Distribution of the average number of tags used per dataset in ODPs.}
 \label{fig:tags_per_ds}
 \end{center}
 \end{figure}
 
-\subsubsection{Tag similarity}
+\subsubsection{Tag Similarity}
 By looking at the ODP tags, one can readily recognize that many tags differ only on capitalization, accents or singular and plural forms.
 Thus, this metric assesses whether several tags are being used with the same meaning.
 While recognizing these cases is easy for humans who understand the language of the tags, an automatic discovery of tags with the same meaning is not always straightforward.
@@ -373,7 +380,7 @@ However, this method fails with tags containing numbers.
 For example, the Levenshtein edit distance between \texttt{budget-2010} and \texttt{budget-2011} is the same as between \texttt{Access} and \texttt{access}.
 Semantic-oriented methods, as detailed in~\citeonline{Harispe2015}, could also be used to detect synonymous tags.
 
-Figure \ref{fig:similarity} shows a distribution of the percentage of similar tags inside each ODP.
+\autoref{fig:similarity} shows a distribution of the percentage of similar tags inside each ODP.
 Similarity was checked using the simple approach.
 The occurrence of a significant rate of similarity reveals that there are few portals adopting a systematic tagging procedure.
 Despite the low percentage for some portals, in many of them similar tags still occur.
@@ -383,7 +390,7 @@ It should be noticed that these portals use far less tags (148 per portal) than 
 \begin{figure}[tb]
 \begin{center}
 \includegraphics[scale=1.2]{images/similarity.png}
-\caption{Proportion of similar tags in ODPs, where the difference lies only capitalization or special characters.}
+\caption[Percentage of very similar tags in ODPs.]{Percentage of very similar tags in ODPs, where the difference lies only in capitalization or special characters.}
 \label{fig:similarity}
 \end{center}
 \end{figure}
@@ -402,7 +409,7 @@ This figure, however, should be carefully analysed.
 If we are interested in datasets from different ODPs tagged similarly, an overestimation bias may come from the fact that some portals act only as datasets harvesters, replicating the same datasets (and related tags). 
 On the other hand, because portals are available in several languages, different tags could have the same meaning in different languages, what in turn tends to be an underestimation bias.
 In any case, the figure clearly indicates that there exists great potential for linking tags between open data portals.
-In fact, with this metric, our aim is to justify and motivate the development of a semantic tag curation approach for open data portals, which will be described in \ref{sec:stodap_overview}. 
+In fact, with this metric, our aim is to justify and motivate the development of a semantic tag curation approach for open data portals, which will be described in \autoref{chap:tagging}. 
 %note about context: it do not make sense to compare tags between portals of different contexts
 %calculate more than twice
 
@@ -431,7 +438,7 @@ In our tests for matching tags with semantic resources, we found that \url{Lexvo
 Lexvo.org is connected not only to Wikipedia and WordNet, but also to Gemet, Wikitionary, Eurovoc, Agrovoc, OpenCyc and others.
 By providing an isolated term (in our case, the tag) and its language, Lexvoc.org returns the corresponding translations, as \texttt{lexvo:translation}, and if the term is English, it returns semantic resources, either as \texttt{rdfs:seeAlso} or \texttt{lexvo:means}.
 
-Table \ref{tab:expressiveness} shows the results. 
+\autoref{tab:expressiveness} shows the results. 
 The majority of tags (68.38\%) did not correspond to any semantic resource according to this method.
 8.15\% of the tags were not evaluated either because they contain numbers, or because their length was equal or smaller than three. 
 In those cases, results are mostly wrong.
@@ -468,11 +475,11 @@ Thus, we can say that some semantic potential is present on the tags.
 
 \hspace{0.2pt}
 
-After this analysis, we can affirm that: (i) tags in ODPs are widelly used, but in a non-systematic way, which hinders their capacity of supporting information retrieval, and (ii) there is a potential for using these tags as connecting elements between ODPs, and for raising semantics from them.
+After this analysis, we can affirm that: (i) tags in ODPs are widely used, but in a non-systematic way, which hinders their capacity of supporting information retrieval, and (ii) there is a potential for using these tags as connecting elements between ODPs, and for raising semantics from them.
 Next, we describe our proposal based on these statements.
 
 
-\section{Our contribution regarding the state of the art}
+\section{Our Contribution Regarding the State of the Art}
 % talvez puxar para o final do capitulo 5
 
 In this chapter, we presented the state of the art in each of the steps for dealing with the problem of semantic organization of ODPs.

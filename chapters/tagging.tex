@@ -2,7 +2,7 @@
 \label{chap:tagging}
 
 
-As observed in the previous chapter, literature related to semantic enhancement of ODPs metadata has still some significant gaps as:
+As observed in the previous chapter, literature related to semantic enhancement of ODPs metadata has still some significant gaps, such as:
 \begin{itemize}
 	\item Emerging semantics from the ODP context;
 	\item Dealing with multiple languages;
@@ -12,18 +12,19 @@ As observed in the previous chapter, literature related to semantic enhancement 
 
 In order to	tackle this issue, we describe in this chapter the Semantic Tags for Open Data Portals - STODaP approach for improving tag curation within and across ODPs, and for linking ODPs through its metadata.
 
-Our main contributions are:
+Besides the comprehensive analysis of tag usage in 87 ODPs, shown in previous chapter, that justifies the need and benefits of better tools for managing tags, our main contributions are:
 \begin{itemize}
-	\item A comprehensive analysis of tag usage in 87 ODPs, which justifies the need and benefits of better tools for managing tags;
-	\item An approach for cleaning and reconciliation of tags in ODPs; and
-	\item An approach for collaboratively connecting ODPs through meaningful shared tags.
+	\item An approach for cleaning and reconciliation of metadata in ODPs;
+	\item An approach for semantic lifting of metadata in ODPs;
+	\item A centralized repository for connecting ODPs through meaningful shared tags.
 \end{itemize}
 
 %TODO: organize
+This chapter begins with a short motivation to our work, which is also justified by the previous chapters.
 In the first section, some considerations about metadata in open data portals are derived. 
 In the following, the different concepts of tagging are put into perspective, in order to characterize tags in ODPs. 
 Section~\ref{sec:analysis} presents an analysis of the use of tags in several Open Data Portals, both from government and civil society side, and from various countries and languages.
-The main part of this chapter lies in Section~\ref{sec:stodap_overview}, where our approach for semantic tags in open data portals is explained. 
+The main part of this chapter lies in Section~\ref{sec:stodap_architecture}, where our approach for semantic tags in open data portals is explained. 
 Following sections presents some aspects about the implementation, the validation of the approach, and a conclusion.
 
 %#########################################################################################
@@ -84,9 +85,63 @@ A more detailed classification should be done via tags, whose use in ODPs has th
 \end{itemize}
 
 As a result, the navigation, exploration and search within individual, but in particular also across ODPs is significantly hampered.
+Thus, we present in the following the STODaP architecture, whose intention is to facilitate access to data.
+
 
 %#########################################################################################
-\section{Definition of an Open Data Portal}
+\section{The STODaP Architecture}
+\label{sec:stodap_architecture}
+%#########################################################################################
+
+In this section, we present the tag reconciliation approach for cleaning up and connecting ODPs, supported by software tools both at the local and global contexts.
+The objective of this approach is to tackle the main problems identified by the metrics described in \autoref{sec:analysis}, and thus to facilitate data organization and linking through metadata descriptions of ODPs.
+
+Figure \ref{fig:overview}\footnote{Icons by \href{http://www.flaticon.com/authors/simpleicon}{SimpleIcon} from \href{http://www.flaticon.com}{www.flaticon.com} are licensed under \href{http://creativecommons.org/licenses/by/3.0/}{CC BY 3.0}.} shows an overview of the proposed approach.
+Data publishers in charge of ODPs are offered tools for enhancing local tag curation and semantic lifting.
+These local tags are then connected to semantic tags hosted in a central server, which is automatically fed by data coming from ODPs.
+% They can add new semantic descriptions to the global tags, establish relations between them, and also create new links between global and local tags.
+Data consumers have the option to retrieve data directly from ODPs, or through references gathered from the central server.
+%The description of these actions is shown in the sequel.
+
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/overview.pdf}
+\caption[Overview of the STODaP approach.]{Overview of the STODaP approach. Local tags are connected to a corresponding semantic tag within a central tag server. 
+Data managers responsible for ODPs may use tools for local tag curation and semantic lifting of metadata.}
+\label{fig:overview}
+\end{center}
+\end{figure*}
+
+This section is divided as follows: first, we present an overview of the STODaP architecture in \autoref{sec:stodap_architecture_overview}.
+The following subsections describe each element of this architecture, specifically the Open Data Portals (\autoref{sec:definition}), the Local and Global Processing steps (\autoref{sec:local_building} and \ref{sec:global_building}), the STODaP vocabulary (\autoref{sec:stodap_vocabulary}), the external plugins (\autoref{sec:tag_manager_plugin} and \autoref{sec:semantic_tags_plugin}) and the external query interfaces.
+
+
+%#########################################################################################
+\subsection{Architecture Overview}
+\label{sec:stodap_architecture_overview}
+%#########################################################################################
+
+\begin{figure*}%[tb]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/architecture.pdf}
+\caption[Architecture of the STODaP approach.]{Architecture of the STODaP approach.}
+\label{fig:architecture}
+\end{center}
+\end{figure*}
+
+\autoref{fig:architecture} depicts the architecture of STODaP approach.
+The system receives as main input metadata of Open Data Portals, which are basically dataset descriptors such as title, description, tags, themes and others.
+These metadata is pre-processed individually for each portal at the Local Processing phase, and stored at the Metadata Repository..
+Metadata is also jointly processed, together with data coming from semantic knowledge bases from the Linked Open Data cloud, at the Global Processing phase.
+This phase results in the Semantic Tags and Groups, which are then coded using the STODaP vocabulary.
+Resultant dataset is made available for the general public through three types of interface: an HTML website where users can navigate manually, an RDF/XML interface which responds to machine requests searching for the resources URIs, and a SPARQL endpoint which accepts queries and responds with JSON coded triples.
+In addition, the STODaP also offer plugins for ODPs for enhancing tag management and for linking tags with the server.
+The STODaP approach is independent of these plugins, and their implementation is under control of portal administrators.
+
+In the following, each of these blocks is explained in details.
+
+%#########################################################################################
+\subsection{Open Data Portals}
 \label{sec:definition} 
 %#########################################################################################
 
@@ -101,61 +156,28 @@ An \emph{Open Data Portal}, in this context, is a collection of datasets, which 
 \emph{Datasets} can be organized in \emph{Groups}.
 Each \emph{Dataset} belonging to an ODP can be tagged with local tags. 
 Each \emph{Local Tag} also belongs to an ODP, and can be used to tag one or more datasets.
-In this architecture, local tags are connected to \emph{Global Tags}, stored in a collaborative \emph{Tag Server}.
-Several local tags from different ODPs can be associated to a single global tag, which can also have semantic relationships with other global tags.
+In this architecture, local tags are connected to \emph{Semantic Tags}, stored in a collaborative \emph{Tag Server}.
+Several local tags from different ODPs can be associated to a single semantic tag, which can also have semantic relationships with other semantic tags.
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.6]{images/odp_definition.pdf}
+\includegraphics[width=\columnwidth]{images/odp_definition.pdf}
 \caption{Relevant elements of the Semantic Tags for Open Data Portals system.}
 \label{fig:definition}
 \end{center}
 \end{figure}
 
 
-%#########################################################################################
-\section{Overview of the STODaP Approach}
-\label{sec:stodap_overview}
-%#########################################################################################
-
-In this section, we give an overview on the tag reconciliation approach for cleaning up and connecting ODPs, supported by software tools both at the local and global contexts.
-The objective of the approach is to tackle the main problems identified by the metrics described in the previous section, and thus to facilitate data organization and linking through metadata descriptions of ODPs.
-
-Figure \ref{fig:overview}\footnote{Icons by \href{http://www.flaticon.com/authors/simpleicon}{SimpleIcon} from \href{http://www.flaticon.com}{www.flaticon.com} are licensed under \href{http://creativecommons.org/licenses/by/3.0/}{CC BY 3.0}.} shows an overview of the proposed approach.
-Data publishers in charge of ODPs are offered tools for local tag curation.
-These tags are then connected to global tags hosted in a central Tag Server, which can be collaboratively edited both by data consumers and publishers. 
-They can add new semantic descriptions to the global tags, establish relations between them, and also create new links between global and local tags.
-Data consumers have the option to retrieve data directly from ODPs, or through references gathered from the central server.
-%The description of these actions is shown in the sequel.
-
-\begin{figure*}[tb]
-\begin{center}
-\includegraphics[scale=0.65]{images/overview.pdf}
-\caption[Overview of the StodAp approach.]{Overview of the StodAp approach. Local tags are connected to a corresponding global tag within a central tag server. 
-Data managers responsible for ODPs may use tools for local tag curation, as well for maintaining the tag server. 
-This task is also expected to be performed by data consumers.}
-\label{fig:overview}
-\end{center}
-\end{figure*}
-
-The following three sections are dedicated to further detail the approach.
-Section \ref{sec:stodap_building} explains the procedure used to build the first version of the semantic tag server.
-In the following, Section \ref{sec:use_and_maintenance} describes the STODaP tools and methodologies for open data managers and users in order to maintain the tag server.
-Finally, \autoref{sec:implementation} describes the implementation of the tools.
-
-%#########################################################################################
-\section{Building the STODaP server}
-\label{sec:stodap_building}
-%#########################################################################################
-
-In order to build the first version of the STODaP server, a tag harvesting was done through 87 ODPs.
-Almost 300.000 tags were processed, using their names and informations as language and groups that the tagged datasets belong to.
-In the following, we describe first the procedures for the individual portals, and then the procedures for whole tag set until we come to the structured Global Tag Set.
-
+%##################################################################
 \subsection{Local Processing - Clean Up and Reconcile}
 \label{sec:local_building}
+%##################################################################
 
-An overview of the procedure applied locally, i.e., for each ODP, is shown in \autoref{fig:local_processing}.
+In order to build the first version of the STODaP server, a metadata harvesting was driven through 87 ODPs.
+Almost 500.000 datasets were processed, using their metadata such as names, language, tags and groups they belong to.
+In the following, we describe the procedures applied to the individual portals, in the process called Local Processing, which refers to the fact that it deals only with individual ODPs data.
+
+An overview of the procedure applied for each ODP is shown in \autoref{fig:local_processing}.
 In the figure, each green block represents a processing phase, which is materialised in a set of tag representations. 
 The grey blocks describe the transformations suffered by the tag sets from one phase to another.
 The aim of the local processing steps is to transform freely written tags into semantic resources that are candidates for representing the datasets they are associated.
@@ -163,7 +185,7 @@ Each transformation applied to the tags on the local processing is detailed bell
 
 \begin{figure*}[tb]
 \begin{center}
-\includegraphics[scale=0.7]{images/local_processing.pdf}
+\includegraphics[width=\columnwidth]{images/local_processing.pdf}
 \caption[Overview of the local tag processing.]{Overview of the local tag processing.}
 \label{fig:local_processing}
 \end{center}
@@ -259,29 +281,39 @@ On the Translation phase, the main problem lies on polysemy, where the same word
 While also heavily dependent on the translation tools, providing side tags or other metadata can help the algorithm finding the right translation.
 Finally, when searching for the meanings, there is a great dependency on the tool used and the available knowledge bases.
 
+%#######################################################################
 \subsection{Global Processing - Interlinking Portals}
 \label{sec:global_building}
+%#######################################################################
 
 After reaching the last stage of the local processing stage for each one of the 87 portals, a joint process starts over $T_{resources}$ in order to build the Semantic Tag Server.
 At the global processing stage, there are three main steps:
 
 \begin{enumerate}
 	\item Select meaningful tags;
-	\item Create global tags and connect local tags to them; and
+	\item Create semantic tags and connect local tags to them; and
 	\item Discover and qualify relations between tags.
 \end{enumerate}
 
 In order to accomplish this objective, we propose the global procedure shown in Figure~\ref{fig:global_processing}.
 
+\begin{figure*}[tb]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/global_processing.pdf}
+\caption[Overview of the global processing.]{Overview of the global processing.}
+\label{fig:global_processing}
+\end{center}
+\end{figure*}
+
 \noindent \textbf{Significance Selection: } We start the global processing with a joint set $\mathcal{T}_{resources}$, which contains $T_{resources}$ from all portals. 
 In this set, a \emph{Significance Selection} process is driven, in order to determine tags that will be useful on the information retrieval process.
 This is an heuristics based process, which considers: (i) Success on finding semantic candidates for the tag; (ii) the number of datasets pointed by this tags; (iii) the quality of the semantic resources candidates.
 
-\noindent \textbf{Semantic Processing:} After this step, the Global Tags will be derived.
-Global Tags are semantics entities, who have a main name in English, several translations, and point to local tags, which in turn connect to datasets located into Open Data Portals.
+\noindent \textbf{Semantic Processing:} After this step, the Semantic Tags will be derived.
+Semantic Tags are entities on the web, who have a main name in English, several translations, and point to local tags, which in turn connect to datasets located into Open Data Portals.
 
-\noindent \textbf{Structure Emergence:} Finally, relations between Global Tags in set $G$ will be searched on the ontologies they appear in order give a structure to the Global Tag set $G_{struct}$.
-The first strategy is to search for relations on the reconciled ontologies, and set this relation between the global tags.
+\noindent \textbf{Structure Emergence:} Finally, relations between Semantic Tags in set $G$ will be searched on the ontologies they appear in order give a structure to the Semantic Tag set $G_{struct}$.
+The first strategy is to search for relations on the reconciled ontologies, and set this relation between the semantic tags.
 Thus, relations as \texttt{skos:related}, \texttt{skos:narrower} and \texttt{skos:broader} can be set.
 However, at this point we notice need of an upper classification scheme.
 
@@ -351,33 +383,77 @@ Particularly, the Gemet Thesaurus\footnote{Available at \url{http://www.eionet.e
 %Datasets in Groups: 53158
 %Tags in Groups: 37743
 
-\begin{figure*}[tb]
+%#######################################################################
+\subsection{Semantic Metadata Repository}
+\label{sec:semantic_tags_plugin}
+%#######################################################################
+
+With the aim of building a common basis for interlinking ODPs, we developed a Semantic Metadata Server.
+The conceptual rationale is:
+\begin{enumerate}
+	\item To assist individual ODPs enhancing the quality of their tags, by assigning a common agreed meaning to them;
+	\item To create a collaborative platform for meaningfully linking ODPs.
+\end{enumerate}
+
+The Semantic Metadata Server hosts the description of semantic tags and groups.
+Each semantic tag may be associated to one or more Linked Open Data resources, representing their semantic meanings.
+Linking to the local tags is accomplished via the URIs which represent a local tag in its context.
+The semantic tags can also have several types of relations between each other, such as \texttt{skos:broader}, \texttt{skos:narrower} or \texttt{owl:sameAs}.
+Figure \ref{fig:example} illustrates the concept with an example.
+
+\begin{figure}[tb]
 \begin{center}
-\includegraphics[scale=0.8]{images/global_processing.pdf}
-\caption[Overview of the local tag processing.]{Overview of the global tag processing.}
-\label{fig:global_processing}
+\includegraphics[width=\columnwidth]{images/example.pdf}
+\caption[Example of the STODaP model.]{Example of the STODaP model showing relationships of the semantic tag \url{http://stodap.org/tags/Budget}.}
+\label{fig:example}
+\end{center}
+\end{figure}
+
+The example shows the semantic tag identified by the URI \texttt{<http://stodap.org/tags/Budget>}. 
+With this semantic tag, a meaning and some URIs of local tags are associated.
+The semantic tag is also semantically related to other semantic tags, using the SKOS vocabulary.
+The MUTO ontology\footnote{\url{http://muto.socialtagging.org/core/v1.html}} is used to define some concepts and relations between the tags, like \texttt{muto:Tag}, \texttt{muto:taggedResource}, \texttt{muto:hasTag} and \texttt{muto:hasMeaning}.
+
+%#######################################################################
+\subsection{STODaP Vocabulary}
+\label{sec:stodap_vocabulary}
+%#######################################################################
+
+\begin{figure*}[b]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/stodap_vocabulary.pdf}
+\caption[Simplified schema of the STODaP vocabulary.]{Simplified schema of the STODaP vocabulary. Some elements are equivalent to other vocabularies and ontologies, such as SIOC, DCAT and MUTO.}
+\label{fig:vocabulary}
 \end{center}
 \end{figure*}
 
-%#########################################################################################
-\section{Use and Maintenance of the STODaP server}
-\label{sec:use_and_maintenance}
-%#########################################################################################
+In order to represent data in our system, it was necessary to create a simple vocabulary.
+\autoref{fig:vocabulary} shows a simplified schema of the STODaP vocabulary.
+As shown in \autoref{sec:semantic_metadata}, several works describe ontologies and vocabularies related to our work.
+However, it was not possible to fit all entities of STODaP architecture on existing ontologies.
+Specifically, DCAT\footnote{Available at \url{http://www.w3.org/ns/dcat}.} defines some important entities, such as \texttt{dcat:Dataset} and \texttt{dcat:Catalog}.
+They are defined as equivalent (\texttt{owl:equivalentClass}) to \texttt{stodap:Dataset} and \texttt{dcat:Catalog}, respectively.
+At DCAT, tags are represented as literals, which means that two tags with the same label do not differ.
+This is not the case at STODaP, where each tag is an entity.
+MUTO\footnote{Available at \url{http://muto.socialtagging.org/}.} tackles this issue with the class \texttt{muto:Tag}, equivalent to our \texttt{stodap:Tag}.
+On the semantic side, MUTO systematized the relation between a tag and a meaning with the \texttt{muto:tagMeaning} property.
+Thus, although some concepts were reused, \texttt{stodap:SemanticTag} and \texttt{stodap:SemanticGroup} needed to be defined.
+It must also be noted that MUTO works with a social concept of tagging, and thus defines a \texttt{muto:Tagging} class to enable relating actor to a tagging event, as described by~\citeonline{Grubber2007}.
+Since the Open Government Data domain is not social, at least in the sense of tagging, this was not necessary in our case.
+
+\noindent \textbf{\texttt{stodap:SemanticTag}:} A Semantic Tag is a super tag that groups open data portal tags and is connected to a semantic resource on the Linked Open Data Cloud.
+
+\noindent \textbf{\texttt{stodap:SemanticGroup}:} A stodap:SemanticGroup is a super group of tags that groups open data portal groups, open data portal tags, and semantic tags. It is connected to a semantic resource on the Linked Open Data Cloud.
 
 
-
-After building the Semantic Tag Server (STODaP), it is necessary to maintain and enhance the tag corpus alongside the evolution of ODPs, as well as to maintain the server updated.
-In this subsection, the strategy for it will be presented, locally and globally at the individual portal level, and at the server level.
-
-
-\subsection{Local Part - Cleaning up tags}
-\label{sec:local}
+\subsection{Cleaning up and semantifying tags}
+\label{sec:tag_manager_plugin}
 
 Section \ref{sec:local_metrics} showed that ODPs suffer from low reuse of tags, and that there is a significant tags duplication due to slight spelling differences. 
 In fact, both problems -- low reuse and duplication -- are connected, since merging similar tags improves tag reuse.
 However, low tag reuse can be also attributed to the lack absence of a standard tagging procedure, which would guide users in this task.
 
-To address this problem locally at a particular ODP, we propose an approach for reconciliation of tags. %, and for enhancing the quality of the new ones.
+To address this problem locally at a particular ODP, we propose an approach for clean-up and reconciliation of tags. %, and for enhancing the quality of the new ones.
 
 First, we offer three levels of semi-automatic tag merging strategies:
 
@@ -401,39 +477,99 @@ It must be noted that all these approaches have originally quadratic time comple
 After this cleaning procedure, we offer users the opportunity to link each local tag to a global correspondent at the tag server, described in the sequel.
 %TODO improve here
 
-\subsection{Global Part - Semantifying Tags}
-\label{sec:global}
 
-% add new portal
-% renew portal
 
-With the aim of building a common and collaborative basis for interlinking ODPs, we developed a Global Tag Server.
-The conceptual rationale is:
-\begin{enumerate}
-	\item To assist individual ODPs enhancing the quality of their tags, by assigning a common agreed meaning to them;
-	\item To create a collaborative platform for meaningfully linking ODPs.
-\end{enumerate}
 
-The Global Tag Server hosts the description of global tags.
-Each global tag may be associated to one or more Linked Open Data resources, representing their semantic meanings.
-Linking to the local tags is accomplished via the URIs which represent a local tag in its context.
-The global tags can also have several types of relations between each other, such as \texttt{skos:broader}, \texttt{skos:narrower} or \texttt{owl:sameAs}.
-Figure \ref{fig:example} illustrates the concept with an example.
+%#########################################################################################
+\section{Implementation}
+\label{sec:implementation}
+%#########################################################################################
 
-\begin{figure}[tb]
+In this section, we detail the technical choices related to the implementation of some elements of architecture presented in the previous section.
+We give first an overview about the implementation of the STODaP server, detailing the tools and integration strategies used.
+In the sequence, we give also details on the procedure for discovering the Semantic Tags, discussed in \autoref{sec:global_building}.
+Finally, we describe the implementation of two CKAN plugins:
+(i) \emph{CKAN Tag Manager} and 
+(ii) \emph{CKAN Semantic Tags}, which materialize the ideas reported in \autoref{sec:tag_manager_plugin} and \autoref{sec:semantic_tags_plugin}.
+
+\subsection{Semantic Tags Server}
+
+The first version of the STODaP server, presented in \citeonline{Tygel2016}, was implemented using \emph{MediaWiki} and specially the \emph{Semantic MediaWiki} extension~\cite{Kroetzsch2007}.
+This extension turns the Wiki tool into a Semantic repository, facilitating the integration of objects into the Linked Open Data Cloud.
+
+A second version of the STODaP server was developed, and the need of an advanced search engine was the first priority.
+Thus, the most appropriate technological choice was to build an interface from scratch, integrated with a dataset that could be indexed by a search platform.
+The system was implemented using as main module the Django framework for Python Language.
+The implementation architecture can be seen in \autoref{fig:implem_arch}.
+The search module consists of Haystack plugin which interacts with a Solr search platform.
+
+\begin{figure}[h]
 \begin{center}
-\includegraphics[scale=.7]{images/example.pdf}
-\caption{Example of the STODaP model showing relationships of the global tag \url{http://stodap.org/tags/Budget}.}
-\label{fig:example}
+\includegraphics[width=\columnwidth]{images/implementation_architecture.pdf}
+\caption[Implementation Architecture of the STODaP approach.]{Implementation Architecture of the STODaP approach.}
+\label{fig:implem_arch}
 \end{center}
 \end{figure}
 
-The example shows the global tag identified by the URI \texttt{<http://stodap.org/tags/Budget>}. 
-With this global tag, a meaning and some URIs of local tags are associated.
-The global tag is also semantically related to other global tags, using the SKOS vocabulary.
-The MUTO ontology\footnote{\url{http://muto.socialtagging.org/core/v1.html}} is used to define some concepts and relations between the tags, like \texttt{muto:Tag}, \texttt{muto:taggedResource}, \texttt{muto:hasTag} and \texttt{muto:hasMeaning}.
+\subsection{Creating Semantic Tags}
 
-\subsection{STODaP Server - Interlinking Portals}
+\begin{itemize}
+	\item Harvest all tags from portals
+	\item Filter significant tags
+	\item Group syntactically similar
+	\item Translate - lexvo + yandex
+	\item Reconcile - lexvo - several ontologies
+	\item Choose gemet tags and create semantic tags and links
+	\item Create global groups, and reconcile
+	\item Associate semantic tags to global groups
+
+	
+\end{itemize}
+
+\subsection{CKAN Tag Manager Plugin}
+
+The CKAN Tag Manager one offers an environment for tag curation directly inside the CKAN platform. 
+It comprises basic functions such as deletion and editing of tags (not present in CKAN core), and advanced function aimed to enhance the quality of tags.
+In this sense, the plugin looks for:
+\begin{itemize}
+	\item Very similar tags, differing only by capitals or special characters;
+	\item Similar tags, with a Levenshtein distance $\le 2$ (after lowercasing and unaccenting)
+	\item Possible synonyms, using Natural Language Toolkit~\cite{Bird2009} and the WordNet database.
+\end{itemize}
+In all those cases, user is offered the option of merging the respective pair of tags.
+\autoref{fig:local_curation} shows a screenshot of the CKAN Tag Manager.
+The plugin was developed using CKAN API in Python language, and can be installed in any CKAN instance. The source code is available for download and contributions at \url{https://github.com/alantygel/ckanext-tagmanager}.
+
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/local_curation.png}
+\caption[Screenshot of the Tag Manager plugin.]{Screenshot of the Tag Manager plugin, for tag curation in a CKAN instance. The plugin offers possibilities of manual and semi-automatic tag merging. The first block contains only valid suggestions, while the second block shows 2 false-positives. The synonym module also detected plurals. Tags in this example were extracted from the africaopendata.org portal.}
+\label{fig:local_curation}
+\end{center}
+\end{figure}
+
+\subsection{CKAN Semantic Tags Plugin}
+
+The CKAN Semantic Tags plugin implements the connection between a CKAN instance and the Semantic Tag Server.
+Each local tag can be associated to a semantic tag from the server.
+After the association, datasets linked with a local tag also point to the global server, as shown in \autoref{fig:local_link}.
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/local_link.png}
+\caption[Screenshot of the Semantig Tag plugin.]{Screenshot of the Semantig Tag plugin. The dataset is tagged with two tags, and one of them (\texttt{alimento}) is connected to the semantic tag \texttt{http://stodap.org/tags/Food} through the \texttt{muto:hasTag} property.}
+\label{fig:local_link}
+\end{center}
+\end{figure}
+
+The plugin was developed using CKAN API in Python language, and can be installed in any CKAN instance. The source code is available for download and contributions at \url{https://github.com/alantygel/ckanext-semantictags}.
+
+\subsection{Use and Maintenance of the STODaP server}
+\label{sec:use_and_maintenance}
+
+After building the Semantic Tag Server (STODaP), it is necessary to maintain and enhance the tag corpus alongside the evolution of ODPs, as well as to maintain the server updated.
+In this subsection, the strategy for it will be presented at the server level.
 
 The first step for building the semantic tag server is to harvest metadata from open data portals.
 After the initial setup, a strategy for maintaining the portal up-to-date is needed.
@@ -445,8 +581,8 @@ When a new ODP is added to the system, a setup procedure is followed:
 	\item Harvest tags, datasets and groups metadata;
 	\item Clean and group similar tag;
 	\item Translate tags, in case of non-English portal;
-	\item Reconcile tags with existing Global Tags;
-	\item If reconciliation is not successful, search lexvo.org and try to create a new global tag;
+	\item Reconcile tags with existing Semantic Tags;
+	\item If reconciliation is not successful, search lexvo.org and try to create a new semantic tag;
 	\item Groups: reconcile with existing global groups or create new ones.
 \end{itemize}
 
@@ -459,101 +595,24 @@ When an ODP is updated, the procedure followed is:
 \end{itemize}
 
 %#########################################################################################
-\section{Implementation}
-\label{sec:implementation}
-%#########################################################################################
-
-In this section, we detail the technical procedures related to the previous sections.
-We first describe the implementation of the procedure for discovering the Global Tags, discussed in \autoref{sec:stodap_building}.
-Then, we describe the implementation of two CKAN plugins:
-(i) \emph{CKAN Tag Manager}\footnote{\url{https://github.com/alantygel/ckanext-tagmanager}} and 
-(ii) \emph{CKAN Semantic Tags}\footnote{\url{https://github.com/alantygel/ckanext-semantictags}}, which materialize the ideas reported in \autoref{sec:use_and_maintenance}.
-Finally, we describe the implementation of the Semantic Tag Server for Open Data Portals.
-
-\subsection{Building Global Tags}
-
-\begin{itemize}
-	\item Harvest all tags from portals
-	\item Filter significant tags
-	\item Group syntactically similar
-	\item Translate - lexvo + yandex
-	\item Reconcile - lexvo - several ontologies
-	\item Choose gemet tags and create global tags and links
-	\item Create global groups, and reconcile
-	\item Associate global tags to global groups
-
-	
-\end{itemize}
-
-\subsection{CKAN Tag Manager Plugin}
-
-The CKAN Tag Manager one offers an environment for tag curation directly inside the CKAN platform. 
-It comprises basic functions such as deletion and editing of tags, and advanced function aimed to enhance the quality of tags.
-In this sense, the plugin checks:
-\begin{itemize}
-	\item Very similar tags, differing by capitals or special characters;
-	\item Similar tags, with a Levenshtein distance $\le 2$ (after lowercasing and unaccenting)
-	\item Possible synonyms, using Natural Language Toolkit~\cite{Bird2009}.
-\end{itemize}
-In all those cases, the user is offered the option of merging the respective pair of tags. 
-\autoref{fig:local_curation} shows a screenshot of the CKAN Tag Manager.
-
-\begin{figure}[tb]
-\begin{center}
-\includegraphics[width=\columnwidth]{images/local_curation.png}
-\caption[Local tag curation in a CKAN instance.]{Local tag curation in a CKAN instance. The plugin offers possibilities of manual and semi-automatic tag merging. The first block contains only valid suggestions, while the second block shows 2 false-positives. The synonym module also detected plurals. Tags in this example were extracted from the africaopendata.org portal.}
-\label{fig:local_curation}
-\end{center}
-\end{figure}
-
-\subsection{CKAN Semantic Tags Plugin}
-
-The CKAN Semantic Tags plugin implements the connection between a CKAN instance and the Global Tag Server.
-Each local tag can be associated to a global tag from the server.
-After the association, datasets linked with a local tag also point to the global server, as shown in \autoref{fig:local_link}.
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[scale=.5]{images/local_link.png}
-\caption[Detail of dataset in an ODP.]{Detail of dataset in an ODP. The dataset is tagged with two tags, and one of them (\texttt{alimentos}) is connected to the global tag \texttt{http://stodap.org/tags/Food} through the \texttt{muto:hasTag} property.}
-\label{fig:local_link}
-\end{center}
-\end{figure}
-
-\subsection{Semantic Tag Server}
-
-The tag server is implemented using the collaborative \emph{MediaWiki}. 
-Specially, the \emph{Semantic MediaWiki} extension~\cite{Kroetzsch2007} is used in order to include properties and integrate the global tags in the LOD Cloud, through the export of RDF files.
-The page of a global tag is shown in \autoref{fig:tag_server}.
-Each global tag page is build using \href{https://www.mediawiki.org/wiki/Extension:Semantic_Forms}{semantic templates and forms}, in order to facilitate consistency and coherency and to be more user-friendly.
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=\columnwidth]{images/tag_server.png}
-\caption[Semantic Tag Server for Open Data Portals.]{Semantic Tag Server for Open Data Portals. Simplified example of the global tag \texttt{Research}, which is linked to 48 Open Data Portals and 16 semantic resources. In the screenshot, we illustrate a few of them.}
-\label{fig:tag_server}
-\end{center}
-\end{figure}
-
-%#########################################################################################
 \section{Results}
 \label{sec:results}
 %#########################################################################################
 
 We describe in this section some results achieved with the STODaP approach.
-At the global level, it was possible to implement the global tags server and to test the performance.
+At the global level, it was possible to implement the semantic tags server and to test the performance.
 %At the local level it is only possible to claim potential results, as we do not have access to the single ODPs.
 
 \subsection{STODaP Server}
 
 In order to test the system, an open-source implementation of STODaP was created and deployed at \url{http://stodap.org}.
-The following approach was used create 663 global tags at the server:
+The following approach was used create 663 semantic tags at the server:
 \begin{itemize}
 	\item From the 220,567 tags harvested, we selected the 663 that were used in more portals, representing all tags used in 10 or more portals; 
 	\item Using the Lexvo.org service, we found URI candidates to represent the tag meaning via the \texttt{lexvo:means} property;
 	\item Using the Lexvo.org service, we found translations and synonyms for the tags via the \texttt{rdf:seeAlso} and \texttt{lexvo:translate} properties;
 	\item We searched for the translations and synonyms in the harvested tags and included the results as \texttt{muto:taggedResources}, together with the portals tagged with the original term;
-	\item Using the \href{http://www.nltk.org/}{Natural Language Toolkit  Library}, we searched for semantic similar global tags, which were added as \texttt{skos:related}.
+	\item Using the \href{http://www.nltk.org/}{Natural Language Toolkit  Library}, we searched for semantic similar semantic tags, which were added as \texttt{skos:related}.
 \end{itemize}
 
 The occurrence of the original tags among the portals, and the results after including the translations and synonyms can be seen in \autoref{fig:results_tagged_resources}. 
@@ -565,8 +624,8 @@ This fact is probably related to the early stage of development of some portals.
 
 \begin{figure}[tb]
 \begin{center}
-\includegraphics[scale=.8]{images/results_tagged_resources.png}
-\caption{Correspondence between local and global tags. The yellow bar shows the number of exact occurrences of the tag in ODPs. The red bar shows the improvement when considered translations and synonyms, which can also occur in a same portal. This explains the numbers over 90. }
+\includegraphics[width=\columnwidth]{images/results_tagged_resources.png}
+\caption[Correspondence between local and semantic tags.]{Correspondence between local and semantic tags. The yellow bar shows the number of exact occurrences of the tag in ODPs. The red bar shows the improvement when considered translations and synonyms, which can also occur in a same portal. This explains the numbers over 90. }
 \label{fig:results_tagged_resources}
 \end{center}
 \end{figure}

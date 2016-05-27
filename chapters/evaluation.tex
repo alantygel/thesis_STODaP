@@ -11,7 +11,7 @@ We first present a theoretical background on search engine evaluation methodolog
 Then, we show the experimental setup in \autoref{sec:setup} and the results in \autoref{sec:results}.
 Some concluding remarks are driven on the final section.
 
-\section{Methodology evaluation background}
+\section{Methodology Evaluation Background}
 \label{sec:lit_review}
 
 As the amount of online available data gets bigger and bigger, search methodologies are increasingly necessary to allow users accessing relevant content.
@@ -61,7 +61,7 @@ In this section, we describe in details our experimental setup.
 First of all, we define the evaluation goals:
 \begin{itemize}
 	\item When searching for open data, how does STODaP compares to other data-specific and general search engines?
-	\item What is the usability degree of STODaP server?
+	\item Is the STODaP server an useful tool for searching open datasets?w
 \end{itemize}
 
 \subsection{Subjects}
@@ -97,14 +97,14 @@ By design, STODaP server is a tool for interlinking different Open Data Portals.
 Thus, in this evaluation we aim to assess the ability of gathering similar information from several ODPs, rather than finding specific datasets on the Web.
 
 The evaluation tasks where selected based on: (i) topic relevance of datasets on the open data community, based on criteria defined by Open Data Index\footnote{http://index.okfn.org/} (ii) the existence of search results on STODaP server.
-This restriction allows us only to make assertions about the performance of STODaP server on the topics covered by the system, which consists of large base of open data portals, as described in \autoref{sec:stodap_building}.
+This restriction allows us only to make assertions about the performance of STODaP server on the topics covered by the system, which consists of large base of open data portals, as described in \autoref{sec:stodap_architecture}.
 Broader conclusion would require large scale evaluations, which are over the scope of this thesis.
 Defined tasks are:
 
 \begin{itemize}
 	\item Find open datasets containing 2015 budget data from locations in 5 different countries.
 	\item Find open datasets containing procurement information in 3 different idioms.
-	\item Find open datasets about Water Quality on 10 different rivers.
+	\item Find open datasets about Water Quality on 7 different rivers.
 \end{itemize}
 
 \section{Procedure}
@@ -123,26 +123,29 @@ The following procedure was driven during the evaluation process:
 	\item An evaluation questionnaire was filled by the subjects, containing questions about usability and satisfaction.
 \end{itemize}
 
+%#######################################
 \section{Pre-Evaluation}
-In order to test and adjust our evaluation setup, we ran the process with a group of seven students of an Information Retrieval graduate course, at the Federal University of Rio de Janeiro.
-The results of this first round can be seen in \autoref{tab:pre_eval_questionnaire} and \autoref{tab:pre_eval_results}.
+%#######################################
+
+In order to test and adjust our evaluation setup, we ran the process described above with a group of seven students of an Information Retrieval graduate course, at the Federal University of Rio de Janeiro, on the 12th of July 2016.
+The results of this evaluation round can be seen in \autoref{tab:pre_eval_questionnaire} and \autoref{tab:pre_eval_results}.
 Although the main target of this pre-evaluation process was to assess the evaluation procedure (and not the STODaP server), it is useful to look at the results to have the first impressions.
 
 \begin{table}[h]
 \ABNTEXfontereduzida
 \centering
-\caption[Answers to the entry and evaluations questionnaires.]{Answers to the entry and evaluations questionnaires. The first four questions correspond to the entry-questionnaire, applied before the evaluation. The two remaining questions were answered after completing the evaluation tasks.}
+\caption[Answers to the entry and evaluations questionnaires.]{Answers to the entry and evaluations questionnaires. The first four questions correspond to the entry-questionnaire, applied before the evaluation. The two remaining questions were answered after completing the evaluation tasks. Task Completion Time (TCT) is the average number of seconds taken to finish the task. Accepted answers is the percentage of answers considered valid, over a total of 15.}
 \label{tab:pre_eval_questionnaire}
-\begin{tabular}{|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{1.cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
+\begin{tabular}{|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.7cm}|>{\centering\arraybackslash}m{1.cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2.9cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{1.3cm}|}
 \hline
-& 	Age & Internet Ability (1 - low; 5 - high) & Data Ability (1 - low; 5 - high) & Open Data Ability  (1 - low; 5 - high) &	Do you think STODaP is a useful tool for finding data on the web?  (1 - not useful; 5 - very useful) &	How easy is it was get the data you need using the STDOaP in comparison with the other methods?  (1 - harder; 5 - easier) & 	Average TCT (seconds) \\ \hline
-1& 	27& 	5& 	3& 	1& 	4& 	2& 	295.7 +/- 98.8 \\ \hline
-2& 	23& 	5& 	4& 	3& 	5& 	3& 	833.3 +/- 151.8 \\ \hline
-3& 	27& 	5& 	5& 	5& 	2& 	2& 	560.0 +/- 103.2 \\ \hline
-4& 	23& 	5& 	4& 	3& 	5& 	4& 	845.0 +/- 523.9 \\ \hline
-5&	26& 	5& 	3& 	2& 	5& 	5& 	625.3 +/- 269.5 \\ \hline
-6& 	29& 	5& 	5& 	3& 	4& 	4& 	527.0 +/- 287.5 \\ \hline
-7& 	22& 	5& 	4& 	1& 	5& 	5& 	351.0 +/- 121.2 \\ \hline
+& 	Age & Internet Ability (1 - low; 5 - high) & Data Ability (1 - low; 5 - high) & Open Data Ability  (1 - low; 5 - high) &	Do you think STODaP is a useful tool for finding data on the web?  (1 - not useful; 5 - very useful) &	How easy is it was get the data you need using the STDOaP in comparison with the other methods?  (1 - harder; 5 - easier) & 	Average TCT (seconds) & Accepted Answers (\%)\\ \hline
+1& 	27& 	5& 	3& 	1& 	4& 	2& 	295.7 +/- 98.8 & 100 \\ \hline
+2& 	23& 	5& 	4& 	3& 	5& 	3& 	833.3 +/- 151.8 & 80 \\ \hline
+3& 	27& 	5& 	5& 	5& 	2& 	2& 	560.0 +/- 103.2 & 33 \\ \hline
+4& 	23& 	5& 	4& 	3& 	5& 	4& 	845.0 +/- 523.9 & 73 \\ \hline
+5&	26& 	5& 	3& 	2& 	5& 	5& 	625.3 +/- 269.5 & 67 \\ \hline
+6& 	29& 	5& 	5& 	3& 	4& 	4& 	527.0 +/- 287.5 & 100 \\ \hline
+7& 	22& 	5& 	4& 	1& 	5& 	5& 	351.0 +/- 121.2 & 80 \\ \hline
 \end{tabular}
 \end{table}
 
@@ -152,27 +155,33 @@ Although the main target of this pre-evaluation process was to assess the evalua
 \caption[Task Completion Time of the pre-evaluation test, in seconds.]{Task Completion Time of the pre-evaluation test, in seconds. 
 Each cell contains the number of seconds that one or more subjects took to complete the task with the correspondent search method.}
 \label{tab:pre_eval_results}
-\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\begin{tabular}{|>{\centering\arraybackslash}m{2.0cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.0cm}|}
 \hline
-\textbf{Tasks / Search Methods} & \textbf{Water Quality} & 	\textbf{Budget information} &	\textbf{Procurement} &	\textbf{Average and Standard Deviation} \\ \hline
-\textbf{Exversion} &	723, 884, 468 &	235, 382 &	558, 518 &	538.3 +/- 198.5 \\ \hline
-\textbf{STODaP} &	435, 493, 460 &	397, 184, 517, 1048 & -	&	504.9 +/- 244.0 \\ \hline
-\textbf{Free} &	1580 &	702 &	401, 217, 180, 1001, 729 &	687.1 +/- 456.3 \\ \hline
-\textbf{Average and Standard Deviation} &	720.4 +/- 383.7 &	495.0 +/- 276.7 &	514.9 +/- 266.7 &\\ \hline
+\textbf{Tasks / Search Methods} & \textbf{Water Quality} & 	\textbf{Budget information} &	\textbf{Procurement} &	\textbf{Average and Standard Deviation} & \textbf{Accepted Answers (\%)} \\ \hline
+\textbf{Exversion} &	723, 884, 468 &	235, 382 &	558, 518 &	538.3 +/- 198.5 & 78 \\ \hline
+\textbf{STODaP} &	435, 493, 460 &	397, 184, 517, 1048 & -	&	504.9 +/- 244.0 & 83 \\ \hline
+\textbf{Free} &	1580 &	702 &	401, 217, 180, 1001, 729 &	687.1 +/- 456.3 & 63 \\ \hline
+\textbf{Average and Standard Deviation} &	720.4 +/- 383.7 &	495.0 +/- 276.7 &	514.9 +/- 266.7 & & \\ \hline
+\textbf{Accepted Answers (\%)} & 76 & 80 & 71 & & \\ \hline
 \end{tabular}
 \end{table}
 
-\autoref{tab:pre_eval_questionnaire} shows the answers of each subject to the questions both before and after running the evaluation.
+\autoref{tab:pre_eval_questionnaire} shows the answers of each subject to the questions both before and after running the evaluation, together with its average task completion time and the percentage of valid answers.
 As expected, all subjects are frequent internet users.
 Use of data in daily work or study is also high, but the only one declared himself an open data expert.
 Coincidently or not, this subject was the only who did not considered STOaP an useful tool for finding data on the web.
 Four out of seven considered that completing the tasks with STODaP was easier than with other methods.
 The average Task Completion Time had a huge variation, with a minimum of 295 seconds and a maximum of 845 seconds.
+Through a manual procedure, each answer was verified in order to check if it really corresponds to the given task.
+The verification was not strict, and answers were discarded only if they were clearly wrong, or blank.
+Open data criteria were not taken into account.
+No significant correlation was verified between TCT and accepted answers rate.
 
 \autoref{tab:pre_eval_results} shows the Task Completion Times for each task and search method.
 We can easily notice that a choosing a random generator for attributing tasks, search methods and orders was a mistake, specially with a small number of rounds.
 There were 36 possibilities (6 orderings for tasks $\times$ 6 orderings for search methods) but only 7 rounds were used.
 Thus, the number of combinations between tasks and search methods ended up quite unbalanced, and there was no combination of STODaP search method with the procurement task.
+Average TCT for tasks and search methods were also calculated.
 
 After running the procedure, a conversation round was driven with the students on order to get insights both about the tool and the evaluation procedure.
 The following suggestions and comments were made:
@@ -219,6 +228,8 @@ Some students tried to use analytic tools such as Google Public Data.
 Their focus is rather on analysing (open) data sets than on making them available for download in machine readable formats.
 Thus, for our intentions, this is not considered open data and it should also be stated in the explanation.
 
+After considering the above mentioned comments, the procedure was enhanced and applied to the main groups.
+Results are described bellow.
 
 \section{Results}
 \label{sec:eval_results}
