@@ -1,5 +1,6 @@
 %#########################################################################################
 \chapter{Evaluation}
+\label{chap:evaluation}
 %#########################################################################################
 
 In the previous chapter, STODaP approach was presented in details, as well as the supporting tools and their implementation choices.
@@ -8,7 +9,7 @@ Practical results were also characterized, showing concrete achievements on the 
 In this chapter, the evaluation of STODaP server is described.
 The system was compared to other mechanisms on the task of searching for open datasets.
 We first present a theoretical background on search engine evaluation methodologies in \autoref{sec:lit_review}.
-Then, we show the experimental setup in \autoref{sec:setup} and the results in \autoref{sec:results}.
+Then, we show the experimental setup in \autoref{sec:setup}, the pre-evaluation procedure in \autoref{sec:pre_evaluation} and the results in \autoref{sec:results}.
 Some concluding remarks are driven on the final section.
 
 \section{Methodology Evaluation Background}
@@ -49,6 +50,8 @@ The second measure evaluates in which extent the top-results are present in each
 \section{Experimental Setup}
 \label{sec:setup}
 
+-- hiposteses e metricas
+
 % \citeonline{Cheng2010}
 % entry questionaire to make sure the users were able to make the test
 % novices received a basic training, reading instructions and questions we answered
@@ -71,25 +74,6 @@ We consider that experts already have their own strategies and sources for findi
 Thus, we do not require experience in open data.
 However, users must have some previous knowledge on internet navigation. 
 Knowledge on basic data processing tools such as spreadsheet processors is also desired, so that subjects can at least imagine a potential use of data.
-
-In our experiment, participants were students attending a class on the topic Information Retrieval at the Federal University of Rio de Janeiro, in Brazil.
-An entry-questionnaire was filled by the participants, whose answers are summarized in \autoref{tab:eval_summary}.
-Participation was not mandatory and there was no reward for participants.
-
-\begin{table}[]
-\ABNTEXfontereduzida
-\centering
-\caption{STODaP evaluation - summary of subjects profile}
-\label{tab:eval_summary}
-\begin{tabular}{|p{8cm}|p{2cm}|}
-\hline
-Participants & \\ \hline
-Age & \\ \hline
-Internet knowledge (1 - Never Used; 5 - Always use) & \\ \hline
-Open Data Experience (1 - Never heard about; 5 - I work often with open data) & \\ \hline
-Use of data (1 - I've never used any data processing tool; 5 - I'm an expert in advanced data processing tools) & \\ \hline
-\end{tabular}
-\end{table}
 
 \subsection{Tasks}
 
@@ -123,8 +107,15 @@ The following procedure was driven during the evaluation process:
 	\item An evaluation questionnaire was filled by the subjects, containing questions about usability and satisfaction.
 \end{itemize}
 
+\subsection{Validation}
+Each entry-questionnaire was analysed in order to determine if it is valid to our evaluation, in terms of internet experience.
+
+The answers were also checked in order to confirm if the dataset links provided are really valid answers to the assigned task.
+
+
 %#######################################
 \section{Pre-Evaluation}
+\label{sec:pre_evaluation}
 %#######################################
 
 In order to test and adjust our evaluation setup, we ran the process described above with a group of seven students of an Information Retrieval graduate course, at the Federal University of Rio de Janeiro, on the 12th of July 2016.
@@ -234,35 +225,149 @@ Results are described bellow.
 \section{Results}
 \label{sec:eval_results}
 
+In this section, we describe the application of the evaluation procedure and present the results achieved.
 
-\subsection{Validation}
-Each entry-questionnaire was analysed in order to determine if it is valid to our evaluation, in terms of internet experience.
+In our experiment, participants were first year university students attending a class on the topic Introduction to Information Systems, at the Federal University of Rio de Janeiro, in Brazil.
+An entry-questionnaire was filled by the participants, whose answers are summarized in \autoref{tab:eval_summary}.
+Participation was not mandatory and non identified, and there was no reward for participants.
 
-The answers were also checked in order to confirm if the dataset links provided are really valid answers to the assigned task.
+\begin{table}[]
+\ABNTEXfontereduzida
+\centering
+\caption{STODaP evaluation - summary of subjects profile}
+\label{tab:eval_summary}
+\begin{tabular}{|p{8cm}|p{2cm}|}
+\hline
+Participants & 18 \\ \hline
+Age & 20.5 \\ \hline
+Internet knowledge (1 - Never Used; 5 - Always use) & 5\\ \hline
+Use of data (1 - I've never used any data processing tool; 5 - I'm an expert in advanced data processing tools) & 2.7\\ \hline
+Open Data Experience (1 - Never heard about; 5 - I work often with open data) & 2.3 \\ \hline
+English Proficiency (1 - Low; 5 - High) & 4.3\\ \hline
+\end{tabular}
+\end{table}
 
-\subsection{Analysis}
-\begin{itemize}
-	\item Task completion time for each task (and variance) \cite{Xu2009}
-	\item Task completion time for each search method (and variance) \cite{Xu2009}
-	\item Correlation between satisfaction and completion time for STODaP server \cite{Xu2009}
-	\item Correlation between results found in the different search methods \cite{Vaughan2004}
+The average age of the 18 participants was 20.5 years.
+Although all of them use internet every day, direct experience with data processing is low, as well as with open data.
+As our tool is developed for non-experts, this sample is adequate to the experiment.
 
-\end{itemize}
+After filling the entry questionnaire, subjects were presented 3 combinations of tasks and search methods.
+The resulting URLs were pasted in the appropriated fields and the task completion time was automatically calculated for every task of every subject.
+A screenshot of the evaluation tool is shown in \autoref{fig:eval_screenshot}. 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/eval_screenshot.png}
+\caption[Evaluation]{Evaluation}
+\label{fig:eval_screenshot}
+\end{center}
+\end{figure}
+
+\subsection{Task Completion Time Analysis}
+
+Task completion time for all subjects is shown in \autoref{tab:eval_results}.
+
+...
+
+\begin{table}[h!]
+\ABNTEXfontereduzida
+\centering
+\caption[Task Completion Time of the evaluation, in seconds.]{Task Completion Time of the evaluation, in seconds. 
+Each cell contains the number of seconds that one or more subjects took to complete the task with the correspondent search method.}
+\label{tab:eval_results}
+\begin{tabular}{|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.0cm}|}
+\hline
+\textbf{Tasks / Search Methods} & \textbf{Water Quality} & 	\textbf{Budget information} &	\textbf{Procurement} &	\textbf{Average and Standard Deviation} & \textbf{Accepted Answers (\%)} \\ \hline
+\textbf{Exversion} &	723, 884, 468 &	235, 382 &	558, 518 &	538.3 +/- 198.5 & 78 \\ \hline
+\textbf{STODaP} &	435, 493, 460 &	397, 184, 517, 1048 & -	&	504.9 +/- 244.0 & 83 \\ \hline
+\textbf{Free} &	1580 &	702 &	401, 217, 180, 1001, 729 &	687.1 +/- 456.3 & 63 \\ \hline
+\textbf{Average and Standard Deviation} &	720.4 +/- 383.7 &	495.0 +/- 276.7 &	514.9 +/- 266.7 & & \\ \hline
+\textbf{Accepted Answers (\%)} & 76 & 80 & 71 & & \\ \hline
+\end{tabular}
+\end{table}
+
+% \begin{itemize}
+% 	\item Task completion time for each search method (and variance) \cite{Xu2009}
+% 	\item Task completion time for each task (and variance) \cite{Xu2009}
+% 	\item Correlation between satisfaction and completion time for STODaP server \cite{Xu2009}
+% 	\item Correlation between results found in the different search methods \cite{Vaughan2004}
+% \end{itemize}
+
+\subsection{Correlation Analysis}
+
+In order to check the correlation between characteristics of the subjects, their evaluation of the tool and their performance on the tests we calculate the correlation coefficient between every variable related to the subjects, i.e.: (i) profile variables such as age, English proficiency, and internet, data and open data abilities; (ii) evaluation about the tool, i.e.: perceived usefulness and usability in relation to other search methods; and (iii) test performance, i.e.: total tasks completion time and percentage of accepted answers.
+
+\autoref{tab:correlations} shows the results.
+Age is measured in years. The six following columns are variables that scale from 1 to 5, where 1 worse option, and 5 the better.
+Task Completion Time is the sum of time, in seconds, taken to complete all 3 tasks, and the last column is related to the percentage of correct answers.
+For this analysis, we considered only subjects with more than 50\% of correct answers.
+This filtering was necessary to eliminate some subjects who finished the evaluation very quickly, leaving most of the fields blank.
+
+\begin{table}[]
+\ABNTEXfontereduzida
+\centering
+\caption[Correlation analysis of the results.]{Correlation analysis of the results.}
+\label{tab:correlations}
+\begin{tabular}{|>{\centering\arraybackslash}m{3.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|}
+ \hline
+ & Age & Internet Ability &	English Proficiency & Data Ability & Open Data Ability & Usefulness &	Usability &	Task Completion Time &	Accepted Answers \\ \hline
+Age & 1.0 	& nan 	& 0.28 	& 0.43 	& 0.24 	& -0.06 	& 0.29 	& -0.13 	& 0.21 	\\ \hline
+Internet Ability & nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	\\ \hline
+English Proficiency & 0.28 	& nan 	& 1.0 	& 0.14 	& 0.42 	& -0.4 	& -0.2 	& 0.19 	& 0.44 	\\ \hline
+Data Ability & 0.43 	& nan 	& 0.14 	& 1.0 	& 0.05 	& -0.1 	& 0.01 	& -0.41 	& 0.37 	\\ \hline
+Open Data Ability & 0.24 	& nan 	& 0.42 	& 0.05 	& 1.0 	& -0.24 	& -0.64 	& -0.07 	& 0.23 	\\ \hline
+Usefulness & -0.06 	& nan 	& -0.4 	& -0.1 	& -0.24 	& 1.0 	& 0.36 	& 0.28 	& 0.08 	\\ \hline
+Usability & 0.29 	& nan 	& -0.2 	& 0.01 	& -0.64 	& 0.36 	& 1.0 	& 0.27 	& 0.04 	\\ \hline
+Task Completion Time & -0.13 	& nan 	& 0.19 	& -0.41 	& -0.07 	& 0.28 	& 0.27 	& 1.0 	& 0.22 	\\ \hline
+Accepted Answers & 0.21 	& nan 	& 0.44 	& 0.37 	& 0.23 	& 0.08 	& 0.04 	& 0.22 	& 1.0 	\\ \hline
+\end{tabular}
+\end{table}
+
+...
+
+\subsection{Qualitative Analysis}
+
+In this subsection, we derive an analysis of the comments received on the evaluation questionnaire.
+From the first group -- first year Computer Science students -- 6 out of 18 subjects wrote comments about the system. 
+Four of them complained about the user interface, both visually and in terms of usability: ``The user interface is not intuitive nor pleasant. It should be further worked to help the visualization of results.''
+
+One subject assumed
+
+
+
+De fato, foi bem mais simples selecionar o conteúdo. Gostei muito da plataforma. Não estou habituado a pesquisar informações dos tipos propostos, mas o tempo necessário na STOPDaP foi consideravelmente menor para conseguir os resultados desejados. Uma única recomendação que eu faria, que provavelmente já deve ter sido mencionada antes, seriam uns toques novos no CSS do site. 
+
+a UI nao e intuitiva ou agradavel, ela deveria ser melhor trabalhada para auxiliar na visualização dos resultados
+
+It's necessary to update this layout. The project is great. Nice job.
+
+you can make a visual upgrade
+
+as perguntas em ingles não foram muito dificeis de entender não, masportugues apareceu
+
+More data is needed. I really wished I could query data as if it were a single data source.
 
 
 \section{Conclusions}
 \label{sec:conclusion}
 
+After proposing an approach for semantic organization of metadata in Open Data Portals in the previous chapter, in this chapter the approach was evaluated.
+
+Evaluation is a crucial part of every scientific work, since without testing, it is impossible to know if the system works as designed, and if it accomplishes the proposed goals.
+However, designing and implementing an information system evaluation is a very complex and challenging task.
+Isolating the desired variables from other environment influences is nearly impossible, mainly because of the socio-technical characteristic of information systems.
+And if we try to select the ideal subjects to perform the ideal tasks, the evaluation itself can become too complex, and chances are high that it gets too distant of reality.
+One can be tempted to look for simple cause-effect explanations in complex problems, i.e., involving humans and systems.
+However, according to \citeonline{Morin2011}, the world is an inseparable tissue of actions, interactions, feedbacks, determination and chances, an thus it is too simplistic to think in a direct cause-effect explanation for complex systems.
+
+Searching for open datasets is not an everyday task for the absolute majority of the population.
+On the other hand, experienced data scientists already know where to find their data, and even if this data is available or not.
+With those questions in mind, we designed this evaluation trying to balance specificity and generality in the choice of subjects.
+We also tried to balance the specificity of the tasks, so that it would not be too general (``Find open datasets in Brazil'') but also not too specific (``Find the open data set of 2015 budget in Rio de Janeiro'').
+Following this reasoning we chose our subjects (Computer Science students that could work one day with open data and Semantic Web researchers that already work with open data), and our tasks (finding datasets on specific themes according to language and geographical limitations).
+
+Results show that ...
 
 
-% The main objective of the STODaP approach is to facilitate the access of open data by the general public.
-% Thus, in order to test our approach we defined an use case.
-
-% John is a journalist.
-% He has to write an article about openness of health data around the world.
-% Apart of writing about specific cases using national reports, he want's to give the readers a global overview.
-% His first approach is to access search engines.
-% However, he faces hundreds of open data portals, in different languages, which turns the task of retrieving health data into a difficult task.
-% Using the STODaP server, John is able to access datasets of 87 open data portals related to the concept of health, and also other connected concepts.
 
 

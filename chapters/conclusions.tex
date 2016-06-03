@@ -1,16 +1,114 @@
 \chapter{Conclusions}
 \label{chap:conclusions}
+% gancho para motivação e objetivos; introduir o assunto com um pouco mais de profundidade
+
+% 1) enfatizar contribs
+% --> falar dos resultados especificose limitaçẽis do experimento; aqui tem que generalizar se possível
+% 2) falar de limitações e dificuldades
+% 3) trabalhos futuros
+% 4-8 de julho
+
+% amarração do Data literacy; o experiemento teve a ver com data litearcy
+% enfatizar nas limitações que o grupo do DL deveria ter sido o teste stodap
 
 The open data promises are still far from being materialised.
 However, it cannot be denied that significant advances have been made in recent years.
-In this section, the conclusions of this thesis will be derived, based on the initial hypothesis and in other findings that were made during this work.
+In this section, the conclusions of this thesis will be derived, based on the initial hypothesis and in the developments that were made during this work.
+
+\section{Contributions of this Work}
 
 In the Introduction of this work, two hypothesis were posed, which, for the ease of reading, are reproduced here:
 
-\noindent\textbf{H\ref{hyp:tagging}:} Enhancing the organization of open data repositories leads to better use of open data;
+\noindent\textbf{H\ref{hyp:dataliteracy}:} Increasing the level of data literacy on the society leads to a more conscious use of open data.
 
-\noindent\textbf{H\ref{hyp:dataliteracy}:} Increasing the level of data literacy on the society leads to better use of open data (which in turn motivates better publishing).
+\noindent\textbf{H\ref{hyp:tagging}:} Enhancing the organization of open data repositories leads to better find ability of open data;
 
-Regarding H\ref{hyp:tagging}, in the previous chapter results shown that system developed helped people in finding the more datasets quicker than using traditional approaches.
+The work towards the validation of H\ref{hyp:dataliteracy} was described in \autoref{chap:dataliteracy}.
+The importance of data literacy efforts was enforced in \autoref{dl_paulofreire}, where an analogy between traditional and data literacies was derived.
+We concluded showing the importance of data literacy role on giving voice to marginalized people, in the same way as it was crucial to teach people how to read and write some years ago.
+A definition for the concept of Critical Data Literacy is also presented, emphasizing the need of a real understanding of what is behind data.
+
+In \autoref{dl_method} our proposal for working on data literacy with social movements activists was presented.
+A methodology for a data literacy course is detailed, mixing theory, discussion and practice, trying to bring data literacy knowledge closer to each educands reality.
+
+Our hypothesis H\ref{hyp:dataliteracy} is validated in \autoref{dl_results}, where the results of the application of this course are presented.
+Specially, in \autoref{fig:dl_results}, we depict the critical apprehension of data literacy course participants regarding the problems of open data.
+
+Regarding H\ref{hyp:tagging}, the first chapters of this thesis emphasized the importance of open data in our society, and we showed by literature review (\autoref{sec:problems}), participatory research (\autoref{dl_results}) and objective metrics (\autoref{sec:analysis}) that organizing open datasets is a relevant problem.
+The STODaP approach proposed in \autoref{chap:tagging} targeted precisely the open data organization problem, both from a local perspective (inside a single ODP) and from a global perspective (inter-ODPs).
+Our STODaP server, an updated metadata repository, was tested in the previous chapter, and results shown that system helped people in finding the more datasets quicker than using traditional approaches.
+This can be considered true specially for non-experts in open data.
+
+In order to validate our hypothesis, we developed general theoretical analysis, but specific experiments.
+Thus, it is necessary to discuss if the results achieved by this research can be generalised.
+
+Regarding the results achieved by the data literacy, the specificity lies in the main characteristic of the participants, i.e., social movements activists.
+Although the open data impediments gathered on the course do not differ substantially from others reported on the literature, we can see that motivations and desired improvements are very specific of social movements activities.
+
+As discussed in the conclusions of the last chapter, the evaluation of the STODaP server has two specific design choices that may affect the generality of the results.
+The first aspect is the choice of subjects who participate in the evaluation.
+Participants of the experiment can be divided in three groups: (i) first year Computer Sciences students, in Brazil; (ii) Semantic Web researchers of various nationalities; (iii) open data practitioners/activists in Brazil.
+Even though there are significant variations on the level data/open data experience among these subjects, all of them share a daily use of internet and a good English proficiency.
+
+The second design choice were the tasks that subjects had to complete: (i) find 2015 open budget data from 5 countries; (ii) Find open data about water quality in seven rivers outside Europe; and (iii) find open procurement datasets in 3 different languages.
+The choice of this 3 task topics was based on the 8 criteria used by the Open Data Index, in order to guarantee the relevance of tasks.
+
+In this context, it is not possible to guarantee the extension of our results to subjects not from the Computer Science field, with a low English proficiency, or with a low Computer/Internet ability.
+Regarding the topics, since all Open Data Index topics have a high amount of open datasets, it is secure to generalize our findings to other relevant open data topics.
+
+\section{Problems and Limitations}
+
+After highlighting the contributions of this thesis, it is also necessary expose some problems and delimit the extension of our results.
+
+First of all, by choosing the problem of open data organization, we left several other ones detected on \autoref{chap:dataliteracy} open.
+It is of course impossible to deal with every problem on the open data field, but some of them are of crucial importance, as for example the Data Quality problem.
+In our evaluation procedure, subjects went only to the entry point of datasets.
+It is possible that datasets that were marked as valid in the evaluation do not correspond to their descriptions, are outdated, or have broken links to their resources.
+This is a clear limitation of this work: open datasets search is based on metadata, but data quality cannot be guaranteed.
+
+Another limitation of the approach is related to the subjects that participated on the evaluation.
+Ideally, we would like that the same subjects that attended to the Data Literacy course could evaluate the system.
+However, this was not possible, mainly because: (i) Most of the participants on the Data Literacy course do not speak English; (ii) the time span between the courses and the evaluation was of almost 2 years, which makes contacts more difficult.
+Thus, it was not possible to evaluate if the developed system attended to at least some of the requirements pointed out by participants of the courses.
+
+The connection between tags and semantic tags is also limited by the moment.
+The automatic approach used in this thesis resulted in many tags not connected to right semantic tag, and also many wrong connections. 
+Although several methods to tackle this issue are available in the literature, the large size of our database requires efficient approaches.
 
 
+\section{Future Works}
+
+The broadness of this work let many open paths for further research.
+
+On the Data Literacy field, \autoref{fig:dl_results} can give relevant clues for further research.
+The training branch presents a great variety of topics, ranging from Basic Informatics, Mathematics and Statistics, until data journalism or open data publishing.
+The possibility of integrating such a wide range of topics in Data Literacy courses should be further investigated.
+
+Regarding reconciliation of tags in ODPs, a sort of crowd validation would be very useful in order to confirm automatic processing and add new information.
+The model proposed by \citeonline{Limpens2013} could be very useful, because of its ability to deal with divergences between users.
+In this sense, it is necessary to call the attention of the open data community in order further to advance collaborative strategies for enriching the semantic tags server.
+
+Another way of improving the connection between tags and groups with their semantic equivalents could be via artificial intelligence methods. 
+
+Advances on local tools for tagging assistance are crucial, since a good tagging procedure would certainly ease the work of tag reconciliation. 
+Future research and development should include a tag suggestion approach for ODPs which takes into account the related tags at the tag server, using collective knowledge as in~\citeonline{Sigurbjornsson2008}.
+Using the possibly structured data of the ODPs in order to improve tagging suggestions is also a research direction that should be followed.
+
+Another interesting research direction is the detecting the emergence of schemas from the tags, as described in~\citeonline{Robu2009}, where tag correlation is used to create tagging vocabularies and visualizations of terms relationships.
+
+The STODaP system also need a more professional approach on its development in order to be really useful. A priority list of enhancements could start by: 
+
+\begin{itemize}
+	\item Internationalization. At the moment, semantic tags and groups labels are only in English. This means that users searching for keywords in English are able to find datasets in other languages via semantic tags, but the contrary is not true. The Gemet Thesaurus offers several translations of the terms, which could be used for this task.
+	\item User Interface Design. Several subjects commented on the evaluation that interface design should be improved. This is a priority because interface problems can hide system functionalities, and thus result in a worse performance than the system could offer.
+	\item Include other open data portals. The list of ODPs indexed by the STODaP server came from the CKAN Census. The first problem is that this Census is not frequently updated, since many CKAN ODPs listed there do not exist more, and other not present in the Census were found. Secondly, a great quantity of ODPs are developed using Socrata, another open data management system. Although being proprietary, Socrata also offers APIs for external users to consume data. Developing the interface between CKAN and Socrata could significantly improve the STODaP base.
+\end{itemize}
+
+\vspace{1cm}
+\begin{center}* * *
+\end{center}
+\vspace{1cm}
+
+For STOdAP to realize its full potential, ODP administrators and users should be involved and (meta)data literacy needs to be improved.	
+The ``openness'' of open data is still limited by many factors, including politics, data literacy and technology ones.
+With this work, we hope to have contributed to the open data field, maybe no so much with the resulting tool, but hopefully with a socio-technical view where the user side can have at least the same importance as the publisher side.

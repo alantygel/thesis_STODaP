@@ -155,6 +155,7 @@
 \newcommand{\listadesimbolosname}{Lista de s\'imbolos}
 \newcommand{\fontename}{Fonte}
 \newcommand{\notaname}{Nota}
+\newcommand{\hypotesisnoautorefname}{Hypo}
 %
 \addto\captionsbrazil{% portugues-brasil
   %% ajusta nomes padroes do babel
@@ -168,6 +169,7 @@
   \renewcommand{\subsectionautorefname}{subse{\c c}\~ao}
   \renewcommand{\subsubsectionautorefname}{subse{\c c}\~ao}
   \renewcommand{\paragraphautorefname}{subse{\c c}\~ao}
+  \renewcommand{\apendicename}{Apendix}
 }
 \addto\captionsenglish{% ingles
   %% adjusts names from abnTeX2
