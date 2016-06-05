@@ -5,7 +5,7 @@ Given the growing importance of the topic, open data is discussed through severa
 Although looking at it from a Computer Science perspective, it was not possible to skip political, social and economical aspects while discussing the topic.
 This work should thus be regarded as a multidisciplinary effort to contribute to a field that is heavily related to Computer Science, but far from being restricted to it.
 
-This introductory chapter briefly exposes some motivations behind the topic of open data, highlighting selected problems observed in the literature.
+In this introductory chapter, some motivations behind the topic of open data are briefly exposed, highlighting selected problems observed in the literature.
 The hypothesis from where this thesis starts are posed, as well as the objectives that we aim to achieve with this work.
 We further explain the methodology used in order to develop this thesis, and finally describe the structure of the rest of this text.
 
@@ -24,65 +24,72 @@ It is no coincidence that 9 years later, United States and United Kingdom launch
 Nowadays, several countries already implemented their ODPs, together with numerous states and municipalities.
 Universities and research centres are also joining strategies for putting data available on the Web.
 More than 1600 ODPs were surveyed by \href{https://www.opendatasoft.com}{OpenDataSoft}.
-The potential of changing the very basis of democratical processes took the United Nations to coin the term \emph{Data Revolution} to designate ``the new world of data, a world in which data are bigger, faster and more detailed than ever before''~\cite{DataRevolutionGroup2014}.
+The potential of changing the very basis of democratic processes took the United Nations (UN) to coin the term \emph{Data Revolution} to designate ``the new world of data, a world in which data are bigger, faster and more detailed than ever before''~\cite[p.4]{DataRevolutionGroup2014}.
+Still according to the UN, these data is ``creating unprecedented possibilities for informing and transforming society and protecting the environment''~\cite[p.4]{DataRevolutionGroup2014}.
 
-If the numbers about open data scenario generate an enthusiastic hope that this movement will solve many problems of the society, there are also critique voices claiming that the promises are still from being realised, and also that there are some hidden threats that should be alerted.
+While the numbers about open data scenario can generate an enthusiastic hope that this movement will solve many problems of the society, there are also critique voices claiming that the promises are still far from being realised, and also that there are some hidden threats that should be alerted.
 
 \section{Not Only Advantages -- Open Data Impediments}
 
-Despite its recent popularity, Open Data and Open Data Portals still face significant impediments, as richly described by~\citeonline{Zuiderwijk2012}.
-The authors collected 118 socio-technical impediments for use of open data from interviews, workshops and literature.
+Despite its recent popularity, Open Data and Open Data Portals still face significant problems.
+\citeonline{Zuiderwijk2012} collected 118 socio-technical impediments for use of open data from interviews, workshops and literature.
 Some cited impediments were ``absence of commonly agreed metadata'', ``insufficiency of metadata'', ``the lack of interoperability'' and ``difficulty in searching and browsing data'', showing that a great challenge for ODPs is the organization of data.
 
 The open data organization challenge can be subdivided into two aspects: 1) structuring and organizing the datasets themselves and 2) providing well-structured and organized metadata for the datasets.
-The first aspect was, for example, tackled by approaches for semantic lifting of data by~\citeonline{DBLP:conf/i-semantics/ErmilovAS13} and~\citeonline{Ding2011325}, who tried to build general strategies for putting large open government datasets in the Link Data cloud.
+The first aspect was, for example, tackled by approaches for semantic lifting of data by~\citeonline{DBLP:conf/i-semantics/ErmilovAS13} and~\citeonline{Ding2011325}, who tried to build general strategies for putting large open government datasets in the Link Open Data (LOD) cloud.
 For the standardized structuring metadata, the Data Catalog Vocabulary (DCAT)\footnote{Available at \url{http://www.w3.org/TR/vocab-dcat/}}~\cite{conf/i-semantics/CyganiakMP10} was developed.
 However, the cross-portal metadata alignment and reconciliation cannot be addressed by DCAT.
 
 Besides the data organization challenge, another very much cited impediment to the use of open data is the lack of capacity of individuals and groups for dealing with open data.
-There has been a recently growing consensus on defining this individual and collective capacity for dealing with data under the concept of \emph{Data Literacy}.
+There has been a recently growing consensus on defining the skills of consuming, publishing and understanding data under the concept of \emph{Data Literacy}.
 
 As observed by~\citeonline{Bhargava2015}, one of the first mentions of the term \emph{Data Literacy} called the attention for its importance on the context of evaluation of information, together with  Information Literacy and Statistical Literacy. 
-In 2004, Schield reinforced the important of teaching these three literacies for ``students who need to critically evaluate information in arguments'' \cite{Schield2004}.
+In 2004, Schield reinforced the importance of teaching these three literacies for ``students who need to critically evaluate information in arguments'' \cite[p.1]{Schield2004}.
 
-Although not mentioning directly the term Data Literacy, the above cited collection of open data impediments~\cite{Zuiderwijk2012} dedicates a section for problems related to \emph{understand ability}.
+Although not mentioning directly the term Data Literacy, the previously cited collection of open data impediments~\cite{Zuiderwijk2012} dedicates a section for problems related to \emph{understand ability}.
 Among them we find, for example, ``Lack of skills and capabilities to use the data and'' and ``Lack of knowledge about how to interpret the data'', which relates directly to the topic of Data Literacy.
 
 \section{Hypothesis}
 
 In the light of open data theoretical benefits, and the impediments that hinder the achievement of these benefits, we formulate two hypothesis in order to guide the development of this thesis:
 
-\noindent\textbf{\hypothesis{hyp:dataliteracy}:} Increasing the level of data literacy on the society leads to a more conscious use of open data.
+\noindent\textbf{\hypothesis{hyp:dataliteracy}:} Increasing the level of data literacy on the society leads to a more conscious use of open data;
 
-\noindent\textbf{\hypothesis{hyp:tagging}:} Enhancing the organization of open data repositories leads to better find ability of open data;
+\noindent\textbf{\hypothesis{hyp:tagging}:} Enhancing the organization of open data repositories leads to better find ability of open data.
+
+Both hypothesis are inspired in the problems highlighted above.
+In the first one, we assume that it is possible to increase the collective level of data literacy, and that this can lead to a deeper understanding of data.
+Thus, we could gradually move from a scenario where data is always interpreted by intermediaries, to another where people can read, understand and even produce data themselves.
+
+The second hypothesis brings to the light the data organization problem in the context of making data more easily available.
+It assumes that, if by some means, data repositories could be better organized, data would be more easily accessible by a broader audience.
 
 \section{Objective}
 
 Our aim in this thesis is to develop approaches both from user and publisher perspectives in order to advance towards the benefits of open data. Specifically:
 \begin{itemize}
 	\item From the publisher perspective, and recognizing that the lack of organization of ODPs is a problem, to develop an approach for cleaning, reconciliation, and semantic lifting of metadata;
-	\item From the user perspective, and recognizing the lack of abilities for dealing with data, to develop a data literacy approach.
+	\item From the user perspective, and recognizing the lack of abilities for dealing with data, to develop an approach for raising data literacy skills on communities of data users.
 \end{itemize}
 
 \section{Methodology}
-The methodology used to develop this thesis is composed by several steps.
-\begin{itemize}
-	\item Literature revision, described in chapter \ref{chap:opendata}
-	\item Participatory research, described in chapter \ref{chap:dataliteracy}
-	\item Objective alignment
-	\item New and deeper literature revision, described in chapter \ref{chap:relworks}
-	\item System development
-	\item Validation: In order to validate our approach, experiments and objective metrics were developed. Specifically:
-\begin{itemize}
-	\item Hypothesis \ref{hyp:tagging} was validated by measuring the ODP metadata related parameters;
-	\item Regarding Hypothesis \ref{hyp:dataliteracy}, the developed data literacy method was applied and results were analysed. 
-\end{itemize}
 
-\end{itemize}
+The personal motivation for this work came from my previous experience in developing information systems for social movement activists, such as mapping systems, social networks and data analysis systems.
+This practical experiencing showed that a recurrent error is to look only to strict technical problems, ignoring influences of the social context.
+A learned lesson is that socio-technical problems need socio-technical approaches in order to be effective.
+After attending to the Ph.D. seminars, the problem could understood, and a solution path could be envisioned.
+This process resulted in the formulation of both hypothesis, that were necessary to enable tackling social and technical aspects.
 
+The first methodological step after broadly defining the problem was a literature revision on open data, described in \autoref{chap:opendata}.
+With this knowledge in hand, it was necessary to go to the field in order to experiment open data in practice.
+Thus, theory about Popular Education and Participatory Research methods was reviewed, and the data literacy course was developed and applied, in a process reported in \autoref{chap:dataliteracy}.
 
-%% ver tese Kelly e Tiago
+As a result of this process, the problem definition and the solution approach were refined in order to fit the findings of the participatory research.
+Thus, it was also necessary to refine the literature revision, and also to look at the reality of metadata usage in Open Data Portals.
+This is the topic of \autoref{chap:relworks}.
 
+With all these components in hand: (i) a broader literature review; (ii) a field research; (iii) a narrower literature review; and (iv) a reality analysis, it was possible to dive into the development of the solution, described in \autoref{chap:tagging}, and run its validation, described in \autoref{chap:evaluation}.
+Finally, on the conclusions (\autoref{chap:evaluation}), we discuss in which extent our results can be generalized in face of the driven experiments, and if our hypothesis were fully validated.
 
 \section{Structure of the thesis}
 
