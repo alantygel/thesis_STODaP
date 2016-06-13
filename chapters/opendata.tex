@@ -3,19 +3,19 @@
 
 Open data is currently a very popular concept.
 As discussed in the previous chapter, it is part of an important political debate related to transparency, citizen participation, and considered a crucial way for improving democracies around the world.
-In this chapter, we drive an overview about open data, with the objective of historically contextualizing open data, highlighting the problems and challenges currently observed.
+In this chapter, we drive an overview about open data, with the objective of historically contextualizing open data, highlighting its problems and selecting the main challenges currently observed.
 Being a very dynamic field, it is impossible to picture the open data field only looking at academic works.
 Thus, the material used to write this chapter also includes websites, practitioners reports and official documents, seeking to reflect more clearly the current open data landscape.
-Rather than exhausting the topic, the aim of this chapter is to justify the importance of open data, present the open research issues and point the solutions to be presented in the following chapters.
+Rather than exhausting the topic, the aim of this chapter is to justify the importance of open data, present the open research issues and indicate the solutions to be presented in the following chapters.
 
-The chapter starts with a section dedicated to the alleged motivations for opening data, including other contexts than government.
+The chapter starts with a section dedicated to the alleged motivations for opening data, not only at the government context, but also on the research field.
 In the sequel, some historical notes about the open concept and the open data term are presented, followed by a collection of open data definitions.
 \autoref{sec:opendatalandscape} reviews the efforts to map the open data landscape using different assessment methods.
-In order to ground the discussion in a more concrete basis, in the following section we selected one special type -- open budget data -- to describe in a more detailed fashion.
+In order to ground the discussion in a more concrete basis, in \autoref{sec:openbudget} we selected one special type -- open budget data -- to describe in a more detailed fashion.
 The chapter continues with two sections that seek to evaluate the results of open data efforts: impacts evaluation (\autoref{sec:impacts}) and value creation (\autoref{sec:value}).
 Of crucial importance is \autoref{sec:problems}, where the problems of open data are analysed.
-This section is following by the presentation of the Linked Data approach, which is regarded as a way to overcome some of the mentioned impediments.
-We finally conclude this chapter pointing selected references to a broader understanding of open data. 
+This section is followed by a presentation of Linked Open Data approach (\autoref{sec:LOD}), regarded as a way to overcome some of the mentioned impediments.
+We finally conclude this chapter pointing selected references to a deeper understanding of open data. 
 
 \section{Why Open Data?}
 \label{sec:why}
@@ -210,6 +210,7 @@ Surprisingly, the first three countries with more datasets (Germany, UK and Spai
 \textbf{\href{http://right2info.org}{Right2Info}:} This platform monitors FOIAs, which is not specifically open data, but is very related. 93 countries have some kind of FOIA, and the platform presents a comprehensive list of 273 FOIAs covering various scopes~\cite{Vleugels2012}.
 
 \section{Open Budget Data}
+\label{sec:openbudget}
 
 From all types of OGD, one is of particular importance: government budgetary data, as timely access to these data is critical to accomplish government accountability.
 
@@ -346,7 +347,6 @@ The framework walks through the complete Government Data Life Cycle Processes, n
 
 \section{Problems of Open Data}
 \label{sec:problems}
-\cite{Roseira2016}
 
 The vast majority of research about open data assumes that publishing public data in open formats will bring mostly good impacts.
 In this sense, two works from the same research group made an in depth research on the negative sides of open data.
@@ -364,7 +364,9 @@ As reported by \citeonline{Hern2014}, the opening of taxi trips data by the city
 In a similar situation, the release of film ranking data allowed not only the identity of users to be unveiled, but also their political orientation, religious views or sexual orientation.
 In both cases, the attempt to anonymise data failed.
 
-\citeonline{Parycek2016} interviewed 
+\citeonline{Parycek2016} interviewed public servants in German speaking regions in order to gather barriers for the implementation of open data in the public sector.
+As result, three main impediment classes were found: information cultures and divergent interests in agencies, limited innovation potential in organizational cultures and limited communication of strategies.
+Authors conclude that ``if organizational aspects of information culture are not addressed, the value of Open Government might not be understood'' and that ``cultural and organizational factors, as opposed to a simple lack of knowledge, play a crucial role regarding the implementation of open technologies in the German-speaking region.'' \cite[p.7]{Parycek2016}.
 
 \subsection{The Missing Focus on Use of Open Data}
 
@@ -426,14 +428,14 @@ Under these, we can list at least seven directly related to the lack of capaciti
 \citeonline{Zuiderwijk2014a}, based on several interviews with government officials, affirm that this lack of capacities in using data may lead to negative effects in open data: 
 
 \begin{citacao}
-(...) stakeholders do not profit equally from the opening of data. The use of open data is complex, time-intensive and might require certain skills to find, understand and use data. This results in a high threshold for ordinary citizens to make use of the data. Instead journalist and lobbyist have more time and are often skilled in making use of the data. As such open data can be used by certain groups to strengthen their position, instead of creating a level playing field~\cite{Zuiderwijk2014a}.
+(...) stakeholders do not profit equally from the opening of data. The use of open data is complex, time-intensive and might require certain skills to find, understand and use data. This results in a high threshold for ordinary citizens to make use of the data. Instead journalist and lobbyist have more time and are often skilled in making use of the data. As such open data can be used by certain groups to strengthen their position, instead of creating a level playing field~\cite[p.150]{Zuiderwijk2014a}.
 \end{citacao}
 
 Inequalities in access to data is starting to raise concerns for those who, for many years, studied the inequalities in access to ICTs.
 Micheal Gurstein is probably the pioneer in calling attention for this and coining the term \emph{data divide}: 
 
 \begin{citacao}
-Efforts to extend access to “data” will perhaps inevitably create a “data divide” parallel to the oft–discussed “digital divide” between those who have access to data which could have significance in their daily lives and those who don’t \cite{Gurstein2011}.
+Efforts to extend access to “data” will perhaps inevitably create a “data divide” parallel to the oft–discussed “digital divide” between those who have access to data which could have significance in their daily lives and those who don’t \cite[p.2]{Gurstein2011}.
 \end{citacao}
 
 A data divide between countries is also mentioned as one of the conclusion of the Open Data Barometer project.
@@ -443,9 +445,25 @@ Countries are clustered into four classes to define their stage in implementing 
 Another important publication which shows concerns with data divide is the report by the~\citeonline{DataRevolutionGroup2014}: ``There are huge and growing inequalities in access to data and information and in the ability to use it''.
 The group hosted by the United Nations warns that ``Without immediate action, gaps between developed and developing countries, between information-rich and information-poor people, and between the private and public sectors will widen, and risks of harm and abuses of human rights will grow.''
 
+\subsection{Organization Challenge}
+\label{sec:org_problem}
+
+In order to be usable, published open datasets have to be organized in a logical way that allows people to find it.
+Regarding open data repositories, the organization challenge has an internal aspect, i.e., the way each ODP organizes their own data, but also a global aspect, regarding to a harmonization among different repositories.
+Both issue are directly related to the proper use of metadata.
+
+The impediments compilation by \citeonline{Zuiderwijk2012} cites some related problems, such 
+as ``absence of commonly agreed metadata'', ``insufficiency of metadata'', ``the lack of interoperability'' and ``difficulty in searching and browsing data''.
+The same study also states that ``A lack of open data standards between (levels of) government organizations has been identified as a barrier to open data usage by citizens and businesses and subsequently new open data policy''.
+
+When analysing open data of different contexts, language aspects quickly emerge: ``Language barriers and interoperability aspects need to be tackled so that information resources from different organizations and countries can be combined'' \cite{Zuiderwijk2012}.
+
+Organization is also problem for agents in the private sector willing to use open government data.
+According to~\citeonline{Roseira2016}, firm managers interviewed point out that most datasets have incomplete or nonexistent metadata.
+This lack of data quality generates a higher workload on cleaning and harmonizing data.
+The study included that firm managers desire to see advances on datasets standardization in order to boost open data economic value creation at national and international levels.
 
 \section{Linked Data towards Semantic Organization of Open Data}
-
 \label{sec:LOD}
 
 One of the strategies for adding value to data is the interlinking with other datasets.
@@ -495,8 +513,12 @@ In his turn, US's data.gov presents 7534 or 3.87\% datasets in RDF.
 
 \section{Conclusions}
 
-In this chapter, an overview about Open Data was presented.
+In this chapter, a not exhausting overview about Open Data was presented.
+A historical view was emphasized in order to better contextualize this movement.
+
+
 We highlighted some aspects as definitions and main research problems currently posed.
+
 For a more complete view on Open Data, please consult the following selected bibliography:
 \begin{itemize}
 \item \emph{Community Informatics and Open Government Data}, by~\citeonline{Davies2012a}
@@ -507,3 +529,5 @@ For a more complete view on Open Data, please consult the following selected bib
 This chapter was written basically after a literature research.
 In the next chapter, we go to the field and also take conclusions about open data based on the impressions after giving open data classes for social movement activists.
 
+
+%%%% missing organization problem!!!!

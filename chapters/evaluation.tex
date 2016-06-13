@@ -9,7 +9,7 @@ Practical results were also characterized, showing concrete achievements on the 
 In this chapter, the evaluation of STODaP server is described.
 The system was compared to other mechanisms on the task of searching for open datasets.
 We first present a theoretical background on search engine evaluation methodologies in \autoref{sec:lit_review}.
-Then, we show the experimental setup in \autoref{sec:setup}, the pre-evaluation procedure in \autoref{sec:pre_evaluation} and the results in \autoref{sec:results}.
+Then, we show the experimental setup in \autoref{sec:setup}, the pre-evaluation procedure in \autoref{sec:pre_evaluation} and the results in \autoref{sec:eval_results}.
 Some concluding remarks are driven on the final section.
 
 \section{Methodology Evaluation Background}
@@ -29,6 +29,7 @@ In a contrary direction, \citeonline{Xu2009} defend the use of task completion t
 Additionally, these authors found a negative correlation between user satisfaction and task completion time.
 An important result of this study is a mathematical development which shows that a cross-over design reduces significantly the variance of the experiment.
 Cross-over design means that, when comparing systems A and B on several tasks, every user tests both systems and completes all tasks once, half of them in A, and the other half in B.
+For tasks T1 and T2, we would have half of the users performing performing T1 with method A and T2 with method B, and half of them performing T1-B and T2-A.
 
 %config 1: metade dos usuarios usam um sistema, metade outro, todos fazem todas as tarefas
 %config 2: todos fazem todas as tarefas nos dois sistemas > problema : curva de aprendizado - solução - crossover - todos usuarios vao usar os dois sistemas, mas para tarefas diferentes : metade dos usuarios faz metade das tarefas no A e metade no B, e vice-versa
@@ -40,7 +41,7 @@ These metrics were used to compare performance between faceted and non-faceted e
 
 Although the Web and search engines have dramatically changed in the last 10 years, the perspective brought by \citeonline{Vaughan2004} is still relevant.
 The focus in this work relies on the quality of ranking, i.e., the order in which results are presented.
-Both works presented previously rely on the task completion time, which brings with it factors that do not depend on the system, e.g., users ability, and factor not directly related to the search-engine, such as usability.
+Both works presented previously rely on the task completion time, which brings with it factors that do not depend on the system, e.g., users ability, and factors not directly related to the search-engine, such as usability.
 By looking specifically at the ranking quality, the evaluation methodology may ignore these aspects, and keeps full attention on the search mechanism.
 In this work, author proposes non-binary counterparts to the traditional precision and recall measures, with the intention of adding human relevance judgement aspects to the evaluation.
 Specifically, two measures are proposed: (i) \emph{Quality of result ranking}, as counterpart of precision and (ii) \emph{Ability to retrieve top ranked pages}, as counterpart measure of recall.
@@ -50,7 +51,7 @@ The second measure evaluates in which extent the top-results are present in each
 \section{Experimental Setup}
 \label{sec:setup}
 
--- hiposteses e metricas
+% -- hiposteses e metricas
 
 % \citeonline{Cheng2010}
 % entry questionaire to make sure the users were able to make the test
@@ -61,10 +62,38 @@ The second measure evaluates in which extent the top-results are present in each
 % 5. User satisfaction (S): An ordinal number indicating the level of user satisfaction. A questionnaire was provided to the users after each search was complete. It asked the subjects to rate their satisfaction level towards the system in regard to supporting the accomplishment of the search task, using a scale from 1 (not satisfied at all) to 5 (extremely satisfied).
 
 In this section, we describe in details our experimental setup.
+
+\subsection{Goals and Metrics} % (fold)
+
 First of all, we define the evaluation goals:
 \begin{itemize}
-	\item When searching for open data, how does STODaP compares to other data-specific and general search engines?
-	\item Is the STODaP server an useful tool for searching open datasets?w
+	\item G1: When searching for open data, how does STODaP compares to other data-specific and general search engines?
+	\item G2: Is the STODaP server an useful tool for searching open datasets?
+\end{itemize}
+
+G1 will be answered through objective assessments.
+Metrics in this case will be: 
+
+\noindent \textbf{Task Completion Time (TCT)}: the amount of seconds that a subject takes to finish a task, i.e., answering a question using a specific searching method.
+A task is finished when the subject clicks the ``Finish'' button, and the evaluation framework will automatically calculate TCT.
+Subject validation methods will be used to guarantee that tasks not performed adequately are not considered as valid.
+Normalized TCT, as proposed by \citeonline{Cheng2010}, was also considered. 
+However, the structure to guarantee a reasonable number of experts was not available.
+
+\noindent \textbf{Precision}: As detailed bellow, each question requires subjects to find $N$ datasets according to a defined specification.
+Thus, we define Precision as the number of true positives, i.e., answered datasets truly corresponding to the question definition, divided by the sum of true positives and false positives, i.e., $N$.
+In this case, calculating a recall measure is not viable, since the definition of questions is broad enough to make the calculation of all true possibilities nearly impossible.
+
+
+The second goal (G2) relies on subjective evaluation of users.
+In this case, metrics are defined by a questionnaire presented after the evaluation, and contains both a question about absolute user satisfaction, and another related to satisfaction in relation to other methods.
+In order to compare STODaP performance, we selected two other search methods:
+
+\begin{itemize}
+	\item \textbf{Exversion: } Exversion Data Search Engine\footnote{Available at \url{https://www.exversion.com/search/}} is similar to STODaP because it indexes open datasets from ODPs and provides a unified search interface.
+	However, no semantics is applied.
+	\item \textbf{Free: } As observed in \autoref{sec:obs_based_analysis}, the first impulse of users search for open dataset is to use generic web search engines such as Google, DuckDuckGo, Yahoo, and others.
+	Thus, we included a free search to let users choose their preferred search engine.
 \end{itemize}
 
 \subsection{Subjects}
@@ -74,43 +103,77 @@ We consider that experts already have their own strategies and sources for findi
 Thus, we do not require experience in open data.
 However, users must have some previous knowledge on internet navigation. 
 Knowledge on basic data processing tools such as spreadsheet processors is also desired, so that subjects can at least imagine a potential use of data.
+English knowledge is also necessary, because labels of semantic tags and groups are still only in English language.
+
 
 \subsection{Tasks}
 
 By design, STODaP server is a tool for interlinking different Open Data Portals.
 Thus, in this evaluation we aim to assess the ability of gathering similar information from several ODPs, rather than finding specific datasets on the Web.
 
-The evaluation tasks where selected based on: (i) topic relevance of datasets on the open data community, based on criteria defined by Open Data Index\footnote{http://index.okfn.org/} (ii) the existence of search results on STODaP server.
+The evaluation questions where selected based on: (i) topic relevance of datasets on the open data community, based on criteria defined by Open Data Index\footnote{http://index.okfn.org/} (ii) the existence of search results on STODaP server.
 This restriction allows us only to make assertions about the performance of STODaP server on the topics covered by the system, which consists of large base of open data portals, as described in \autoref{sec:stodap_architecture}.
-Broader conclusion would require large scale evaluations, which are over the scope of this thesis.
-Defined tasks are:
+Broader conclusion would require evaluations of larger scales, which are over the scope of this thesis.
+Defined questions are:
 
 \begin{itemize}
-	\item Find open datasets containing 2015 budget data from locations in 5 different countries.
-	\item Find open datasets containing procurement information in 3 different idioms.
-	\item Find open datasets about Water Quality on 7 different rivers.
+	\item \textbf{Q1}: Find open datasets about \textbf{water quality} on \textbf{7 different rivers}.
+	\item \textbf{Q2}: Find open datasets containing \textbf{2015 budget data} from locations in \textbf{5 different countries}.
+	\item \textbf{Q3}: Find open datasets containing \textbf{procurement information} in \textbf{3 different languages}.
 \end{itemize}
 
-\section{Procedure}
+\subsection{Procedure}
 
 The following procedure was driven during the evaluation process:
 
 \begin{itemize}
-	\item Participants filled the entry-questionnaire (5 minutes);
-	\item The main idea of the project was explained, followed by an explanation about (10 minutes)
-	\item Participants were assigned numbers and asked to enter this number on the form. 
-	\item Three tasks were sequentially presented. 
-	Each one was demanded to be completed either using STODaP server, the Exversion Data Search Engine\footnote{Available at \url{https://www.exversion.com/search/}} or conventional search engines \cite{Xu2009}.
-	The combination between search method, task and ordering was randomly chosen for participants.
-	\item For each task, the challenge was presented with the appropriate number of text fields for pasting the results links.
-	\item The time taken for each task was automatically calculated. The search string used in STODaP server were also captured.
-	\item An evaluation questionnaire was filled by the subjects, containing questions about usability and satisfaction.
+	\item The main idea of the project is explained, followed by an explanation about the evaluation itself;
+	\item Participants fill the entry-questionnaire, shown in \autoref{tab:entry_questionnaire}; 
+	\item After finishing the form, three tasks are sequentially presented. 
+	Each task is a combination of a question Q and a search method M.
+	Combinations for each participant are chosen in order to guarantee that each Q-M combination has approximately the same number of answers.
+	\item For each task, the appropriate number of text fields are presented for pasting the dataset links.
+	\item The time taken to complete each task is automatically calculated.
+	\item The evaluation questionnaire shown in \autoref{tab:eval_questionnaire} is presented to the subjects.
 \end{itemize}
+
+\begin{table}[h]
+\ABNTEXfontereduzida
+\centering
+\caption[Entry questionnaire.]{Entry questionnaire.}
+\label{tab:entry_questionnaire}
+\begin{tabular}{|>{\arraybackslash}m{3cm}|>{\arraybackslash}m{7cm}|>{\arraybackslash}m{5cm}|}
+\hline
+\centering\textbf{ID} & \centering\textbf{Question} & \centering\arraybackslash\textbf{Range} \\ \hline
+Age & How old are you?  & $> 0$ \\
+Internet & How often do you use internet? & 1 - once a week; 5 - everyday \\
+Data & How often do you use structured data in your study/work? (e.g. spreadsheets, charts, statistics, ...) & 1 - never; 5 - always \\
+Open Data & How often do you use open data in your study/work? & 1 - never; 5 - always \\
+English & What is your English proficiency level? & 1 - low ; 5 - high \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\ABNTEXfontereduzida
+\centering
+\caption[Evaluation questionnaire.]{Evaluation questionnaire.}
+\label{tab:eval_questionnaire}
+\begin{tabular}{|>{\arraybackslash}m{3cm}|>{\arraybackslash}m{7cm}|>{\arraybackslash}m{5cm}|}
+\hline
+\centering\textbf{ID} & \centering\textbf{Question} & \centering\arraybackslash\textbf{Range} \\ \hline
+Absolute Satisfaction & Do you think STODaP is a useful tool for finding data on the web? & 1 - not useful; 5 - very useful \\
+Relative Satisfaction & How easy is it was get the data you need using the STODaP in comparison with the other methods? & 1 - harder; 5 - easier \\
+Comments & If you have additional comments or suggestions, please write it here: & Free text \\
+\hline
+\end{tabular}
+\end{table}
 
 \subsection{Validation}
 Each entry-questionnaire was analysed in order to determine if it is valid to our evaluation, in terms of internet experience.
+Subjects are only validated if they complete all tasks and the evaluation questionnaire.
 
-The answers were also checked in order to confirm if the dataset links provided are really valid answers to the assigned task.
+Individual answers are checked in order to confirm if the dataset links provided are really valid answers according to the assigned question.
 
 
 %#######################################
@@ -118,18 +181,18 @@ The answers were also checked in order to confirm if the dataset links provided 
 \label{sec:pre_evaluation}
 %#######################################
 
-In order to test and adjust our evaluation setup, we ran the process described above with a group of seven students of an Information Retrieval graduate course, at the Federal University of Rio de Janeiro, on the 12th of July 2016.
+In order to test and adjust our evaluation setup, we ran the process described above with a group of seven students of an Information Retrieval graduate course, at the Federal University of Rio de Janeiro, on the 12th of May 2016.
 The results of this evaluation round can be seen in \autoref{tab:pre_eval_questionnaire} and \autoref{tab:pre_eval_results}.
 Although the main target of this pre-evaluation process was to assess the evaluation procedure (and not the STODaP server), it is useful to look at the results to have the first impressions.
 
 \begin{table}[h]
 \ABNTEXfontereduzida
 \centering
-\caption[Answers to the entry and evaluations questionnaires.]{Answers to the entry and evaluations questionnaires. The first four questions correspond to the entry-questionnaire, applied before the evaluation. The two remaining questions were answered after completing the evaluation tasks. Task Completion Time (TCT) is the average number of seconds taken to finish the task. Accepted answers is the percentage of answers considered valid, over a total of 15.}
+\caption[Answers to the entry and evaluations questionnaires.]{Answers to the entry and evaluations questionnaires. Columns correspond to the entry-questionnaire, applied before the evaluation, and the evaluation one, filled afterwards. Full question text can be seen in \autoref{tab:entry_questionnaire} and \autoref{tab:eval_questionnaire}. Task Completion Time (TCT) is the average number of seconds taken to finish the task. Precision is the percentage of answers considered valid, over a total of 15.}
 \label{tab:pre_eval_questionnaire}
-\begin{tabular}{|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.7cm}|>{\centering\arraybackslash}m{1.cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2.9cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{1.3cm}|}
+\begin{tabular}{|>{\centering\arraybackslash}m{.5cm}|>{\centering\arraybackslash}m{.7cm}|>{\centering\arraybackslash}m{1.cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{.8cm}|>{\centering\arraybackslash}m{2cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{1.3cm}|}
 \hline
-& 	Age & Internet Ability (1 - low; 5 - high) & Data Ability (1 - low; 5 - high) & Open Data Ability  (1 - low; 5 - high) &	Do you think STODaP is a useful tool for finding data on the web?  (1 - not useful; 5 - very useful) &	How easy is it was get the data you need using the STDOaP in comparison with the other methods?  (1 - harder; 5 - easier) & 	Average TCT (seconds) & Accepted Answers (\%)\\ \hline
+& 	Age & Internet & Data  & Open Data &	Absolute Satisfaction &	Relative Satisfaction &  TCT & Precision (\%)\\ \hline
 1& 	27& 	5& 	3& 	1& 	4& 	2& 	295.7 +/- 98.8 & 100 \\ \hline
 2& 	23& 	5& 	4& 	3& 	5& 	3& 	833.3 +/- 151.8 & 80 \\ \hline
 3& 	27& 	5& 	5& 	5& 	2& 	2& 	560.0 +/- 103.2 & 33 \\ \hline
@@ -148,7 +211,7 @@ Each cell contains the number of seconds that one or more subjects took to compl
 \label{tab:pre_eval_results}
 \begin{tabular}{|>{\centering\arraybackslash}m{2.0cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.0cm}|}
 \hline
-\textbf{Tasks / Search Methods} & \textbf{Water Quality} & 	\textbf{Budget information} &	\textbf{Procurement} &	\textbf{Average and Standard Deviation} & \textbf{Accepted Answers (\%)} \\ \hline
+\textbf{Questions / Search Methods} & \textbf{Q1: Water Quality} & 	\textbf{Q2: Budget information} &	\textbf{Q3: Procurement} &	\textbf{Average and Standard Deviation} & \textbf{Accepted Answers (\%)} \\ \hline
 \textbf{Exversion} &	723, 884, 468 &	235, 382 &	558, 518 &	538.3 +/- 198.5 & 78 \\ \hline
 \textbf{STODaP} &	435, 493, 460 &	397, 184, 517, 1048 & -	&	504.9 +/- 244.0 & 83 \\ \hline
 \textbf{Free} &	1580 &	702 &	401, 217, 180, 1001, 729 &	687.1 +/- 456.3 & 63 \\ \hline
@@ -157,7 +220,7 @@ Each cell contains the number of seconds that one or more subjects took to compl
 \end{tabular}
 \end{table}
 
-\autoref{tab:pre_eval_questionnaire} shows the answers of each subject to the questions both before and after running the evaluation, together with its average task completion time and the percentage of valid answers.
+\autoref{tab:pre_eval_questionnaire} shows the answers of each subject to the questions both before and after running the evaluation, together with its average task completion time and precision.
 As expected, all subjects are frequent internet users.
 Use of data in daily work or study is also high, but the only one declared himself an open data expert.
 Coincidently or not, this subject was the only who did not considered STOaP an useful tool for finding data on the web.
@@ -165,13 +228,12 @@ Four out of seven considered that completing the tasks with STODaP was easier th
 The average Task Completion Time had a huge variation, with a minimum of 295 seconds and a maximum of 845 seconds.
 Through a manual procedure, each answer was verified in order to check if it really corresponds to the given task.
 The verification was not strict, and answers were discarded only if they were clearly wrong, or blank.
-Open data criteria were not taken into account.
-No significant correlation was verified between TCT and accepted answers rate.
+No significant correlation was verified between TCT and precision.
 
-\autoref{tab:pre_eval_results} shows the Task Completion Times for each task and search method.
-We can easily notice that a choosing a random generator for attributing tasks, search methods and orders was a mistake, specially with a small number of rounds.
-There were 36 possibilities (6 orderings for tasks $\times$ 6 orderings for search methods) but only 7 rounds were used.
-Thus, the number of combinations between tasks and search methods ended up quite unbalanced, and there was no combination of STODaP search method with the procurement task.
+\autoref{tab:pre_eval_results} shows the Task Completion Times for each task.
+We can easily notice that a choosing a random generator for attributing question / search methods combination was a mistake, specially with a small number of rounds.
+There were 36 possibilities (6 orderings for questions $\times$ 6 orderings for search methods) but only 7 rounds were used.
+Thus, the number of combinations between questions and search methods ended up quite unbalanced, and there was no combination of STODaP search method with the procurement task.
 Average TCT for tasks and search methods were also calculated.
 
 After running the procedure, a conversation round was driven with the students on order to get insights both about the tool and the evaluation procedure.
@@ -180,11 +242,11 @@ The following suggestions and comments were made:
 Regarding the evaluations interface:
 
 \begin{itemize}
-	\item Alert that search engines should be open in another tab;
-	\item Write the tasks more clearly and specific (e.g., asking budget 2015 may include 2014-16?)
+	\item Alert that search engines should be opened in another tab;
+	\item Write the questions more clearly and specific (e.g., asking budget 2015 may include 2014-16?)
 	\item On the final questions, positive answers to the system were at the left side, which is not usual and confused some subjects;
 	\item State more clearly that only the link to the dataset should be answered;
-	\item Makes clear that users are allowed to use auxiliary tools such as translators or Wikipedia in order to better understand the tasks;
+	\item Makes clear that users are allowed to use auxiliary tools such as translators or Wikipedia in order to better perform the tasks;
 	\item State more clearly that users should only look to the dataset title, and there is no need to open it;
 	\item Explain that only some specific portals are indexed, not all open data in the world.
 \end{itemize}
@@ -192,14 +254,14 @@ Regarding the evaluations interface:
 Regarding the evaluations procedure:
 \begin{itemize}
 	\item On the evaluation questionnaire, ask the English proficiency and other languages, and ask if the English language hampered the performance;
-	\item To few questions - do not evaluate learning curve.
+	\item There were to few questions, and thus learning curve was not evaluated.
 \end{itemize}
 	
 Regarding the STODaP faceted search interface:
 \begin{itemize}
 	\item There should be an explanation about faceted search and how does it work;
-	\item Regarding the Portal facet, it was suggested to write portals name in spite of url, when this metadata is available
-	\item One participant reported that he took a while to realize the language facet; after seeing it, it was very quick.
+	\item Regarding the Portal facets, it was suggested to write portals name in spite of URLs, when this metadata is available
+	\item One participant reported that he took a while to realize the language facet; after seeing it, question Q3 could be very quickly answered.
 	\item It was suggested to include the possibility of making the query broader by including facets with OR.
 \end{itemize}	
 
@@ -222,37 +284,43 @@ Thus, for our intentions, this is not considered open data and it should also be
 After considering the above mentioned comments, the procedure was enhanced and applied to the main groups.
 Results are described bellow.
 
+%###############################################################
 \section{Results}
 \label{sec:eval_results}
+%###############################################################
 
 In this section, we describe the application of the evaluation procedure and present the results achieved.
 
-In our experiment, participants were first year university students attending a class on the topic Introduction to Information Systems, at the Federal University of Rio de Janeiro, in Brazil.
+\subsection{Subjects Profile}
+
+Three rounds of the experiment were run.
+In the first round, participants were first year university students attending a class on the topic Introduction to Information Systems, at the Federal University of Rio de Janeiro, in Brazil.
+The second and third round were online, being one with Semantic Web researchers in Bonn (Germany) and Rio de Janeiro (Brazil), and another within a discussion group of open data practitioners in Brazil.
 An entry-questionnaire was filled by the participants, whose answers are summarized in \autoref{tab:eval_summary}.
 Participation was not mandatory and non identified, and there was no reward for participants.
 
-\begin{table}[]
+\begin{table}[b]
 \ABNTEXfontereduzida
 \centering
 \caption{STODaP evaluation - summary of subjects profile}
 \label{tab:eval_summary}
-\begin{tabular}{|p{8cm}|p{2cm}|}
+\begin{tabular}{|p{4cm}|>{\centering\arraybackslash}m{2cm}|}
 \hline
-Participants & 18 \\ \hline
-Age & 20.5 \\ \hline
-Internet knowledge (1 - Never Used; 5 - Always use) & 5\\ \hline
-Use of data (1 - I've never used any data processing tool; 5 - I'm an expert in advanced data processing tools) & 2.7\\ \hline
-Open Data Experience (1 - Never heard about; 5 - I work often with open data) & 2.3 \\ \hline
-English Proficiency (1 - Low; 5 - High) & 4.3\\ \hline
+\textbf{Question} & \textbf{Average} ($n=34$) \\ \hline
+Age & 25.7 \\ \hline
+Internet & 5\\ \hline
+Data & 3.3\\ \hline
+Open Data & 2.7 \\ \hline
+English & 4.3\\ \hline
 \end{tabular}
 \end{table}
 
-The average age of the 18 participants was 20.5 years.
-Although all of them use internet every day, direct experience with data processing is low, as well as with open data.
+The average age of the 34 participants was 25.7 years.
+Although all of them use internet every day, direct experience with data processing is mid-low, as well as with open data.
 As our tool is developed for non-experts, this sample is adequate to the experiment.
 
 After filling the entry questionnaire, subjects were presented 3 combinations of tasks and search methods.
-The resulting URLs were pasted in the appropriated fields and the task completion time was automatically calculated for every task of every subject.
+Subjects were instructed to find the specified datasets and paste their URLs in the appropriated fields. The task completion time was automatically calculated for every task of every subject, and correctness of each dataset regarding the specified task was manually checked.
 A screenshot of the evaluation tool is shown in \autoref{fig:eval_screenshot}. 
 
 \begin{figure}[h!]
@@ -265,26 +333,134 @@ A screenshot of the evaluation tool is shown in \autoref{fig:eval_screenshot}.
 
 \subsection{Task Completion Time Analysis}
 
-Task completion time for all subjects is shown in \autoref{tab:eval_results}.
+\autoref{fig:tct} shows the general results for the Task Completion Time analysis.
+Each bar shows the average time, in seconds, for finding one dataset.
+The time taken to find one dataset is an average of the time taken to fully complete the task.
+This approximation was necessary because each question required a different number of datasets, and thus comparing times to complete the whole task would not be correct.
+In order to remove disturbing samples, we considered only answers with precision higher than 33\% and TCT lower than 1000 seconds.
+The first case is aimed to remove subjects who gave up without trying to complete the task, or who did not understand the task.
+Regarding the second case, since some evaluations were made online, we considered that subjects who took more than 1000 seconds to find a dataset, actually gave up and left the evaluation tool open.
+It is important to notice that TCT for wrong answers were also computed, since we expect that subjects dedicate efforts even if the answer was not correct.
+The discussion about which method resulted in more precise answers is driven in the next section. 
 
-...
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/tct.png}
+\caption[Task Completion Time analysis.]{Task Completion Time analysis. Bars show the average time in seconds to find one dataset for each question and for each search method.}
+\label{fig:tct}
+\end{center}
+\end{figure}
 
-\begin{table}[h!]
+The graphic shows that, on average, task completion time was lower for subjects using STODaP than other methods.
+Specifically, STODaP TCT was 22\% faster than Exversion Data Search Engine, and 17\% faster than free search, for the specified questions.
+Looking at each question individually, it can be seen that for Q2 (Budget data), free search was faster than STODaP.
+A possible explanation is the current high availability of budget data over the web.
+As shortly explained in \autoref{sec:openbudget}, and in details in \citeonline{Tygel2016}, releasing budget data is of crucial importance, and this topic is being prioritized by most of the countries.
+Thus, the high availability enables web search engines to deliver faster and more accurate results.
+
+
+\subsection{Precision Analysis}
+
+\autoref{fig:precision} presents an analysis of the answer precision for each search method and task.
+As stated before, each answer given by participants was validated against the specified task.
+Thus, we were able to compute the precision of each task as:
+
+\begin{equation}
+	P = \frac{a_v}{A_T} * 100,
+\end{equation}
+
+where $A_T$ is the number of required answers for each task, and $a_v$ is the number of valid answer given by a subject.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/precision.png}
+\caption[Precision analysis.]{Precision analysis. Bars show the average precision for subjects answers, for each question and for each search method.}
+\label{fig:precision}
+\end{center}
+\end{figure}
+
+A parallel behaviour as in TCT analysis can be observed.
+STODaP exhibits a better performance on average, but is slightly worse regarding the Budget task.
+A 100\% rate can be observed in the STODaP performance for the Procurement task.
+In this case, where the task required datasets in three different languages, semantic tag Public Procurement (\url{http://stodap.org/semantictag/4321/}) could directly connect datasets in English, Russian, Spanish, Finish, Portuguese, Danish, German and Italian using the keyword ``procurement''.
+Thus, this task presents the better performance for STODaP, and also the worse using other methods.
+
+\subsection{Subjective Evaluation}
+
+After completing the tasks, subjects were filled an evaluation questionnaire, whose answers are systematized in \autoref{tab:subj_eval}.
+The first question is aimed to gather an absolute view of subjects about the system.
+The second one, in turn, evaluates STODaP in relation to another specialized open dataset search engine, and to generic web search engines.
+
+Results are shown as an average of all user, but also segregated between non-experts, i.e., those who considered their open data ability being between 1 to 3, and experts, i.e., open data ability 4 or 5.
+Global score shows an overall satisfaction with STODaP, both absolutely and in relation to other methods.
+Segregated results shows non-experts more satisfied than experts.
+This result was expected, since, as discussed before, experts normally need more specific datasets, and they know where to find it, or at least have some clues. 
+STODaP fits more the needs of non-experts, by providing a generic starting point to find data.
+
+\begin{table}[h]
 \ABNTEXfontereduzida
 \centering
-\caption[Task Completion Time of the evaluation, in seconds.]{Task Completion Time of the evaluation, in seconds. 
-Each cell contains the number of seconds that one or more subjects took to complete the task with the correspondent search method.}
-\label{tab:eval_results}
-\begin{tabular}{|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.0cm}|}
+\caption{STODaP evaluation - summary of subjective evaluation}
+\label{tab:subj_eval}
+\begin{tabular}{|m{4cm}|>{\centering}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
 \hline
-\textbf{Tasks / Search Methods} & \textbf{Water Quality} & 	\textbf{Budget information} &	\textbf{Procurement} &	\textbf{Average and Standard Deviation} & \textbf{Accepted Answers (\%)} \\ \hline
-\textbf{Exversion} &	723, 884, 468 &	235, 382 &	558, 518 &	538.3 +/- 198.5 & 78 \\ \hline
-\textbf{STODaP} &	435, 493, 460 &	397, 184, 517, 1048 & -	&	504.9 +/- 244.0 & 83 \\ \hline
-\textbf{Free} &	1580 &	702 &	401, 217, 180, 1001, 729 &	687.1 +/- 456.3 & 63 \\ \hline
-\textbf{Average and Standard Deviation} &	720.4 +/- 383.7 &	495.0 +/- 276.7 &	514.9 +/- 266.7 & & \\ \hline
-\textbf{Accepted Answers (\%)} & 76 & 80 & 71 & & \\ \hline
+\textbf{Question} & \textbf{Global Average} ($n=34$) & \textbf{Non-experts} ($n=25$) & \textbf{Experts} ($n=9$) \\ \hline
+Absolute Satisfaction & 4.3 & 4.4 & 4.2 \\ \hline
+Relative Satisfaction & 4.2 & 4.4 & 3.9\\ \hline
 \end{tabular}
 \end{table}
+
+The evaluation questionnaire included also a free comment section, in order to let subjects write their impressions.
+Unfortunately, only 14 subjects out of 34 wrote comments.
+Comments can be categorized in the following categories:
+
+\noindent \textbf{Design/Layout:} Six subjects complained about the user interface, both visually and in terms of usability: \emph{``The user interface is not intuitive nor pleasant. It should be further worked to help the visualization of results.''} was one the comments.
+The absence of an interface for managing filter was also noticed: \emph{``When I select the option to filter by country, I couldn't see any way to remove that filter or which filters are currently applied in case there are more than one.''}
+
+\noindent \textbf{Compliments: } Six users wrote positive comments, highlighting the ability of the system to support proposed tasks. One example is: \emph{``I did not manage to find any relevant datasets on river data quality after about 20 minutes of searching (using google). There were some available but they were for European rivers. The STDOaP is very useful and simple to use. Data is very easily discovered, and results are more relevant due to the availability of filtering.''}
+
+\noindent \textbf{Language: } One comment was related to language barriers, specifically when search terms are not in English.
+The translation of semantic tags label is referred on the future works.
+
+\noindent \textbf{Missing data: } Two subjects noticed the absence of desired data, but one of them recognized that this could be due to a publishing failure, and not related to the STODaP system itself.
+
+\noindent \textbf{Semantic Interpreter:} One subject noticed that \emph{``some improvement in semantic interpreter is needed.''}, but unfortunately no further details were given.
+
+
+% \begin{table}[h!]
+% \ABNTEXfontereduzida
+% \centering
+% \caption[Task Completion Time of the evaluation, in seconds.]{Task Completion Time of the evaluation, in seconds. 
+% Each cell contains the number of seconds that one or more subjects took to complete the task with the correspondent search method.}
+% \label{tab:eval_results_tct}
+% \begin{tabular}{|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.0cm}|}
+% \hline
+% \textbf{Tasks / Search Methods} & \textbf{Water Quality} & 	\textbf{Budget information}  &	\textbf{Procurement} &	\textbf{Average and Standard Deviation}  & \textbf{Accepted Answers (\%)} \\ \hline 
+% \textbf{Exversion} & 122.89 &125.92 &122.82 &124.00 & 81.91 \\ \hline 
+% \textbf{STODaP} & 83.91 &118.33 &89.00 &97.22 & 94.78 \\ \hline 
+% \textbf{Free} & 101.44 &58.75 &184.00 &116.88 & 85.58 \\ \hline 
+% \textbf{Average} & 101.45 & 106.28 & 126.18 &  & \\ \hline 
+% \textbf{Acceptance} & 88.69 & 88.12 & 86.85 &  & \\ \hline
+% \end{tabular}
+% \end{table}
+
+% \begin{table}[h!]
+% \ABNTEXfontereduzida
+% \centering
+% \caption[Task Completion Time of the evaluation, in seconds.]{Task Completion Time of the evaluation, in seconds. 
+% Each cell contains the number of seconds that one or more subjects took to complete the task with the correspondent search method.}
+% \label{tab:eval_results_rate}
+% \begin{tabular}{|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.4cm}|>{\centering\arraybackslash}m{2.0cm}|}
+% \hline
+% \textbf{Tasks / Search Methods} & \textbf{Water Quality} & 	\textbf{Budget information}  &	\textbf{Procurement} &	\textbf{Average and Standard Deviation}  & \textbf{TCT (s)} \\ \hline 
+% \textbf{Exversion} & 80.89 &88.33 &75.73 &81.91 &124.00 \\ \hline 
+% \textbf{STODaP} & 97.45 &86.67 &100.00 &94.78 &97.22 \\ \hline 
+% \textbf{Free} & 85.78 &90.00 &81.44 &85.58 &116.88 \\ \hline 
+% \textbf{Acceptance} & 88.69 & 88.12 & 86.85 &  & \\ \hline 
+% \textbf{TCT} & 101.45 & 106.28 & 126.18 &  & \\ \hline
+% \end{tabular}
+% \end{table}
+
 
 % \begin{itemize}
 % 	\item Task completion time for each search method (and variance) \cite{Xu2009}
@@ -295,63 +471,47 @@ Each cell contains the number of seconds that one or more subjects took to compl
 
 \subsection{Correlation Analysis}
 
-In order to check the correlation between characteristics of the subjects, their evaluation of the tool and their performance on the tests we calculate the correlation coefficient between every variable related to the subjects, i.e.: (i) profile variables such as age, English proficiency, and internet, data and open data abilities; (ii) evaluation about the tool, i.e.: perceived usefulness and usability in relation to other search methods; and (iii) test performance, i.e.: total tasks completion time and percentage of accepted answers.
+In order to check the correlation between characteristics of the subjects, their evaluation of the tool and their performance on the tests we calculate the correlation coefficient between every variable related to the subjects, i.e.: (i) profile variables such as age, English proficiency, and internet, data and open data abilities; (ii) evaluation about the tool, i.e.: absolute and relative satisfaction; and (iii) test performance, i.e.: total tasks completion time and precision.
 
 \autoref{tab:correlations} shows the results.
 Age is measured in years. The six following columns are variables that scale from 1 to 5, where 1 worse option, and 5 the better.
 Task Completion Time is the sum of time, in seconds, taken to complete all 3 tasks, and the last column is related to the percentage of correct answers.
-For this analysis, we considered only subjects with more than 50\% of correct answers.
-This filtering was necessary to eliminate some subjects who finished the evaluation very quickly, leaving most of the fields blank.
+As before, for this analysis, we considered only subjects with more than 33\% of correct answers.
 
-\begin{table}[]
+\begin{table}[t]
 \ABNTEXfontereduzida
 \centering
 \caption[Correlation analysis of the results.]{Correlation analysis of the results.}
 \label{tab:correlations}
-\begin{tabular}{|>{\centering\arraybackslash}m{3.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}|}
- \hline
- & Age & Internet Ability &	English Proficiency & Data Ability & Open Data Ability & Usefulness &	Usability &	Task Completion Time &	Accepted Answers \\ \hline
-Age & 1.0 	& nan 	& 0.28 	& 0.43 	& 0.24 	& -0.06 	& 0.29 	& -0.13 	& 0.21 	\\ \hline
-Internet Ability & nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	\\ \hline
-English Proficiency & 0.28 	& nan 	& 1.0 	& 0.14 	& 0.42 	& -0.4 	& -0.2 	& 0.19 	& 0.44 	\\ \hline
-Data Ability & 0.43 	& nan 	& 0.14 	& 1.0 	& 0.05 	& -0.1 	& 0.01 	& -0.41 	& 0.37 	\\ \hline
-Open Data Ability & 0.24 	& nan 	& 0.42 	& 0.05 	& 1.0 	& -0.24 	& -0.64 	& -0.07 	& 0.23 	\\ \hline
-Usefulness & -0.06 	& nan 	& -0.4 	& -0.1 	& -0.24 	& 1.0 	& 0.36 	& 0.28 	& 0.08 	\\ \hline
-Usability & 0.29 	& nan 	& -0.2 	& 0.01 	& -0.64 	& 0.36 	& 1.0 	& 0.27 	& 0.04 	\\ \hline
-Task Completion Time & -0.13 	& nan 	& 0.19 	& -0.41 	& -0.07 	& 0.28 	& 0.27 	& 1.0 	& 0.22 	\\ \hline
-Accepted Answers & 0.21 	& nan 	& 0.44 	& 0.37 	& 0.23 	& 0.08 	& 0.04 	& 0.22 	& 1.0 	\\ \hline
+\begin{tabular}{|>{\arraybackslash}m{1.8cm}||>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.2cm}|>{\centering\arraybackslash}m{1.2cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}||>{\centering\arraybackslash}m{1.7cm}|>{\centering\arraybackslash}m{1.6cm}||>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.4cm}|}
+ \hline 
+ Variables & \textbf{Age} & \textbf{Internet} &	\textbf{English} & \textbf{Data} & \textbf{Open Data} & \textbf{Absolute Satisfaction} &	\textbf{Relative Satisfaction} & \textbf{TCT} &	\textbf{Precision} \\ \hline \hline
+\textbf{Age} & 1.0 	& nan 	& 0.18 	& 0.52 	& 0.41 	& -0.11 	& -0.42 	& -0.16 	& 0.13 	\\ \hline
+\textbf{Internet} & nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	\\ \hline
+\textbf{English} & 0.18 	& nan 	& 1.0 	& 0.39 	& 0.43 	& -0.22 	& -0.31 	& 0.11 	& 0.28 	\\ \hline
+\textbf{Data} & 0.52 	& nan 	& 0.39 	& 1.0 	& 0.45 	& -0.18 	& -0.28 	& -0.32 	& 0.41 	\\ \hline
+\textbf{Open Data} & 0.41 	& nan 	& 0.43 	& 0.45 	& 1.0 	& -0.21 	& -0.44 	& -0.13 	& 0.15 	\\ \hline
+\textbf{Absolute Satisfaction} & -0.11 	& nan 	& -0.22 	& -0.18 	& -0.21 	& 1.0 	& 0.56 	& 0.15 	& 0.14 	\\ \hline
+\textbf{Relative Satisfaction} & -0.42 	& nan 	& -0.31 	& -0.28 	& -0.44 	& 0.56 	& 1.0 	& 0.15 	& 0.08 	\\ \hline
+\textbf{TCT} & -0.16 	& nan 	& 0.11 	& -0.32 	& -0.13 	& 0.15 	& 0.15 	& 1.0 	& 0.09 	\\ \hline
+\textbf{Precision} & 0.13 	& nan 	& 0.28 	& 0.41 	& 0.15 	& 0.14 	& 0.08 	& 0.09 	& 1.0 	\\ \hline 
 \end{tabular}
 \end{table}
 
-...
+Looking to the correlation coefficients, only a few have a module higher than 0.5, and higher values do not reveal any unexpected results.
+It is possible to observe a positive correlation between absolute usefulness and relative usability.
+A negative correlation between open data ability and relative usability confirms the fitness of the system for non-experts in open data.
+Data ability is negatively correlated with task completion time, and positively with precision.
+English proficiency may also play a positive role regarding precision.
 
-\subsection{Qualitative Analysis}
-
-In this subsection, we derive an analysis of the comments received on the evaluation questionnaire.
-From the first group -- first year Computer Science students -- 6 out of 18 subjects wrote comments about the system. 
-Four of them complained about the user interface, both visually and in terms of usability: ``The user interface is not intuitive nor pleasant. It should be further worked to help the visualization of results.''
-
-One subject assumed
-
-
-
-De fato, foi bem mais simples selecionar o conteúdo. Gostei muito da plataforma. Não estou habituado a pesquisar informações dos tipos propostos, mas o tempo necessário na STOPDaP foi consideravelmente menor para conseguir os resultados desejados. Uma única recomendação que eu faria, que provavelmente já deve ter sido mencionada antes, seriam uns toques novos no CSS do site. 
-
-a UI nao e intuitiva ou agradavel, ela deveria ser melhor trabalhada para auxiliar na visualização dos resultados
-
-It's necessary to update this layout. The project is great. Nice job.
-
-you can make a visual upgrade
-
-as perguntas em ingles não foram muito dificeis de entender não, masportugues apareceu
-
-More data is needed. I really wished I could query data as if it were a single data source.
-
+Although some clues can be gathered looking at \autoref{tab:correlations}, an analysis of variance (ANOVA) reveals that only a few correlations have a high confidence.
+The variables whose correlation confidence (p-value) is equal or than 0.05 are: age and data ability (0.001), age and usability (0.003/0.0001), English proficiency and data ability (0.042), data and open data ability (0.029/0.02), usefulness and usability (0.002/0.003).
+Regarding the experiment measures -- TCT and precision -- no relevant correlation was found.
 
 \section{Conclusions}
 \label{sec:conclusion}
 
-After proposing an approach for semantic organization of metadata in Open Data Portals in the previous chapter, in this chapter the approach was evaluated.
+% After proposing an approach for semantic organization of metadata in Open Data Portals in the previous chapter, in this chapter the approach was evaluated.
 
 Evaluation is a crucial part of every scientific work, since without testing, it is impossible to know if the system works as designed, and if it accomplishes the proposed goals.
 However, designing and implementing an information system evaluation is a very complex and challenging task.
@@ -364,10 +524,19 @@ Searching for open datasets is not an everyday task for the absolute majority of
 On the other hand, experienced data scientists already know where to find their data, and even if this data is available or not.
 With those questions in mind, we designed this evaluation trying to balance specificity and generality in the choice of subjects.
 We also tried to balance the specificity of the tasks, so that it would not be too general (``Find open datasets in Brazil'') but also not too specific (``Find the open data set of 2015 budget in Rio de Janeiro'').
-Following this reasoning we chose our subjects (Computer Science students that could work one day with open data and Semantic Web researchers that already work with open data), and our tasks (finding datasets on specific themes according to language and geographical limitations).
+Following this reasoning we chose our subjects (Computer Science students that could work one day with open data and Semantic Web researchers and practitioners that already work with open data), and our tasks (finding datasets on specific themes according to language and geographical limitations).
 
-Results show that ...
+Results shows that, for the designed tasks, STODaP outperforms Exversion Data Search Engine and generic web search engines regarding time to complete tasks and precision of the answers.
+It can also be concluded that STODaP performance is better when less data is available.
+In cases were data availability is high, such as budget data, web search engines may find more precise data in less time.
 
+Subjective evaluation about the system was positive, both regarding absolute usefulness, and in relation to other search methods.
+Subjects with a lower open data experience tend to rate the system better than experts.
+Statistical correlation analysis confirmed that subjects with a higher data manipulation ability finish their tasks faster and with a higher precision.
+English proficiency seems also to play a positive role regarding precision.
+However, no interesting correlation could be confirmed by a relevance test.
 
+Comments written by subjects point out several enhancement suggestions, e.g. regarding layout and design, semantic interpretation and multi-language enhancements.
+The absence of data for some topics was also noticed, recognizing this gap as a governmental transparency issue.
 
-
+In the next chapter, we summarize our contributions, indicating the limits of this research and pointing out the way for continuing this work.

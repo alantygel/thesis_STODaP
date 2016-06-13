@@ -2,26 +2,26 @@
 \label{chap:relworks}
 
 In the previous chapter, the issue of building open data skills was tackled through the development of a data literacy course as part of a participatory research.
-One of the results of this research points out a significant problem related to the organization of ODPs.
-Following this motivation, we tackle in this chapter the issue of metadata for open data. 
+One of the results of this research pointed out a significant problem related to the organization of ODPs.
+Following this motivation, we investigate in this chapter the issue of metadata for open data. 
 The chapter is divided in two parts, covering:
 
 \begin{itemize}
-	\item A literature investigation over the possible strategies to deal with semantic metadata for open data organization;
-	\item An analysis of the current status of metadata in ODPs.
+	\item A literature investigation over the possible strategies to deal with semantic metadata for organization of open data repositories;
+	\item An analysis of the current usage status of metadata in ODPs.
 \end{itemize}
 
-Particularly, in the first section we selected works related to semantic enrichment of metadata in ODPs, in order to position the main contribution of this thesis presented in the following chapter.
-The section starts with some preliminary discussions regarding semantics and metadata.
+Particularly, in the first part we selected works related to semantic enrichment of metadata in ODPs, in order to position the main contribution of this thesis presented in the following chapter.
+Section starts with some preliminary discussions regarding semantics and metadata.
 Then, a characterization of our contribution is driven, in order to delimit the related research topics.
-After this characterization, we present in each section one processing step, highlighting the main related works, their gaps and relations to this work.
+After this characterization, we present in each section one topic, highlighting the main related works, their gaps and relations to this work.
 We start with Assessment of Metadata in \autoref{sec:metadata_assessment}, followed by Metadata Cleanup in \autoref{sec:metadata_cleanup}, Metadata Reconciliation in \autoref{sec:metadata_reconciliation} and finally with Structure Emergence in \autoref{sec:emergence}.
 
-The second section aims to bring light over the current status of metadata use in Open Data Portals.
+The second section aims to bring light over the current status of metadata usage in Open Data Portals.
 Based on the CKAN Census of ODPs, we profile 87 portals and analyse several aspects regarding metadata.
 The analysis embraces not only local aspects regarding individual portals, such as use, reuse and similarity within a portal (\autoref{sec:local_metrics}), but also global features between portals, such as coincident metadata and expressiveness (\autoref{sec:global_metrics}).
 
-We conclude in the last section with an evaluation of the literature gaps and the actual problems detected in ODPs, pointing out our strategies to tackle some of these issues.
+We conclude in the last section with an evaluation of the literature gaps and the actual problems detected in ODPs, pointing out our strategies to be developed in the next chapter.
 
 \section{Semantic Metadata: A Literature Review}
 \label{sec:semantic_metadata}
@@ -29,10 +29,10 @@ We conclude in the last section with an evaluation of the literature gaps and th
 \subsection{Introduction}
 
 It is unnecessary to argue that good metadata are crucial for making data usable.
-By \emph{good} we can give as example a series of quality attributes as clean, well organized, detailed, complete, accessible, and meaningful.
+By \emph{good} we can give as example a series of quality attributes such as clean, well organized, detailed, complete, accessible, and meaningful.
 Intuitively, metadata is meaningful if it brings new information -- meaning -- for data.
-If a consumer asks: ``Which banana do you have?'', and the seller answers: ``The yellow one!'', this is barely meaningful, since almost all types of banana are yellow.
-However, if the seller answers: ``I have \emph{Cavendish}, \emph{Gros Michel}, \emph{Latacan}, and \emph{Cambuta}, which one do you prefer?'', there is much more information accessible through the types of bananas, including colour, size, countries origin, among others.
+If a consumer asks: ``Which bananas do you have?'', and the seller answers: ``The yellow one!'', this is barely meaningful, since almost all types of banana are yellow.
+However, if the seller answers: ``I have \emph{Cavendish}, \emph{Gros Michel}, \emph{Latacan}, and \emph{Cambuta}, which one do you prefer?'', there is much more information accessible through the types of bananas, including colour, size, countries of origin, among others.
 
 On the Web context, the way of enhancing the meaning of an object is to connect it to the Semantic Web, through the Linked Open Data Cloud, as detailed in \autoref{sec:LOD}.
 This procedure is also called Semantic Enrichment or Semantic Lifting.
@@ -54,28 +54,28 @@ According to them, there are six categories of problems:
 \item \textbf{Different lexical forms:} the same concept can be referred to by different noun forms, for instance plural nouns (’car’/’cars’), different verb conjugation (’buy’/ ’buying’), name-adjective couple (’energy’/’energetic’), multiple words (’pc’/’personal computer’) and so on;
 \item \textbf{Misspelling errors or alternate spellings:} typing errors that occurs when we write a word (’staton’ in place of ’station’) or different possible spelling of the same word (’color’/’colour’);
 \item \textbf{Different levels of precision:} the specificity of the word chosen to tag a resource (’jazz’ is more specific than ’music’);
-\item \textbf{Different kinds of tag-to-resource association:} implicit kinds of relations that links a tag to a specific resource (’interesting’ expresses an opinion on the resource, ’car’ expresses the topic of the resource and so on) \cite{Marchetti2007}.
+\item \textbf{Different kinds of tag-to-resource association:} implicit kinds of relations that links a tag to a specific resource (’interesting’ expresses an opinion on the resource, ’car’ expresses the topic of the resource and so on) \cite[p.2]{Marchetti2007}.
 \end{enumerate}
 \end{citacao}
 
-Around ten years ago, the discussion about semantifying folksonomies started.
+Around ten years ago, discussions about semantifying folksonomies started.
 Probably on of the most important work at that time was \emph{Ontology of Folksonomy: a mash-up of Apples and Oranges}~\cite{Grubber2007}.
-This work, published first on the web in November 2005, aimed to clear up a false contradiction between ontologies, as the enabling technology for sharing sharing information on the Semantic Web, and Folksonomies, a typical phenomenon of the Social Web representing data emerged from shared information.
-It is perfectly reasonable that these two concepts could be understood as a contradiction: while ontologies are formally built by domain experts and ontology engineers, folksonomies are freely constructed by users.
+This work, published first on the web in November of 2005, aimed to clear up a false contradiction between ontologies, as the enabling technology for sharing sharing information on the Semantic Web, and folksonomies, a typical phenomenon of the Social Web representing data emerged from shared information.
+It is perfectly reasonable that these two concepts could be understood as contradictory: while ontologies are formally built by domain experts and ontology engineers, folksonomies are freely constructed by users.
 After clarifying the role of each concept, Grubber defines the ontology of folksonomy, whose central element is \emph{Tagging}, which is an activity involving an object $O$, an user $U$, a tag $T$ and a system $S$.
-The possibility of qualifying a tagging is also mentioned, for example, with a negative tagging.
+The possibility of qualifying a tagging is also mentioned, for example, as a negative tagging.
 
-Another important work introducing this topic is ``Ontologies are us: A unified model of social networks and semantics'' \cite{Mika2007}, also published first in November 2005.
+Another important work introducing this topic is \emph{``Ontologies are us: A unified model of social networks and semantics''} \cite{Mika2007}, also published first in November of 2005.
 Mika also disagrees that ontologies and folksonomies are contradictory, but differently from Grubber, for who both are distinct concepts (Apples and Orange) that can be united, he states that ``folksonomies are ontologies''.
-In order to justify it, the author cites a set of broad ontology definitions, and classifies folksonomies in these definitions as ``lightweight, dynamic and limited in sharing scope''.
+In order to justify it, author cites a set of broad ontology definitions, and classifies folksonomies in these definitions as ``lightweight, dynamic and limited in sharing scope''.
 
 In the sequence of these papers, several authors tried to define tagging ontologies.
 \citeonline{Wu2006} added a time dimension to the tagging model.
-And to the best of our knowledge, \citeonline{Newman2005} was the first work to propose an ontology for tagging.
+And to the best of our knowledge, \citeonline{Newman2005} was the first to propose an ontology for tagging.
 This work was further extended by \citeonline{Knerr2006}, who proposed the Tagging Ontology, depicted in \autoref{fig:tagging_ontology}.
-All the dimensions proposed by \citeonline{Wu2006} and \citeonline{Grubber2007} are present and further detailed in the ontology.
+All dimensions proposed by \citeonline{Wu2006} and \citeonline{Grubber2007} are present and further detailed in this ontology.
 
-\begin{figure}[tb]
+\begin{figure}[b]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/tagging_ontology.png}
 \caption[Tagging Ontology.]{Tagging Ontology. Source: \citeonline{Knerr2006} }
@@ -83,18 +83,17 @@ All the dimensions proposed by \citeonline{Wu2006} and \citeonline{Grubber2007} 
 \end{center}
 \end{figure}
 
-Although crucial, models are not enough to enable the creation of ontologies emerged from collaborative tagging.
+Although crucial, these models are not complete enough to solve problem of creating ontologies emerged from collaborative tagging.
 \citeonline{Halpin2007} analysed the dynamics of collaborative tagging, in order to determine the possibilities of extracting knowledge.
 
 It is important to notice that until this point, tagging ontologies were concerned with organizing the knowledge contained in the tagging activity.
 The MOAT architecture was the first to explicitly include the concept of tag meaning, associating each tagging element to a LOD resource~\cite{Passant2008}.
 
 A review about semantic tagging initiatives by \citeonline{Kim2008} compared the different types and relations proposed by the works until 2008, and was updated by \citeonline{Kim2011}.
-
 The most recent attempt to build a tag ontology is the Modular Unified Tagging Ontology (MUTO)\footnote{\url{http://muto.socialtagging.org/core/v1.html}}, shown in \autoref{fig:muto}, and described by~\citeonline{Lohmann2011}.
 It incorporates suggestions of several previous models into a unified model, and is strongly based on wide used ontologies, such as Dublin Core, SKOS and SIOC. 
 
-\begin{figure}[tb]
+\begin{figure}[b]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/muto.png}
 \caption[MUTO Ontology.]{MUTO Ontology. Source: \citeonline{Lohmann2011}}
@@ -104,7 +103,7 @@ It incorporates suggestions of several previous models into a unified model, and
 
 Finally, in the context of tagging semantics, it is also important to discuss the nature of the relation between tags and tagged resources.
 To the best of our knowledge, none of the proposed tagging ontologies incorporates the possibility of qualifying this relationship.
-\citeonline{Marchetti2007} points out the question of ``implicit kinds of relations that links a tag to a specific resource'' with an example: ``\emph{interesting} expresses an opinion on the resource, \emph{car} expresses the topic of the resource.''
+\citeonline{Marchetti2007} point out the question of ``implicit kinds of relations that links a tag to a specific resource'' with an example: ``\emph{interesting} expresses an opinion on the resource, \emph{car} expresses the topic of the resource.''
 
 \subsection{Characterization of the Contribution}
 
@@ -123,7 +122,7 @@ This is applicable to platforms such as del.icio.us of flicker, where several us
 However, in the open data portals context, tags are only attributed by system managers.
 Although less noisy, this procedure is biased by few taggers.
 
-In the following subsections, we analyse the literature contributions regarding the above cited topics that relate to our work.
+In the following subsections, we analyse the literature contributions regarding the above cited topics in relation to our work.
 
 \subsection{Metadata Assessment}
 \label{sec:metadata_assessment}
@@ -137,32 +136,33 @@ In relation to the metrics for tagging environments, some related ideas could be
 For example, \citeonline{Umbrich2015} present a framework to evaluate the quality of ODPs. 
 Among the applied quality metrics, three of them -- \emph{Usage}, \emph{Completeness} and \emph{Accuracy} -- are related to metadata keys, which tags are part of. 
 \emph{Usage} establishes which metadata keys are actually used in a portal; \emph{Completeness} evaluates the presence of non empty values; and \emph{Accuracy} checks if metadata adequately describes the data.
-However, this metric is not applied for tags.
+This metric, however, is not applied for tags.
 
 Laniado and Mika did a similar analysis over hashtags on Twitter~\cite{Laniado2010}.
 Their work is focused in answering if Twitter hashtags constitute \emph{strong identifiers} for the semantic web. 
 To achieve this, four metrics are used: frequency of hashtags; specificity, which is the deviation from the use of them without being a hashtag; consistency; and stability over time.
 
-\citeonline{Colpaert2014} presented a method for calculating interoperability between ODPs based in the identifiers used in datasets.
-The metric developed by the authors take into account if the same identifiers were used to represent the same concepts in a dataset, and then calculates an interoperability metric.
+\citeonline{Colpaert2014} presented a method for calculating interoperability between ODPs based on  identifiers used in datasets.
+These identifiers are unique identifications for datasets, and process of considering them equal or different is manual.
+The metric takes into account if the same identifiers were used to represent the same concepts in a dataset, and then calculates an interoperability metric.
 
 These works are taken into account in \autoref{sec:analysis}, where we derive an extensive analysis over ODP metadata.
 
 \subsection{Metadata Clean-Up}
 \label{sec:metadata_cleanup}
 
-When dealing with metadata of large datasets, a cleaning up procedure is always necessary.
+When dealing with metadata of large datasets, a cleaning up procedure is usually the first step before start working with it.
 There are several strategies for cleaning up tags described in the literature.
 
-\citeonline{Angeletou2008} describes a Lexical Processing procedure to clean-up tags containing special characters, numbers, concatenated tags or tags with spaces.
-Two steps are proposed in this work: the first is called Lexical Isolation, which uses a set of heuristics to determine if tags have a potential to become semantic identifiers.
+\citeonline{Angeletou2008}, in a context of semantic enrichment of folksonomy tagspaces, describes a Lexical Processing procedure to clean-up tags containing special characters, numbers, concatenated tags or tags with spaces.
+Two steps are proposed in this work: the first is called Lexical Isolation, which uses a set of heuristics to determine if tags have potential to become semantic identifiers.
 The following step is called Lexical Normalisation, which aims to produce a list of possible lexical representations for each tag, considering plural and singular forms, different verb tenses, and others.
 
-Although the focus of \citeonline{Specia2007} lies on creating tags clusters, the procedure includes a pre-processing phase.
-As the previous work, the first step consists in removing tags with low chances of being mapped in an on ontology.
+Although the focus of \citeonline{Specia2007} lies on creating tags clusters, their procedure to integrate folksonomies to the semantic web also includes a pre-processing phase.
+As in the previous work, the first step consists in removing tags with low chances of being mapped in an ontology.
 In the sequence, a series of heuristics are used to group morphologically very similar tags, including the Levenshtein distance.
 In order to choose the more significant tag in a group, preference is given to words that can be found in the WordNet base.
-The last step of the cleaning procedure is to eliminate tags with a low frequency, or appearing only isolated.
+The last step of the cleaning procedure is to eliminate tags with a low frequency, or appearing only in an isolated form.
 
 In the context of library metadata, \citeonline{VanHooland2013} describes as a first step for metadata reconciliation ``profiling and cleansing of metadata''.
 Using an open source tool, authors describes cleaning activities such as deduplication (remove duplicate entries), atomization (explode overloaded fields), applying facets and clustering.
@@ -174,11 +174,11 @@ Using an open source tool, authors describes cleaning activities such as dedupli
 On the metadata context, reconciliation refers to the process of finding a correspondence for some text string in a controlled vocabulary, thesaurus or ontology.
 To the extent of our problem, we are going to analyse strategies for mapping possible multi-language tags into defined ontologies, in order to be able to semantically process these tags.
 
-The reconciliation approach described by \citeonline{VanHooland2013} consists simply in searching the categories in pre-defined ontologies such as LCSH and Powerhouse Museum.
+The reconciliation approach described by \citeonline{VanHooland2013} consists simply in searching the categories in pre-defined ontologies such as Library of Congress Subject Headings (LCSH) and Powerhouse Museum.
 This approach is followed by some content specific processing in order to equalize plurals. 
 
-\citeonline{Lawler2012} developed the Open Reconcile tool, a reconciliation tool tailored to help curators to ensure the compliance of datasets with controlled vocabularies.
-Alongside the automatic procedures, user are allowed to build a synonym table in order to give manual input to the algorithm.
+\citeonline{Lawler2012} developed the Open Reconcile tool, a reconciliation tool tailored to help metadata curators to ensure the compliance of datasets with controlled vocabularies.
+Alongside the automatic procedures, user are allowed to build a synonym table in order to provide manual input to the algorithm.
 
 A whole Semantic Tagging system is proposed by \citeonline{Marchetti2007}.
 The system, implemented as a browser plugin, allows users to tag web resources and choose a corresponding semantic resources from knowledge bases such as Wikipedia.
@@ -188,22 +188,14 @@ This is not the case of the technique described in \citeonline{Angeletou2008}.
 In this case, author first performs a sense disambiguation, which consists of calculating the similarity distance to co-occurring tags, and then select the sense with the smaller distance.
 This procedure is deeper detailed in \citeonline{Angeletou2008a}.
 The second step is called Semantic Expansion, which is justified by the sparseness of the Semantic Web.
-In this step, synonyms and synonyms of the hypernym of the correct sense are included in order to search for semantic web entities (SWE).
-The process is finalized by searching for SWEs in the Watson platform, and choosing the most adequate according to the defined criteria.
+In this step, synonyms and synonyms of the hypernyms of the correct sense are included in order to search for semantic web entities (SWE).
+The process is finalized by searching for SWEs in the Watson\footnote{Available at \url{http://watson.kmi.open.ac.uk/WatsonWUI/}.} platform, and choosing the most adequate according to the defined criteria.
 
-Instead of grouping tags using semantic criteria, \citeonline{Specia2007} uses a statistical approach for this.
+Instead of grouping tags using semantic criteria, \citeonline{Specia2007} use a statistical approach for this.
 An $N \times N$ co-occurrence matrix is built, where $N$ is the number of distinct tags, and each element $m_{ij}$ represents the number of times that tags $i$ and $j$ co-occur in different resources.
 Thus, the lines or columns of this matrix are vectors representing the tags, and the angular distance between them are calculated in order to cluster the closer tags.
 After building the clusters, terms are pairwise searched in ontologies in order to find the appropriate semantic entity.
 This procedure is also used for finding relations between the tags, which will be discussed in the following section.
-
-In this section, several approaches make use of similarity measures.
-This topic is very extensive, and several strategies can be found on the literature \cite{Harispe2015, Harispe2014, Trillo2007, Cilibrasi2007}.
-It is worth highlighting a paper by \citeonline{Cattuto2008}, where several measures of relatedness are compared in the context of tags in social bookmarking systems.
-Relatedness is considered to be a special case of similarity, which is grounded only in the folksonomy (and not in external sources, as showed in \citeonline{Angeletou2008}).
-The alleged reason for grounding the measures only in the folksonomy is the use of community specific terms, which may not be present in external vocabularies.
-\citeonline{Cattuto2008} presents three groups of relatedness measures: co-occurrence, distributional measures and FolkRank, which uses a similar approach as the PageRank algorithm.
-
 
 %http://pt.slideshare.net/Freddy.Limpens/phd-defense-multipoints-of-view-semantic-enrichment-of-folksonomies
 
@@ -216,15 +208,21 @@ Some of the above cited works also proposed strategies for this step.
 
 \citeonline{Specia2007} searches if a pairs of tags appears on the same ontology, and in case of success, relations are extracted directly from the ontology.
 
+Several approaches described on the literature make use of similarity measures in order to determine the relation between two tags.
+The topic of similarity measures is very extensive, and several strategies can be found on the literature \cite{Harispe2015, Harispe2014, Trillo2007, Cilibrasi2007}.
 A number of works, such as \cite{Limpens2013}, use the WordNet database in order to determine the relation between two words.
-The hierarchical structure of WordNet allows to determine broader and narrower relations, as well as to calculate the distance between word through the WordNet tree.
+The hierarchical structure of WordNet allows to determine broader and narrower relations, as well as to calculate the distance between words through the WordNet tree.
+It is worth highlighting a paper by \citeonline{Cattuto2008}, where several measures of relatedness are compared to WordNet similarity in the context of tags in social bookmarking systems.
+Relatedness is considered to be a special case of similarity, which is grounded only in the folksonomy (and not in external sources, as in \citeonline{Angeletou2008}).
+The alleged reason for grounding the measures only in the folksonomy is the use of community specific terms, which may not be present in external vocabularies.
+\citeonline{Cattuto2008} presents three groups of relatedness measures: co-occurrence, distributional measures and FolkRank, which uses a similar approach as the PageRank algorithm.
 
 A very interesting point-of-view on this topic is brought by \citeonline{Limpens2013}.
 In this work, a complete model for the semantic enrichment of folksonomies is presented including a socio-technical approach for managing diverging points of view, e.g., ``Kevin agrees with the fact that soil pollution is a more specific term than pollution but Alex disagrees''.
 \autoref{fig:srtag} shows the proposed model.
 After driving an automatic reconciliation and structuring strategy, which is then validated or corrected by users, the divergences are managed by a conflict solving module.
 
-\begin{figure}[tb]
+\begin{figure}[h]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/SRTag.png}
 \caption[SRTag RDF schema.]{SRTag RDF schema. Source: \citeonline{Limpens2013}}
@@ -235,7 +233,7 @@ After driving an automatic reconciliation and structuring strategy, which is the
 \subsection{Automatic Semantic Tagging}
 \label{sec:automatic_semtags}
 Although this is not the main objective of this work, it is worth mentioning some strategies for automatic semantic tagging of documents.
-\citeonline{Allahyari2016} proposes a probabilistic model based on DBPedi hierarchical model to automatically determine categories to documents.
+\citeonline{Allahyari2016} proposes a probabilistic model based on DBPedia hierarchical model to automatically determine categories to documents.
 The model was successfully tested on a Wikipedia sample and on a Reuters database.
 Since categories are DBPedia resources, they can be considered as semantic metadata for linking purposes.
 
@@ -323,6 +321,9 @@ While the tags are attributed to an average 3.88 datasets, groups contain a mean
 This makes groups less selective than tags, which justifies our decision to focus on tags in this work.
 Moreover, while all 87 portals use tags, 18 do not use groups to organize data.
 
+In the following, we present the metrics and their results divided into Local Metrics, i.e., applied separately to each portal, and Global Metric, where a joint analysis is driven.
+First ones aim to assess the use of tags and verify enhancement possibilities, and the last ones assess the viability of using tags as main elements of communication between portals.
+
 \subsection{Local Metrics}
 \label{sec:local_metrics}
 
@@ -382,8 +383,8 @@ Semantic-oriented methods, as detailed in~\citeonline{Harispe2015}, could also b
 Similarity was checked using the simple approach.
 The occurrence of a significant rate of similarity reveals that there are few portals adopting a systematic tagging procedure.
 Despite the low percentage for some portals, in many of them similar tags still occur.
-Only 20 portals, out of overall 90, revealed no similar tags at all. 
-It should be noticed that these portals use far less tags (148 per portal) than the average of all portals (2451 per portal), which may also be a sign of careful tagging.
+Only 20 portals, out of overall 87, revealed no similar tags at all. 
+It should be noticed that these portals use far less tags (average 148 per portal) than the global average of 2451 per portal, which may also be a sign of careful tagging.
 
 \begin{figure}[tb]
 \begin{center}
@@ -401,7 +402,7 @@ It should be noticed that these portals use far less tags (148 per portal) than 
 
 \subsubsection{Coincident tags between portals}
 Different ODPs, especially governmental ones, can publish related data, which may also be tagged similarly.
-A similar measurement was used in \cite{Umbrich2015}.
+A similar measurement was used by \citeonline{Umbrich2015}.
 Using the same tag comparison approach as described in the local tag similarity metric, we found that 79,882 tags appeared in more than one ODP, which represents 28\% of the total tags. 
 This figure, however, should be carefully analysed. 
 If we are interested in datasets from different ODPs tagged similarly, an overestimation bias may come from the fact that some portals act only as datasets harvesters, replicating the same datasets (and related tags). 
@@ -422,7 +423,7 @@ In fact, with this metric, our aim is to justify and motivate the development of
 
 \subsubsection{Tag expressiveness}
 A way of taking the tagging process one step further is to associate tags with resources or terms openly described in knowledge bases.
-In~\cite{Passant2008}, while building the MOAT ontology\footnote{\url{http://muto.socialtagging.org/mirror/moat.rdf}}, authors designed the association of tags with meanings, represented by one or more URIs in the LOD cloud.
+\citeonline{Passant2008}, while building the MOAT ontology\footnote{\url{http://muto.socialtagging.org/mirror/moat.rdf}}, designed the association of tags with meanings, represented by one or more URIs in the LOD cloud.
 With this expressiveness metric, our aim is to check if a tag is suitable to be connected to the LOD cloud, i.e., if there are candidate resources to represent its meaning.
 
 Several knowledge bases are available on the Web, with DBpedia and WordNet being the most prominent ones.
@@ -471,12 +472,17 @@ However, we see that at least one fifth of the tags correspond directly to a sem
 Providing context and a stemming pre-processing would probably enhance this result.
 Thus, we can say that some semantic potential is present on the tags.
 
-\hspace{0.2pt}
-
-After this analysis, we can affirm that: (i) tags in ODPs are widely used, but in a non-systematic way, which hinders their capacity of supporting information retrieval, and (ii) there is a potential for using these tags as connecting elements between ODPs, and for raising semantics from them.
-Next, we describe our proposal based on these statements.
 
 \section{Conclusions}
+
+In this chapter, a theoretical and practical analysis about metadata and tagging in ODPs was driven.
+After a general overview on semantic tagging, a literature revision regarding metadata assessment, clean up, reconciliation and relationship presented the recent advanced of metadata curation in relation to the Semantic Web tendency.
+
+Apart from the literature review, looking at the actual use of tags in ODPs was also necessary.
+An analysis of 87 ODPs revealed that: (i) tags in ODPs are widely used, but in a non-systematic way, which hinders their capacity of supporting information retrieval, and (ii) there is a potential for using these tags as connecting elements between ODPs, and for raising semantics from them.
+Next, we describe our proposal based on these statements.
+
+Ideas and gaps noticed on the literature, and actual problems and potentials detected on ODPs are the basis for proposing the STODaP approach that will be described in the following chapter.
 
 %metadado, extração, muito breve, uma vez tendo tags, o que eu faço para melhorar
 %bernardo azevedo tentando pegar localização de tweets - "teoria da mutua informação", tentando descobrir o que está fortemente relacionado e o que não está relacionado. Bons resultados

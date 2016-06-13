@@ -1,7 +1,6 @@
 \chapter{Semantic Tags for Open Data Portals}
 \label{chap:tagging}
 
-
 As observed in the previous chapter, literature related to semantic enhancement of ODPs metadata has still some significant gaps, such as:
 \begin{itemize}
 	\item Emerging semantics from the ODP context;
@@ -10,7 +9,7 @@ As observed in the previous chapter, literature related to semantic enhancement 
 	\item Integrating multiple domains.
 \end{itemize}
 
-In order to	tackle this issue, we describe in this chapter the Semantic Tags for Open Data Portals - STODaP approach for improving tag curation within and across ODPs, and for linking ODPs through its metadata.
+In order to	tackle those issues, we describe in this chapter the Semantic Tags for Open Data Portals - STODaP approach for improving tag curation within and across ODPs, and linking ODPs via a common basis of semantic metadata\footnote{This chapter is an extension of \citeonline{Tygel2016a}.}.
 
 Besides the comprehensive analysis of tag usage in 87 ODPs, shown in previous chapter, that justifies the need and benefits of better tools for managing tags, our main contributions are:
 \begin{itemize}
@@ -21,9 +20,6 @@ Besides the comprehensive analysis of tag usage in 87 ODPs, shown in previous ch
 
 This chapter begins with a short motivation to the topic of our work.
 For a deeper analysis, readers are referred to the the previous chapters.
-% In the first section, some considerations about metadata in open data portals are derived. 
-% In the following, the different concepts of tagging are put into perspective, in order to characterize tags in ODPs. 
-% \autoref{sec:analysis} presents an analysis of the use of tags in several Open Data Portals, both from government and civil society side, and from various countries and languages.
 The main part of this chapter lies in \autoref{sec:stodap_architecture}, where our approach for semantic tags in open data portals is explained.
 STODaP architecture is detailed, and every module and their connections is explained.
 In the following, \autoref{sec:implementation} presents the implementation architecture, detailing the technological choices used to build the STODaP platform and the associated plugins.
@@ -41,15 +37,16 @@ Despite recent advances in structured data publishing on the Web (such as RDFa a
 One approach for addressing the problem of data dispersion are data catalogues, which enable organizations to upload and describe datasets using comprehensive metadata schemes. 
 Similar to digital libraries, networks of such catalogues can support the description, archiving and discovery of datasets on the Web. 
 Recently, we have seen a rapid growth of data catalogues being made available to the public. 
-The data catalogue registry \href{http://datacatalogs.org}{datacatalogs.org}, for example, already lists 285 data catalogues worldwide. 
+The data catalogue registry \href{http://datacatalogs.org}{datacatalogs.org}, for example, already lists 519 data catalogues worldwide. 
 
 Data catalogues where data is supposed to be open, at least in the licensing sense, are usually called Open Data Portals (ODPs).
 Implementations that show the increasing popularity of ODPs can be seen, for example, in open government data portals, data portals of international organizations and NGOs, as well as scientific data portals.
 
-In order to increase transparency and citizen engagement, governments and public administrations all over the world are implementing ODPs. 
-These ODPs comprise large amounts of structured data, mostly in the form of tabular data such as CSV files or Excel sheets. 
-They aim to be a one-stop-shop for citizens and companies interested in using public data produced by governments or civil society organisations.
-Examples are the \href{http://data.gov}{US' data portal}, the \href{http://data.gov.uk}{UK's data portal}, the \href{http://open-data.europa.eu}{European Commission's} portal as well as numerous other local, regional and national data portal initiatives.
+Based on a discourse of increasing transparency and citizen engagement, governments and public administrations all over the world are implementing ODPs. 
+These ODPs comprise large amounts of data, mostly structured in the form of tabular data such as CSV files or Excel sheets.
+However, large quantities of PDF and other closed formats can still be found in ODPs.
+Aim of ODPs is to be a one-stop-shop for citizens and companies interested in using public data produced by governments or civil society organisations.
+Examples are the \href{http://data.gov}{US data portal}, the \href{http://data.gov.uk}{UK data portal}, the \href{http://open-data.europa.eu}{European Commission} portal as well as numerous other local, regional and national data portal initiatives.
 
 In the research domain ODPs also play an important role.
 Almost every researcher works with data. 
@@ -59,20 +56,12 @@ An example of a popular scientific open data portals is the \href{http://data.gb
 Also many international and non-governmental organizations operate ODPs such as the \href{http://data.worldbank.org}{World Bank Data Portal} or the data portal of the \href{http://apps.who.int/gho/data/}{World Health Organization}.
 Although being a relatively new type of information system first commercial (e.g. Socrata) and open-source (e.g. CKAN) data portal implementations are already available.
 
-% Despite its recent popularity, Open Data and Open Data Portals still face significant impediments, as richly described in \autoref{sec:problems}.
-% Authors collected 118 socio-technical impediments for use of open data from interviews, workshops and literature.
-% Some cited impediments were ``absence of commonly agreed metadata'', ``insufficiency of metadata'', ``the lack of interoperability'' and ``difficulty in searching and browsing data'', showing that a great challenge for ODPs is the organization of data.
-
-% The open data organization challenge can be subdivided into two aspects: 1) structuring and organizing the datasets themselves and 2) providing well-structured and organized metadata for the datasets.
-% The first aspect was, for example, tackled by approaches for semantic lifting of data by~\cite{DBLP:conf/i-semantics/ErmilovAS13} and~\cite{Ding2011325}, who tried to build general strategies for putting large open government datasets in the Link Data cloud.
-% For the standardized structuring metadata, the Data Catalog Vocabulary (DCAT)\footnote{Available at \url{http://www.w3.org/TR/vocab-dcat/}}~\cite{conf/i-semantics/CyganiakMP10} was developed.
-% However, the cross-portal metadata alignment and reconciliation can not be addressed by DCAT.
-
-The metadata used to organize datasets in an ODP comprises categories or groups and most importantly labelling with free-text words or sets of words -- the tags.
+Metadata used to organize datasets in an ODP comprises normally title, description, last update, format, size, license, and categories or groups, but most importantly free-text words or sets of words used as labels -- the so called tags.
 The concept of tagging became popular within Web 2.0 services and aggregation tools like del.icio.us. 
 The main advantages of tagging are the ease of classifying, and the crowd effect -- resulting in the so called folksonomies -- because all users are allowed to tag and share their contents. 
 Tagging datasets in an ODP cannot be considered as folksonomies, because the process is mainly driven by portal managers and data publishers, and not by the actual users.
 As a result of this, the structuring effect of crowd-tagging and folksonomies is missing in ODPs.
+The concept of allowing web objects to be easily tagged and retrieved using these tags, however, remains the same.
 
 A quick look over some ODPs reveals that most of them suffer from a very confusing organization of datasets. 
 The first level of categorization uses the concept of groups.
@@ -87,12 +76,12 @@ A more detailed classification should be done via tags, whose use in ODPs has th
 	\item \emph{Incoherence:} Tags do not allow any connection between different portals that use the same or equivalent tags, e.g., two datasets tagged with \texttt{budget} in different portals are not connected.
 \end{itemize}
 
-As a result, the navigation, exploration and search within individual, but in particular also across ODPs is significantly hampered.
-Thus, we present in the following the STODaP architecture, whose intention is to facilitate access to open data.
+As a result, the navigation, exploration and search within individual, but in particular also across ODPs, is significantly hampered.
+Thus, we present in the following the STODaP approach, whose intention is to facilitate access to open data, improving inter- and intra-ODP datasets organization.
 
 
 %#########################################################################################
-\section{The STODaP Architecture}
+\section{STODaP Architecture}
 \label{sec:stodap_architecture}
 %#########################################################################################
 
@@ -104,7 +93,7 @@ Data publishers in charge of ODPs are offered tools for enhancing local tag cura
 These local tags are then connected to semantic tags hosted in a central server, which is automatically fed by data coming from ODPs.
 % They can add new semantic descriptions to the global tags, establish relations between them, and also create new links between global and local tags.
 Data consumers have the option to retrieve data directly from ODPs, or through references gathered from the central server.
-%The description of these actions is shown in the sequel.
+Semantic groups are also stored on the server and connected to local groups, but are omitted from the overview figure for simplicity.
 
 \begin{figure*}[t]
 \begin{center}
@@ -116,7 +105,7 @@ Data managers responsible for ODPs may use tools for local tag curation and sema
 \end{figure*}
 
 This section is divided as follows: first, we present an overview of the STODaP architecture in \autoref{sec:stodap_architecture_overview}.
-The following subsections describe each element of this architecture, i.e., Open Data Portals (\autoref{sec:definition}), external plugins (\autoref{sec:tag_manager_plugin}), local and global Processing steps (\autoref{sec:local_building} and \autoref{sec:global_building}), Semantic Metadata Repository (\autoref{sec:semantic_metadata_repo}),  STODaP vocabulary (\autoref{sec:stodap_vocabulary}), and query interfaces.
+The following subsections describe each element of this architecture, i.e., Open Data Portals (\autoref{sec:definition}), external plugins (\autoref{sec:tag_manager_plugin}), local and global Processing steps (\autoref{sec:local_building} and \autoref{sec:global_building}), Semantic Metadata Repository (\autoref{sec:semantic_metadata_repo}),  STODaP vocabulary (\autoref{sec:stodap_vocabulary}), and external interfaces (\autoref{sec:interfaces}).
 
 % %#########################################################################################
 \subsection{Architecture Overview}
@@ -125,13 +114,14 @@ The following subsections describe each element of this architecture, i.e., Open
 
 \autoref{fig:architecture} depicts the architecture of STODaP approach.
 The system receives as main input metadata of Open Data Portals, which are basically dataset descriptors such as title, description, tags, themes and others.
-These metadata are individually pre-processed for each portal at the Local Processing phase, and stored at the Metadata Repository.
+These metadata are pre-processed individually for each portal at the Local Processing phase, and stored at the Metadata Repository.
 These metadata are individually pre-processed for each portal at the Local Processing phase, and stored at the Metadata Repository.
 Metadata are also jointly processed, together with data coming from semantic knowledge bases from the Linked Open Data cloud, at the Global Processing phase.
-This phase results in the Semantic Tags and Groups, which are then coded using the STODaP vocabulary.
-Resultant dataset is made available for the general public through three types of interfaces: an HTML website where users can navigate manually, an RDF/XML interface which responds to machine requests searching for the URIs resources, and a SPARQL endpoint, which accepts queries and responds with JSON coded triples.
+This phase results in the Semantic Tags and Groups, which are then coded together with ODP Metadata using the STODaP vocabulary.
+Resultant dataset is made available for the general public through three types of interfaces: an HTML website where users can navigate manually, an RDF/XML interface which responds to machine requests searching for the resources URIs, and a SPARQL endpoint, which accepts queries and responds with JSON coded triples.
 In addition, the STODaP approach also offer plugins for ODPs to enhance tag management and to link local tags with the server.
-The STODaP approach is independent of these plugins, and their implementation is under control of ODP administrators.
+The STODaP approach is independent of these plugins, and their installing is under control of ODP administrators.
+In the following, each of these blocks is explained in details.
 
 \begin{figure*}[t]
 \begin{center}
@@ -140,8 +130,6 @@ The STODaP approach is independent of these plugins, and their implementation is
 \label{fig:architecture}
 \end{center}
 \end{figure*}
-
-In the following, each of these blocks is explained in details.
 
 %#########################################################################################
 \subsection{Open Data Portals}
@@ -163,28 +151,29 @@ However, in that case, the focus is quite general and complex, which turns their
 In this section, we will describe the elements that are present in the context of this work.
 
 \autoref{fig:definition} shows the relevant entities and relations that are present in ODPs and their relation to the STODaP server.
-An \emph{Open Data Portal}, in this context, is a collection of datasets, which can be managed by governments, NGOs, universities or other institutions.
-Open Data Portals are managed authorized users, who are in charge of uploading resources and filling metadata fields.
+An \emph{Open Data Portal}, in this context, is a collection of datasets, which can be owned by governments, NGOs, universities or other institutions.
+Open Data Portals are managed by authorized users, who are in charge of uploading resources and filling metadata fields.
 
-\emph{Datasets} are containers that can hold one or more open data resources of several formats, including csv, xls, json, and even non-open ones, such as pdf.
+\emph{Datasets} are containers that can hold one or more open data resources of several formats, including CSV, XLS, JSON, and even non-open ones, such as PDF.
 Most ODP metadata are associated to datasets, and the main ones are name, description, author, date, maintainer, and tags.
 
 \emph{Groups} are dataset containers, and are used normally to organize datasets by theme. One group can hold several datasets, and one dataset can be associated to several groups (or none).
 
-\emph{Tags} are a metadata element which is defined a string that represents its name.
+\emph{Tags} are a metadata element defined by the string of characters that represents its name.
 Every distinct string represents a different tag, and every dataset tagged with tags represented by the same string can be sorted using this tag.
-Tags normally refer to the specific theme dealt by the dataset.
-However, it is quite frequent that tags represent temporal or geographical references.
+Tags normally refer to a specific theme dealt by the dataset.
+However, it is quite frequent that tags represent temporal or geographical references, publishers or other kinds of informations.
 It must be emphasized that tags, in this context, are not related to a tagger, i.e., the person who tags.
 This happens in folksonomy contexts \cite{Grubber2007}, which, as previously discussed, is not our case.
+Tags are always associated to a context, in this case, an ODP.
 A dataset can be tagged with several (or no) tags, and a tag can be related to one or more datasets.
 At the CKAN platform, it is possible to have a tag not related to any dataset, however, we will not consider those ones.
-In our context, we will define tags as \emph{Local Tags}, in order to emphasize that they only exist in a single ODP context.
+In our context, we will define these tags as \emph{Local Tags}, in order to emphasize that they only exist in a single ODP context.
 
 In order to illustrate the whole architecture, we also show the connections between Tags and \emph{Semantic Tags}, and between Groups and \emph{Semantic Groups}.
 Several local tags from different ODPs can be associated to a single semantic tag, which can also have semantic relationships with other semantic tags.
 
-The STODaP architecture also includes plugins to enhance metadata inside ODPs.
+The STODaP architecture also includes plugins to enhance metadata quality inside ODPs.
 Two of these add-ons will be presented in the following.
 It is important to highlight that these plugins are external to the STODaP server, and can only be installed and used by ODP managers.
 
@@ -212,18 +201,18 @@ In many ODPs, this strategy will already achieve significant results, as shown i
 	\item After running the first strategy, the Levenshtein distance is computed for all remaining pairs of tags.
 Tags with distance one or two are suggested for merging, in order to catch plural/gender variations, such as \texttt{worker} and \texttt{workers}. 
 However, false-positives like \texttt{widow} and \texttt{window} may appear.
-Tags composed only by numbers (to avoid merging tags representing years) or less than 4 characters are not included.
-	\item Finally, we use semantic measures~\cite{Harispe01032014} to determine the semantic similarity between two tags. 
+Tags composed only by numbers (to avoid merging tags representing years) or less than 4 characters are not considered.
+	\item Finally, we use Natural Language Toolkit~\cite{Bird2009} and the WordNet database to determine the semantic similarity between two tags.
 In this case, the tags \texttt{autumn} and \texttt{fall} have a high similarity, and thus will be suggested for merging.
 \end{enumerate}
 
 %For the new tags, besides suggesting tags that were already used in the portal, we also suggest tags based on the previous tags (and on the context???). 
-It must be noted that all these approaches have originally quadratic time complexity, because every pair of tags has to be computed. However, sorting tags alphabetically turns the problem into linear in strategies 1 and 2 (however, with possible losses in 2), and ignoring tags without correspondence in dictionary reduces the dimension in strategy 3.
+It must be noted that all these approaches have originally quadratic time complexity, because measures have to be computed for every pair of tags. However, sorting tags alphabetically turns the problem into linear in strategies 1 and 2 (however, with possible losses in 2), and ignoring tags without correspondence in dictionary reduces the dimension in strategy 3.
 
 \noindent\textbf{Semantic Tags}
 
-After this cleaning procedure, we offer users the opportunity to link each local tag to a semantic correspondent at the tag server.
-The main idea is to enable not only the connection between ODPs and the STODaP server, but also the other way around.
+After this cleaning procedure, we offer users the opportunity to link each local tag to a semantic correspondent at the STODaP server.
+The main idea is to enable not only the connection from STODaP server to ODPs, but also the other way around.
 The semantic tags plugin automatically suggests connections between local tags and semantic tags.
 Connections can also be done manually.
 
@@ -243,12 +232,13 @@ In the following subsection, we describe the procedures applied to the individua
 
 The first processing step inside the STODaP server works over metadata of each ODP, and thus is called \emph{Local Processing}.
 An overview of the procedure applied for each ODP is shown in \autoref{fig:local_processing}.
-In the figure, each green block represents a processing phase, which is materialised in a set of tag representations. 
-The grey blocks describe the transformations suffered by the tag sets from one phase to another.
-The aim of the local processing steps is to transform freely written tags into semantic resources that are candidates for representing the datasets they are associated.
-Each transformation applied to the tags on the local processing is detailed bellow:
+Each green block represents a state of the processing phase. %, which is materialised in a set of tag representations. 
+Grey blocks describe the transformations suffered by the tag set from one phase to another.
+The aim of local processing steps is to transform freely written tags into semantic resources that are candidates for representing the datasets they are associated.
+Processing starts with the complete tag set $T$, where each element is a local tag.
+Each transformation step is detailed bellow:
 
-\begin{figure*}[b]
+\begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/local_processing.pdf}
 \caption{Overview of the local tag processing.}
@@ -257,14 +247,14 @@ Each transformation applied to the tags on the local processing is detailed bell
 \end{figure*}
 
 \noindent \textbf{Lexical Cleaning: }The complete tag set $T$ is the set containing all original tags found in one portal.
-Firstly, the \emph{Lexical Cleaning} is applied in order to discard tags with low probability of getting a semantic meaning.
+Over this set, \emph{Lexical Cleaning} is applied in order to discard tags with low probability of being associated to a semantic resource.
 At this point, some heuristics are applied, and a tag is discarded if it is: 
 \begin{itemize}
-	\item smaller than 4 characters; 
-	\item composed of numbers and alphabetic characters;
-	\item exclusively composed by uppercase characters;
-	\item not started by a alphanumerical character;
-	\item larger than 5 words; or
+	\item smaller than 4 characters (tags such as \texttt{ac}, \texttt{aca}, \texttt{ad} would be discarded); 
+	\item composed by numbers and alphabetic characters (\texttt{50-year-rain-event}, \texttt{52-week} would be discarded);
+	\item exclusively composed by uppercase characters (\texttt{APFO}, \texttt{EPSRC} would be discarded);
+	\item not started by an alphanumerical character (\texttt{'Other' meteorological measurements}, \texttt{-10000} would be discarded);
+	\item composed by more than 5 words (\texttt{Centre for Environmental Data and Recording}, \texttt{Countryside and Rights of Way Act} would be discarded); or
 	\item not applied to any dataset.
 \end{itemize}
 
@@ -274,14 +264,14 @@ These similar tags have a high probability of representing the same meaning, wit
 In order to determine this similarity, we apply the Levenshtein edit-distance to the lowercased and unaccented tags (which means that \texttt{Açaí} will be transformed into \texttt{acai} before measuring the distance).
 Based on manual experimentation, we consider that tags with an edit-distance of 0 or 1 are similar.
 This distance captures plural, gender and temporal variations in most of the languages present in our sample.
-The proceeding results in the set $T_{group}$ of syntactically similar tags.
+This process results in the set $T_{group}$ of syntactically similar tags.
 
 \noindent \textbf{Translation:} The sample used to build this tag server contains portals in 22 different languages.
 Thus, it is necessary to use translation services on the Web to transform words from their original language to the English language.
 English language was chosen because of the higher availability of translation services, and also because the main ontologies have their terms described necessarily in English, and possibly also in other languages.
-It also significant that 43\% of the portals are in English (according to the provided metadata), and their tags represent 83\% of all tags.
-Each group of similar tags from $T_{group}$ was translated, resulting possibly in a set of translations for each group.
-The new set achieved in this processing is $T_{trans}$.
+It is also significant that 43\% of the portals are in English (according to the provided metadata), and their tags represent 83\% of all tags.
+Each group of similar non-English tags from $T_{group}$ was translated, resulting in a set of translations for each group.
+The new set achieved after this step is $T_{trans}$.
 
 \noindent \textbf{Reconciliation:} The previous proceeding results in a set $T_{trans}$ of groups formed by all the related translations.
 Until this moment, we were dealing with string of characters.
@@ -295,7 +285,7 @@ The resulting set will be denominated $T_{resources}$.
 %Finally, in order to prepare the tags for linking with other portals, we come to the \emph{Translation} step.
 %Each tag is translated to the English language, forming the set $T_{english}$ of translated tags.
 %->> tentar todas as opções de tradução
-In order to illustrate the procedure, \autoref{tab:local_example} shows an example using real tags from the Brazilian Data.gov.br.
+In order to illustrate the whole procedure, \autoref{tab:local_example} shows an example using real tags from the Brazilian Data.gov.br.
 From $T$ to $T_{clean}$, tags containing numbers, too small or representing abbreviations were removed.
 Then, similar tags were grouped to form $T_{group}$.
 The translation process could not find an equivalent for the first group.
@@ -328,7 +318,7 @@ orçamento
 finanças,
 orçamento
 &
---
+--,
 finances,
 budget
 &
@@ -351,7 +341,7 @@ Finally, when searching for the meanings, there is a great dependency on the too
 \label{sec:global_building}
 %#######################################################################
 
-After reaching the last stage of the local processing stage for each one of the 87 portals, a joint process starts over $T_{resources}$ in order to build the Semantic Tag Server.
+After reaching the last stage of the local processing for each of the 87 portals, a joint process starts over $T^p_{resources}$, where $p$ is an ODP, in order to build the Semantic Tag Server.
 At the global processing stage, there are three main steps:
 
 \begin{enumerate}
@@ -360,9 +350,9 @@ At the global processing stage, there are three main steps:
 	\item Discover and qualify relations between tags.
 \end{enumerate}
 
-In order to accomplish this objective, we propose the global procedure shown in \autoref{fig:global_processing}.
+In order to accomplish this objective, we propose the process shown in \autoref{fig:global_processing}, where each step is detailed in the following:
 
-\begin{figure*}[tb]
+\begin{figure*}[t]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/global_processing.pdf}
 \caption[Overview of the global processing.]{Overview of the global processing.}
@@ -370,32 +360,34 @@ In order to accomplish this objective, we propose the global procedure shown in 
 \end{center}
 \end{figure*}
 
-\noindent \textbf{Significance Selection: } We start the global processing with a joint set $\mathcal{T}_{resources}$, which contains $T_{resources}$ from all portals. 
+\noindent \textbf{Significance Selection: } We start the global processing with a set $\mathcal{T}_{resources}$, which is composed by $T^p_{resources}$ from all portals. 
 In this set, a \emph{Significance Selection} process is driven, in order to determine tags that will be useful on the information retrieval process.
-This is an heuristics based process, which considers: (i) Success on finding semantic candidates for the tag; (ii) the number of datasets pointed by this tags; (iii) the quality of the semantic resources candidates.
+This is an heuristics based process, which considers: (i) Success on finding semantic candidates for the tag; (ii) the number of datasets pointed by this tags; (iii) the quality of semantic resources candidates.
+Selected resources form the $\mathcal{T}_{significant}$ set.
 
-\noindent \textbf{Semantic Processing:} After this step, the Semantic Tags will be derived.
-Semantic Tags are entities on the web, who have a main name in English, several translations, and point to local tags, which in turn connect to datasets located into Open Data Portals.
+\noindent \textbf{Semantic Processing:} After this step, Semantic Tags will be derived by connecting resources from $\mathcal{T}_{significant}$ to local tags.
+Semantic Tags are entities defined by an URI, who have a main name in English, and point to local tags, which in turn connect to datasets located into Open Data Portals.
+The set containing all Semantic Tags is denoted by $\mathcal{T}$.
 
-\noindent \textbf{Structure Emergence:} Finally, relations between Semantic Tags in set $G$ will be searched on the ontologies they appear in order give a structure to the Semantic Tag set $G_{struct}$.
+\noindent \textbf{Structure Emergence:} Finally, relations between Semantic Tags in set $\mathcal{T}$ will be searched on the ontologies they appear in order give a structure to the Semantic Tag.
 The first strategy is to search for relations on the reconciled ontologies, and set this relation between the semantic tags.
 Thus, relations as \texttt{skos:related}, \texttt{skos:narrower} and \texttt{skos:broader} can be set.
-However, at this point we notice need of an upper classification scheme.
 
+At this point we notice need of an upper classification scheme.
 The ODP model, as shown in \autoref{fig:definition}, includes a Group element, to which one or more datasets can be associated.
 Thus, it is possible to consider that a tag associated to a dataset which is in a group is also related to this group.
 However, only 11\% of all datasets in our sample are associated to groups, and only 13\% of the tags are associated to datasets in groups.
 
 If we look to some ODPs which are organized in groups, it is possible to see a similar organization.
 In \autoref{tab:groups}, we list the groups of 4 ODPs. 
-If we look at the table, it is clear that in the context of open government data portals, there are some specific categories, but the portals also share common subjects, such as Health, Education or Culture.
+Examining the table, it is clear that in the context of open government data portals, there are some context specific categories, but portals also share common subjects, such as Health, Education or Culture.
 
-\begin{table}[]
+\begin{table}[hb]
 \centering
 \ABNTEXfontereduzida
-\caption{Examples of groups in some ODPs}
+\caption[Examples of groups in some ODPs.]{Examples of groups in some ODPs. Groups of Non-English portals are translated. Apart of a few context specific groups such as Multi-Year Plan and Municipal Chamber, the majority of groups fits generically to the Open Government Data context.}
 \label{tab:groups}
-\begin{tabular}{|p{3.2cm}|p{3.2cm}|p{3.2cm}|p{3.4cm}|}
+\begin{tabular}{|p{3.2cm}|p{3.2cm}|p{3.2cm}|p{3.6cm}|}
 \hline
 Data.gov & Data.gov.de & Dados.gov.br & Data.buenosaires.gob.ar \\ \hline
 Aging / Agriculture / Business / Climate / Consumer / Disasters / Ecosystems / Education / Energy / Finance / Health / Law / Local Government / Manufacturing / Ocean / Public Safety / Science \& Research &
@@ -442,7 +434,7 @@ Some distortions were observed, such as \texttt{sport} being associated with \te
 These errors were manually corrected.
 
 Finally, groups were reconciled with general-purpose ontologies.
-Particularly, the Gemet Thesaurus\footnote{Available at \url{http://www.eionet.europa.eu/gemet/}} fits well for this purpose.
+Particularly, the top concepts of Gemet Thesaurus\footnote{Available at \url{http://www.eionet.europa.eu/gemet/}} fits for this purpose.
 
 %All Datasets: 470551
 %Datasets in Groups: 53158
@@ -454,6 +446,17 @@ Particularly, the Gemet Thesaurus\footnote{Available at \url{http://www.eionet.e
 %#######################################################################
 
 After the Global Processing steps, Semantic Tags and Groups are ready to be stored at the \emph{Semantic Metadata Repository}, together with metadata originally collected from ODPs.
+Metadata are stored in a relational database, whose main models are 
+
+\begin{itemize}
+	\item Open Data Portal
+	\item Dataset
+	\item Tag
+	\item Group
+	\item Semantic Tag
+	\item Semantic Group
+\end{itemize}
+
 
 % With the aim of building a common basis for interlinking ODPs, we developed a Semantic Metadata Server.
 % The conceptual rationale is:
@@ -486,20 +489,12 @@ After the Global Processing steps, Semantic Tags and Groups are ready to be stor
 \label{sec:stodap_vocabulary}
 %#######################################################################
 
-\begin{figure*}[b]
-\begin{center}
-\includegraphics[width=\columnwidth]{images/stodap_vocabulary.pdf}
-\caption[Simplified schema of the STODaP vocabulary.]{Simplified schema of the STODaP vocabulary. Some elements are equivalent to other vocabularies and ontologies, such as SIOC, DCAT and MUTO.}
-\label{fig:vocabulary}
-\end{center}
-\end{figure*}
-
 In order to represent data in our system, it was necessary to create a simple vocabulary.
 \autoref{fig:vocabulary} shows a simplified schema of the STODaP vocabulary.
 As shown in \autoref{sec:semantic_metadata}, several works describe ontologies and vocabularies related to our work.
 However, it was not possible to fit all entities of STODaP architecture on existing ontologies.
 Specifically, DCAT\footnote{Available at \url{http://www.w3.org/ns/dcat}.} defines some important entities, such as \texttt{dcat:Dataset} and \texttt{dcat:Catalog}.
-They are defined as equivalent (\texttt{owl:equivalentClass}) to \texttt{stodap:Dataset} and \texttt{dcat:Catalog}, respectively.
+They are defined as equivalent (\texttt{owl:equivalentClass}) to \texttt{stodap:Dataset} and \texttt{stodap:OpenDataPortal}, respectively.
 At DCAT, tags are represented as literals, which means that two tags with the same label do not differ.
 This is not the case at STODaP, where each tag is an entity.
 MUTO\footnote{Available at \url{http://muto.socialtagging.org/}.} tackles this issue with the class \texttt{muto:Tag}, equivalent to our \texttt{stodap:Tag}.
@@ -511,6 +506,14 @@ Since the Open Government Data domain is not social, at least in the sense of ta
 \noindent \textbf{\texttt{stodap:SemanticTag}:} A Semantic Tag is a super tag that groups open data portal tags and is connected to a semantic resource on the Linked Open Data Cloud.
 
 \noindent \textbf{\texttt{stodap:SemanticGroup}:} A stodap:SemanticGroup is a super group of tags that groups open data portal groups, open data portal tags, and semantic tags. It is connected to a semantic resource on the Linked Open Data Cloud.
+
+\begin{figure*}[t]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/stodap_vocabulary.pdf}
+\caption[Simplified schema of the STODaP vocabulary.]{Simplified schema of the STODaP vocabulary. Some elements are equivalent to other vocabularies and ontologies, such as SIOC, DCAT and MUTO.}
+\label{fig:vocabulary}
+\end{center}
+\end{figure*}
 
 %#########################################################################################
 \subsection{Interfaces}
@@ -525,26 +528,26 @@ In order to respond to the various kinds of actors interacting with the STODaP s
 \noindent\textbf{HTML - Human browsable interface}
 
 The first interface is designed to offer ODP information for humans accessing the STODaP server.
-This interface offers several options for users willing to find open datasets.
+HTML browser interface provides several options for users willing to find open datasets.
 One option is to navigate through Semantic Tags.
 Each Semantic Tag points to related local tags, which in turn are linked to tagged datasets.
-Users are also presented related Semantics Tags (broader, narrower or related).
-Following the same reasoning, it also possible to navigate though Semantic Groups an their related Semantic Tags, Groups and datasets.
+Users are also presented to related Semantics Tags (broader, narrower or related).
+Following the same reasoning, it also possible to navigate though Semantic Groups an their related Semantic Tags, Groups and Datasets.
 
-Besides the navigation, the system also offers a keyword search interface.
+Besides navigation, the system also offers a keyword search interface.
 In order to take advantage of the metadata organization system, a faceted search was designed.
-Search is made in two steps: (i) user inserts a keyword; (ii) resulting datasets are presented, and may be filtered by 5 different facets: (a) Semantic Tags (b) Semantic Groups (c) Language (d) ODP (e) Country. 
+Search is made in two steps: (i) user inserts a keyword; (ii) resulting datasets are presented, and can be filtered by 5 different facets: (a) Semantic Tags (b) Semantic Groups (c) Language (d) ODP (e) Country. 
 
 \noindent\textbf{RDF - Dereferenceable URIs}
 
 In order to be compatible with the fourth star of open data \cite{Berners-Lee2010}, each element of the STODaP server - Semantic Tags, Semantic Groups, Tags, Groups, Datasets and Open Data Portals have their own Unique Resource Identifier (URI).
-This URI is also valid as URL, and accessed via the RDF interface, which responds with an RDF document containing the attributes of the referred element.
+This URI is also valid as URL, and can be accessed via the RDF interface, which responds with an RDF document containing the attributes of the referred element.
 
 \noindent\textbf{SPARQL Endpoint}
 
 The SPARQL endpoint provides direct access to the information stored in the Semantic Metadata Repository coded with the STODaP vocabulary.
 Queries might be manually inserted, but can also be input via an API.
-This requirement is important in order enable this repository to be link to automatic SPARQL queries generators, such as ...
+This requirement is important to make STODaP repository compatible automatic SPARQL queries generators, such as ExConQuer\footnote{Available at \url{http://eis.iai.uni-bonn.de/Projects/ExConQuer.html}.}.
 
 %#########################################################################################
 \section{Implementation}
@@ -552,7 +555,7 @@ This requirement is important in order enable this repository to be link to auto
 %#########################################################################################
 
 In this section, we detail the technical choices related to the implementation of some elements of architecture presented in the previous section.
-We start with an overview about the implementation of the STODaP server, detailing the software tools and integration strategies used, in \autoref{sec:implem_semtagserver}.
+We start with an overview about the implementation of STODaP server, detailing the software tools and integration strategies used, in \autoref{sec:implem_semtagserver}.
 % In the sequence (\ref{sec:implem_semtags}), we give also details on the procedure for discovering the Semantic Tags discussed in \autoref{sec:global_building}.
 A specific subsection is dedicated to the interface implementation, in \autoref{sec:implem_interface}.
 Finally, we describe the implementation of two CKAN plugins in \autoref{sec:implem_plugins}:
@@ -562,7 +565,7 @@ Finally, we describe the implementation of two CKAN plugins in \autoref{sec:impl
 \subsection{Semantic Tags Server}
 \label{sec:implem_semtagserver}
 
-\begin{figure}[hb]
+\begin{figure}[t]
 \begin{center}
 \includegraphics[width=\columnwidth]{images/implementation_architecture.pdf}
 \caption[Implementation Architecture of the STODaP approach.]{Implementation Architecture of the STODaP approach.}
@@ -574,20 +577,20 @@ The first version of the STODaP server, presented in \citeonline{Tygel2016}, was
 This extension turns the Wiki tool into a Semantic repository, facilitating the integration of objects into the Linked Open Data Cloud.
 
 A second version of the STODaP server was developed, and the need of a more complete search platform, not present in MediaWiki was a main priority.
-Thus, the most appropriate technological choice was to build an interface from scratch, integrated with a dataset that could be indexed by a search platform.
+Thus, the most appropriate technological choice was to build an interface from scratch, using a framework that could be integrated with a search platform.
 The implementation architecture can be seen in \autoref{fig:implem_arch}.
 
-As core framework, STODaP uses the Django framework for Python Language.
+As core framework, STODaP uses Django framework for Python Language.
 This framework offers a rapid prototyping environment, with database integration and a web server for development purposes.
-We integrated Django with a MySQL server, where the semantic metadata repository is stored in a relational database.
+Django was integrated with a MySQL server, where the semantic metadata repository is stored in a relational database.
 
 This database is indexed using Haystack Django plugin, which connects Django with an Apache Solr search platform.
-Searching design option such as weights, facets and keyword logics are defined in Django and transformed into an XML configuration file which is used by Solr.
+Searching design options such as weights, facets and keyword logics are defined in Django and transformed into an XML configuration file which is used by Solr.
 After this definition, Solr starts the indexing process, which enables the search mechanism.
 
-In order to generate RDF triples, an Django2RDF converter was developed, based on the STODaP vocabulary.
+In order to generate RDF triples, a Django2RDF converter was developed, based on the STODaP vocabulary.
 The converter reads Django models and generates RDF files for each class: Dataset, Tag, Group, Semantic Tag, Semantic Group and Open Data Portal.
-These files are upload into TDB Triplestore, which connects to the Fuseki RDF Server enabling a SPARQL endpoint.
+These files are uploaded into TDB Triplestore, which connects to the Fuseki RDF Server enabling a SPARQL endpoint.
 
 % \subsection{Creating Semantic Tags}
 % \label{sec:implem_semtags}
@@ -710,24 +713,24 @@ In this subsection, the strategy for it will be presented at the server level.
 The first step for building the semantic tag server is to harvest metadata from open data portals.
 After the initial setup, a strategy for maintaining the portal up-to-date is needed.
 
-\textbf{Adding a new portal}
+\noindent \textbf{Adding a new portal}
 
 When a new ODP is added to the system, a setup procedure is followed:
 \begin{itemize}
-	\item Harvest tags, datasets and groups metadata;
-	\item Clean and group similar tag;
-	\item Translate tags, in case of non-English portal;
+	\item Harvest tags, datasets and groups metadata using CKAN API;
+	\item Drive the \emph{Local Processing} described above;
 	\item Reconcile tags with existing Semantic Tags;
 	\item If reconciliation is not successful, search lexvo.org and try to create a new semantic tag;
-	\item Groups: reconcile with existing global groups or create new ones.
+	\item The same is applied for groups.
 \end{itemize}
 
-\textbf{Updating a portal}
+\noindent \textbf{Updating a portal}
 
-When an ODP is updated, the procedure followed is:
+ODPs are very dynamic, and have to be constantly updated.
+This procedure can be done on demand, and consists of:
 \begin{itemize}
 	\item Harvest tags, datasets and groups metadata;
-	\item Verify which datasets were inserted or modified
+	\item Verify which metadata was changed, and for those, apply the procedure described above.
 \end{itemize}
 
 %#########################################################################################
@@ -745,6 +748,17 @@ At the local level it is only possible to claim potential results, as we do not 
 From a total of 291.805 Local Tags, we extracted 2142 Semantic Tags, all linked to the Gemet Thesaurus.
 The 1743 Local Groups resulted in 74 Semantic Groups, which are linked to the top concepts of the Gemet Thesaurus.
 Between Semantic Tags, we found 3314 relations, being 1355 typed as \texttt{skos:broader}, 1355 as \texttt{skos:narrower} and 604 as \texttt{skos:related}.
+
+An important analysis is related to the number of local tags related to semantic tags.
+If we look at \autoref{sec:local_building}, local tags may be discarded on \emph{Local Processing}, if they do not meet the criteria, or on \emph{Reconciliation} step, if an adequate semantic resource is not found for this tag.
+After the whole procedure, have 23,850 local tags associated to semantic tags, which represents only 8.22\% of the corpus.
+However, because most relevant tags where selects, 152,625 datasets are tagged by these local tags.
+This figure represents 32.44\% of all datasets.
+Moreover, if we take into account that 172,157 datasets (or 36.59\%) are not tagged by any tag, we can say that 51.15\% of tagged datasets are referenced by a semantic tag.
+
+Reasons why 48,85\% are not linked to semantic tags may lie on metadata quality and on the proposed approach.
+Enhancing the semantic lifting procedure can certainly increase this percentage, however at some point still to be determined, lack of metadata quality will prevent further improvements.
+
 
 % In order to test the system, an open-source implementation of STODaP was created and deployed at \url{http://stodap.org}.
 % The following approach was used create 663 semantic tags at the server:
@@ -779,21 +793,23 @@ Using the naive approach to merge similar tags in every portal would result in r
 Lowercase and unaccented tags differing by a Levenshtein-distance from 0 to 2 represent a total of 35,066 pairs, or 15,8\% from the whole tag universe.
 However, as discussed above, this approach can lead to false-positives and thus requires manual checking.
 
+From the previous discussion, it is clear that enhancing metadata quality is fundamental to increase success on their semantic lifting.
+Strategies at the local are of paramount importance, but can only be performed by ODP administrators.
 
-\section{Our Contribution Regarding the State of the Art}
-% talvez puxar para o final do capitulo 5
+% \section{Our Contribution Regarding the State of the Art}
+% % talvez puxar para o final do capitulo 5
 
-In this chapter, we presented the state of the art in each of the steps for dealing with the problem of semantic organization of ODPs.
-In relation to the cited works, we are advancing on this field in the following aspects:
-\begin{itemize}
-	\item Instead of dealing with folksonomies, i.e., several users tagging the same resources in the same platform, our problem is related to few administrators tagging different resources on different platforms.
-	\item Our approach is multi-language;
-	\item We implemented a platform for semantically linking datasets through semantic tags;
-	\item Dealing with the context of ODPs.
-\end{itemize}
+% In this chapter, we presented the state of the art in each of the steps for dealing with the problem of semantic organization of ODPs.
+% In relation to the cited works, we are advancing on this field in the following aspects:
+% \begin{itemize}
+% 	\item Instead of dealing with folksonomies, i.e., several users tagging the same resources in the same platform, our problem is related to few administrators tagging different resources on different platforms.
+% 	\item Our approach is multi-language;
+% 	\item We implemented a platform for semantically linking datasets through semantic tags;
+% 	\item Dealing with the context of ODPs.
+% \end{itemize}
 
-Offline: \citeonline{Marchetti2007}
-\cite{Passant2008}
+% Offline: \citeonline{Marchetti2007}
+% \cite{Passant2008}
 
 %#########################################################################################
 \section{Conclusions}
@@ -809,7 +825,7 @@ Converting tags into semantic identifiers was also shown as a viable option, eve
 Based on these findings, we derived the STODaP approach, which comprises two parts: 
 a local one, aimed at cleaning up and enhancing the quality of ODPs tags, and 
 a global one, for connecting ODPs through semantic tags.
-The implementation of both shows that significant enhancements can be achieved both at the individual ODPs and the global levels.
+The implementation of both shows that significant enhancements can be achieved both at individual ODPs and globally.
 In the next chapter, an evaluation of this approach is presented.
 
 
