@@ -379,8 +379,14 @@ However, this method fails with tags containing numbers.
 For example, the Levenshtein edit distance between \texttt{budget-2010} and \texttt{budget-2011} is the same as between \texttt{Access} and \texttt{access}.
 Semantic-oriented methods, as detailed in~\citeonline{Harispe2015}, could also be used to detect synonymous tags.
 
-\autoref{fig:similarity} shows a distribution of the percentage of similar tags inside each ODP.
-Similarity was checked using the simple approach.
+For our purposes, we define similarity as:
+
+\begin{equation}
+	S = \frac{\textrm{Similar Pairs}}{\textrm{Number of Tags}} * 100,
+\end{equation}
+where Similar Pairs is the number of tag pairs where tags are equal after lowercasing and unaccenting.
+\autoref{fig:similarity} shows the distribution of similar tags inside each ODP.
+% Similarity was checked using the simple approach.
 The occurrence of a significant rate of similarity reveals that there are few portals adopting a systematic tagging procedure.
 Despite the low percentage for some portals, in many of them similar tags still occur.
 Only 20 portals, out of overall 87, revealed no similar tags at all. 

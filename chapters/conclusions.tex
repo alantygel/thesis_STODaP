@@ -20,16 +20,66 @@ Finally, we point out various directions for researchers willing to continue thi
 
 \section{Contributions}
 
+As described in \autoref{sec:objectives}, this thesis has a main objective, and also other specific ones.
+In this section, we first detail the main contribution, analysing the validation of our initial hypothesis and the possible generalizations of our results.
+The second part describes other contributions related to the specific objectives.
+
+\subsection{Main Contribution}
+\label{sec:main_contribution}
+
 In the Introduction of this work, a hypothesis was posed, which, for the ease of reading, is reproduced here:
 
-\noindent\textbf{H\ref{hyp:tagging}:} Enhancing the organization of open data repositories leads to better find ability of open data.
+\noindent\textbf{H\ref{hyp:tagging}:} \emph{Enhancing the organization of open data repositories leads to better find ability of open data.}
 
-% The work towards validating H\ref{hyp:dataliteracy} was described in \autoref{chap:dataliteracy}.
-% Importance of data literacy efforts was emphasized in \autoref{dl_paulofreire}, where an analogy between traditional and data literacies was derived.
-% We concluded showing the importance of data literacy on giving voice to marginalized people, in the same way as it was crucial to alphabetise people some decades ago.
-% A definition of the concept of \emph{Critical Data Literacy} was also presented, emphasizing the need of a real understanding of what is behind data.
-% In \autoref{dl_method} our proposal for working on data literacy with social movements activists was presented.
-% A methodology for data literacy course was detailed, mixing theory, discussion and practice, in an effort to bring data literacy knowledge closer to each educands reality.
+
+The first chapters of this thesis emphasized the importance of open data in our society, and we showed by literature review (\autoref{sec:problems}), participatory research (\autoref{dl_results}) and objective metrics (\autoref{sec:analysis}) that organization of open datasets is a relevant problem.
+The STODaP approach proposed in \autoref{chap:tagging} targeted precisely the open data organization problem, both from a local perspective (inside a single ODP) and from a global perspective (inter-ODPs).
+The implementation of STODaP server was evaluated in the previous chapter, and results shown that the system enabled people to find datasets preciser and quicker than using other approaches.
+This can be considered true specially for non-experts in data processing and open data, and regarding topics for that open datasets are not abundant.
+
+In order to validate the hypothesis, general theoretical and practical analysis were developed, as described above.
+However, experiments are intrinsically specific.
+Thus, it is necessary to discuss if the results described in this thesis can be generalised, or if they are true only for a specific context.
+
+As discussed in the conclusions of the last chapter, evaluation of STODaP server has two specific design choices that may affect the generality of the results.
+The first aspect was the choice of subjects.
+Participants of the experiment can be divided in three groups: (i) first year Computer Sciences students, in Brazil; (ii) Semantic Web researchers of various nationalities; (iii) open data practitioners/activists in Brazil.
+Even though there are significant variations on the level of data/open data experience among these subjects, all of them share a daily use of internet and a good English proficiency, and are members of the Computer Science community, or very familiar with it, in the case of some activists.
+
+The second design choice was regarding the questions that subjects had to answer: (i) find 2015 open budget data from 5 countries; (ii) find open data about water quality in seven rivers outside Europe; and (iii) find open procurement datasets in 3 different languages.
+The choice of the topics was based on the 13 criteria used by the Open Data Index\footnote{The Open Data Index compiles an open data ranking, whose criteria are: National Statistics, Government Budget, Legislation, Procurement tenders, Election Results, National Map, Weather forecast, Pollutant Emissions, Company Register, Location datasets, Water Quality, Land Ownership and Government Spending. For each of these topics, countries are evaluated and receive a score according to openness level.}, in order to guarantee the relevance of the questions on the open data community.
+
+In this context, regarding the choice of subjects, it is not possible to guarantee the extension of our results to subjects completely unaware of the Computer Science field, with a low English proficiency, or with a low computer/internet ability.
+Regarding the topics, since all Open Data Index topics have a significant amount of open datasets, it is secure to generalize our findings to other relevant open data topics.
+As seen in last chapter, a higher availability of datasets favours generic web search engines.
+No conclusions can be drawn about topics less popular topics, but we can speculate that STODaP would have a good performance as long as datasets exist and are adequately tagged.
+
+Thus, we can affirm that:
+
+\noindent \emph{For users with at least an intermediate level of English and some approximation to the Computer Science field, STODaP open data search engine delivers open datasets with a higher precision in less time than other search methods when searching for relevant open data topics.}
+
+\subsection{Other Contributions}
+\label{sec:other_contributions}
+
+\autoref{chap:dataliteracy} presents some contributions on the Data Literacy field.
+The importance of data literacy efforts was emphasized in \autoref{dl_paulofreire}, where an analogy between traditional and data literacies was derived.
+We concluded showing the importance of data literacy on giving voice to marginalized people, in the same way as it was crucial to alphabetise people some decades ago.
+A definition of the concept of \emph{Critical Data Literacy} was also presented, emphasizing the need of a real understanding of what is behind data.
+In \autoref{dl_method} our proposal for working on data literacy with social movements activists was presented.
+A methodology for data literacy course was detailed, mixing theory, discussion and practice, in an effort to bring data literacy knowledge closer to each educands reality.
+
+Thus, on the Data Literacy field, we bring:
+\begin{itemize}
+	\item A theoretical contribution regarding the contributions of Popular Education theory to Data Literacy, and the definition of the concept of Critical Data Literacy;
+	\item A methodological contribution, regarding the description of a Data Literacy course and associated research methodology, with an emphasis on a critical understanding and use of data by social movement activists; and
+	\item A practical contribution, regarding the systematisation of impediments, benefits and improvements of open data according to social movement activists.
+\end{itemize}
+
+\autoref{chap:relworks} brings also an as a contribution a framework for analysing the use of tags inside ODPs and between several ODPs.
+Metrics developed are not innovative themselves, but their application on the ODP context bring lights to the problematic use of tags.
+
+In \autoref{chap:tagging}, beyond the already presented contribution, there are still local strategies for cleaning up and semantically lifting tags.
+These contributions -- the Tag Manager Plugin and the Semantic Tags Plugin -- are part of the STODaP approach, but were not evaluated because their use demand modifying ODPs software, which is managed by government servants.
 
 % Our hypothesis H\ref{hyp:dataliteracy} was partially validated in \autoref{dl_results}, where the results of the application of this course were presented.
 % Specially, in \autoref{fig:dl_results}, we depicted the critical apprehension of data literacy course participants regarding the problems of open data.
@@ -37,46 +87,34 @@ In the Introduction of this work, a hypothesis was posed, which, for the ease of
 % The critical use of data by subjects, however, could not be evaluated.
 % As discussed in \autoref{sec:obs_based_analysis}, the fourth stage of the course, were the real use of data was planned, was reached only twice, and thus it would be precipitated to take any conclusions about it.
 
-The first chapters of this thesis emphasized the importance of open data in our society, and we showed by literature review (\autoref{sec:problems}), participatory research (\autoref{dl_results}) and objective metrics (\autoref{sec:analysis}) that organizing open datasets is a relevant problem.
-The STODaP approach proposed in \autoref{chap:tagging} targeted precisely the open data organization problem, both from a local perspective (inside a single ODP) and from a global perspective (inter-ODPs).
-Our STODaP server, an updated metadata repository, was tested in the previous chapter, and results shown that the system helped people finding the more datasets quicker than using traditional approaches.
-This can be considered true specially for non-experts in data processing and open data, and topics for that open datasets are not abundant.
+% Regarding the results achieved by the data literacy experiment, specificity lies in the main characteristic of the participants, i.e., social movements activists.
+% Although the open data impediments gathered on the course do not differ substantially from others reported on the literature, we can see that motivations and desired improvements are very specific of social movements activities.
 
-\subsection{Generalisation}
+% Thus, we can affirm that:
 
-In order to validate both hypothesis, generic theoretical and practical analysis were developed.
-However, experiments are intrinsically specific.
-Thus, it is necessary to discuss if results described in this thesis can be generalised, or if they are true only for a specific context.
+% \noindent \emph{The developed data literacy course methodology was able to raise critical a critical view about open data on social movement activists. However, the use of open data by theses subjects could not be tested.}
 
-Regarding the results achieved by the data literacy experiment, specificity lies in the main characteristic of the participants, i.e., social movements activists.
-Although the open data impediments gathered on the course do not differ substantially from others reported on the literature, we can see that motivations and desired improvements are very specific of social movements activities.
 
-Thus, we can affirm that:
-
-\noindent \emph{The developed data literacy course methodology was able to raise critical a critical view about open data on social movement activists. However, the use of open data by theses subjects could not be tested.}
-
-As discussed in the conclusions of last chapter, the evaluation of STODaP server has two specific design choices that may affect the generality of the results.
-The first aspect is the choice of subjects.
-Participants of the experiment can be divided in three groups: (i) first year Computer Sciences students, in Brazil; (ii) Semantic Web researchers of various nationalities; (iii) open data practitioners/activists in Brazil.
-Even though there are significant variations on the level data/open data experience among these subjects, all of them share a daily use of internet and a good English proficiency.
-
-The second design choice was regarding the tasks that subjects had to complete: (i) find 2015 open budget data from 5 countries; (ii) Find open data about water quality in seven rivers outside Europe; and (iii) find open procurement datasets in 3 different languages.
-The choice of these 3 topics was based on the 13 criteria used by the Open Data Index\footnote{The Open Data Index compiles an open data ranking, whose criteria are: National Statistics, Government Budget, Legislation, Procurement tenders, Election Results, National Map, Weather forecast, Pollutant Emissions, Company Register, Location datasets, Water Quality, Land Ownership and Government Spending. For each of these topics, countries are evaluated and receive a score according to openness level.}, in order to guarantee the relevance of tasks on the open data community.
-
-In this context, it is not possible to guarantee the extension of our results to subjects not from the Computer Science field, with a low English proficiency, or with a low Computer/Internet ability.
-Regarding the topics, since all Open Data Index topics have a significant amount of open datasets, it is secure to generalize our findings to other relevant open data topics.
-As seen in last chapter, a higher availability of datasets favours generic web search engines.
-No conclusions can be drawn about topics less popular topics, but we can speculate that STODaP would have a good performance as long as datasets are adequately tagged.
-
-Thus, we can affirm that:
-
-\noindent \emph{For users with at least an intermediate level of English and some approximation to the Computer Science field, STODaP open data search engine delivers open dataset with more quality in less time than other search methods when searching for relevant open data topics.}
 
 \section{Limitations and Difficulties}
 
 After highlighting the contributions of this thesis, it is also necessary expose some limitations and difficulties, and delimit the extension of our results.
 
-First of all, by choosing the problem of open data organization, we left several other ones detected in \autoref{chap:dataliteracy} open.
+Regarding the work reported in this thesis as a whole, the main conceptual problem lies in attempting to derive a transdisciplinary approach without having the appropriate means for it.
+Open Data is a topic that comprehends multiple perspectives.
+Political sciences, regarding open data policies, Law Studies, regarding access to information regulation, Social Sciences, regarding the effects it can have on the society, or Education, regarding Data Literacy are certainly a few of them.
+Looking at the problem from the Computer Science point of view is necessary, but the other perspectives have to be somehow included.
+According to the Charter of Transdisciplinarity, 
+
+\begin{citacao}
+The transdisciplinary vision is resolutely open insofar as it goes beyond the field of the exact sciences and demands their dialogue and their reconciliation with the humanities and the social sciences as well as with art, literature, poetry and spiritual experience. \cite[Article 5]{Freitas1994}
+\end{citacao}
+
+The initial aim of this thesis was to achieve a balance between social and technical aspects, in the sense of connecting people's real demand to the developed approach, recognizing the complexity and transdisciplinarity of the open data problem.
+Although it was still possible to include social and educational aspects, mainly through the Data Literacy discussion, their role ended up being more motivational than really being part of the scientific development.
+A reason for this lies on the missing transdisciplinary view on the Computer Sciences field, which hampers the validation of a hypothesis off the objective and quantitative framework, derived from the Cartesian scientific method.
+
+More specifically, by choosing the problem of open data organization, we left several other ones detected in \autoref{chap:dataliteracy} open.
 It is of course impossible to deal with every problem on the open data field in a single thesis, but some of them are of crucial importance, as for example the Data Quality problem.
 In our evaluation procedure, subjects went only until the entry point of datasets.
 It is possible that datasets that were marked as valid in the evaluation do not correspond to their descriptions, are outdated, or have broken links to their resources.
