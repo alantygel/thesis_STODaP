@@ -2,16 +2,17 @@
 \label{chap:opendata}
 
 Open data is currently a very popular concept.
-As discussed in the previous chapter, it is part of an important political debate related to transparency, citizen participation, and considered a crucial way for improving democracies around the world.
-In this chapter, we drive an overview about open data, with the objective of historically contextualizing open data, highlighting its problems and selecting the main challenges currently observed.
+As discussed in the previous chapter, it is part of an important political debate regarding transparency and citizen participation. 
+Open data is currently considered a crucial way for improving democracies around the world.
+In this chapter, we drive an overview about open data, with the objective of historically contextualizing the movement, highlighting its problems and selecting the main challenges currently observed.
 Being a very dynamic field, it is impossible to picture the open data field only looking at academic works.
-Thus, the material used to write this chapter also includes websites, practitioners reports and official documents, seeking to reflect more clearly the current open data landscape.
-Rather than exhausting the topic, the aim of this chapter is to justify the importance of open data, present the open research issues and indicate the solutions to be presented in the following chapters.
+Thus, the material used to write this chapter also includes web platforms, practitioners reports and official documents, seeking to reflect more clearly the current open data scenario.
+Rather than exhausting the topic, the aim of this chapter is to justify the importance of open data, present the open research issues and indicate the solution paths to be presented in the following chapters.
 
 The chapter starts with a section dedicated to the alleged motivations for opening data, not only at the government context, but also on the research field.
 In the sequel, some historical notes about the open concept and the open data term are presented, followed by a collection of open data definitions.
 \autoref{sec:opendatalandscape} reviews the efforts to map the open data landscape using different assessment methods.
-In order to ground the discussion in a more concrete basis, in \autoref{sec:openbudget} we selected one special type -- open budget data -- to describe in a more detailed fashion.
+In order to ground the discussion in a more concrete basis, in \autoref{sec:openbudget} we selected one special type of data -- budget data -- to describe in a more detailed fashion.
 The chapter continues with \autoref{sec:impacts}, that seeks to analyse open data efforts in terms of impacts evaluation and value creation.
 Of crucial importance is \autoref{sec:problems}, where the problems of open data are analysed.
 This section is followed by a presentation of Linked Open Data approach (\autoref{sec:LOD}), regarded as a way to overcome some of the mentioned impediments.
@@ -52,16 +53,16 @@ A comparison between open government data implementation strategies in 5 countri
 	\item Strengthen law enforcement.
 \end{itemize}
 
-Although very important, government data is not only kind of data possible to be opened.
+Although very important, government data is not the only one possible to be opened.
 Another important field where open data is discussed is science.
 According to~\citeonline{Murray-Rust2008}, copyright over scientific data ``is a major impediment to the progress of scholarship in the digital age.''
 His work severely criticizes publishers who impose barriers to free use of academic papers and associated supporting information, such as datasets, experiments data, simulation source code or software output.
 The author strongly defends an Open Access policy for publishing scientific work, and also lists a number of reasons why scientific data should be open:
 
 \begin{itemize}
-	\item  ``Data belong to the human race.'' Typical examples are genomes, data on organisms, medical science, envi- ronmental data;
+	\item  ``Data belong to the human race.'' Typical examples are genomes, data on organisms, medical science, environmental data;
 	\item Public money was used to fund the work and so it should be universally available;
-	\item It was created by or at a government institution (this is common in US National Laboratories and government agencies)
+	\item It was created by or at a government institution;
 	\item Facts cannot legally be copyrighted;
 	\item Sponsors of research do not get full value unless the resulting data are freely available;
 	\item Restrictions on data re-use create an anticommons;
@@ -69,14 +70,20 @@ The author strongly defends an Open Access policy for publishing scientific work
 	\item In scientific research, the rate of discovery is accelerated by better access to data.
 \end{itemize}
 
+Though less common, private companies may also be motivated to release open data for a number of reasons.
+For The World Bank, private companies in some sectors may release data to increase levels of costumers engagement and loyalty \cite{TheWorldBank}.
+According to this report, companies can even release open data and charge for premium services and consulting.
+Benjamin Herzberg, in his blog also at The World Bank portal\footnote{Available at \url{http://blogs.worldbank.org/voices/next-frontier-open-data-open-private-sector}.}, lists a series benefits for companies publishing open data: more efficient internal governance frameworks, enhanced feedback from workers and employees, improved traceability of supply chains, accountability to end consumers, and better service and product delivery.
+He argues that open data for private sector impacts both the bottom line and generate governance, environmental and social gains.
+
 \section{Historical Notes}
 
 Although the idea was present in the scientific world for a long time, the term open data appeared for the first time in 1995, regarding the opening of geophysical and environmental data in an American scientific agency~\cite{Chignard2013}. 
-\citeonline{Tauberer2014} also affirms the roots of open data praxis come from the scientific community, who first realized the importance of opening and sharing data.
-He affirms that open government data, in turn, ``has its own history rooted in Web 2.0, political campaigns, and innovations inside of municipal governments.''
+\citeonline{Tauberer2014} also affirms that the roots of open data praxis come from the scientific community, who first realized the importance of opening and sharing data.
+He argues that open government data, in turn, ``has its own history rooted in Web 2.0, political campaigns, and innovations inside of municipal governments.''
 
-The open source software movement fights since the 1980's for the source code of software to be open and free\footnote{Richard Stallmann always remembers that `'free'' has the sense of ``free speech'', and not the sense of ``free beer''. However, we must remember that a free beer in the sense of free speech (where the recipe is freely shared) also exists, available at~\url{http://freebeer.org/}.}.
-However, with the popularization of the Web, the increased speed in transmission rates, and the widely spread concept of Web Application, it was recognized that opening the source code was not enough for the unrestricted flow of knowledge through the Web.
+The open source software movement fights since the 1980's for the source code of software to be open and free\footnote{Richard Stallmann always remembers that ``free'' has the sense of ``free speech'', and not the sense of ``free beer''. However, we must remember that a free beer in the sense of free speech (where the recipe is freely shared) also exists, available at~\url{http://freebeer.org/}.}.
+However, with the popularization of the Web, the increased speed in transmission rates, and the widely spread concept of Web Applications, it was recognized that opening the source code was not enough to guarantee the unrestricted flow of knowledge through the Web.
 It was necessary that, beyond the code, public data could also be open, and also considered a common good, a thus not subject to private appropriation.
 
 According to~\citeonline{Chignard2013}, in 2007, a meeting between thinkers and activists in Sebastopol, USA, defined some concepts about open data, and some strategies in order to effectively apply it.
@@ -88,7 +95,8 @@ The memorandum is a political commitment on transparency, public participation, 
 On the same year USA and UK released their open data portals in order to centralize the distribution of open government data.
 This action was followed by several countries and local administrations, as we will see in \autoref{sec:opendatalandscape}. 
 
-The first academic papers about open data started to be published only in 2010, according to a survey driven by~\citeonline{Attard2015}. One year, in 2011 the Open Government Partnership (OGP) was launched by eight countries, aiming to be a platform for national governments to willing to be more open, accountable, and responsive\footnote{Available at~\url{http://www.opengovpartnership.org/}}. In 2015, 69 countries were taking part on it and implementing their 1st, 2nd or 3rd action plans.
+The first academic papers about open data started to be published only in 2010, according to a survey driven by~\citeonline{Attard2015}. One year latter, in 2011 the Open Government Partnership (OGP) was launched by eight countries, aiming to be a platform for national governments willing to be more open, accountable, and responsive\footnote{Available at~\url{http://www.opengovpartnership.org/}}. 
+In 2015, 69 countries were taking part on it and implementing their 1st, 2nd or 3rd action plans.
 
 Another important historical milestone was the signature of the Open Data Charter\footnote{Available here:~\url{http://opendatacharter.net/}} by the G8 leaders, in 2013. The charter is based on six principles to be followed the governments that adopt it:
 
@@ -124,23 +132,24 @@ One of the most used and accepted definitions of OGD are the Eight Principles of
 
 From this definition, it should be noted that several dimensions of data publishing are tackled.
 The first three principles are about the \emph{nature of data}, i.e., aspects related to the content represented by data.
-The next three ones are about \emph{access to data}, dealing with aspects that impact the technical use abiliy of data.
+The next three ones are about \emph{access to data}, dealing with aspects that impact the technical usability of data.
 Finally, the last two principles deal with \emph{legal framework over data}.
 However, there is a possible ambiguity on the last principle.
 The term \emph{License-free} can be understood both as \emph{free of license}, i.e., there is no legal framework regulating what can and what cannot be done with data, or as possessing a \emph{free license}, i.e., a defined legal framework which guarantees that data is open. 
 Nowadays, there is a certain consensus that the latter interpretation is the most productive, since it gives legal parameters for people wanting to re-use data, including for commercial purposes.
 Thus, some countries defined their own Open Data Licenses, e.g. Germany\footnote{Available at \url{https://www.govdata.de/dl-de/by-1-0}} and UK\footnote{Available at \url{http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/}}.
 The Open Data Commons platform\footnote{Available at \url{http://opendatacommons.org}.} offers legal support for open data and defines three types of license: Public Domain Dedication and License (PDDL), Attribution License (ODC-By), and Open Database License (ODC-ODbL).
+Therefore, it has to be clear that ``License-free'' means \emph{possessing a license which guarantees freedom of use}, and not \emph{free of license}.
 
 To these 8 principles, another 6 ones were added by~\citeonline{Tauberer2014}:
 
 \begin{enumerate} \setcounter{enumi}{8}
-	\item Permanent: Data should be made available at a stable Internet location indefinitely.
-	\item Safe file formats: “Government bodies publishing data online should always seek to publish using data formats that do not include executable content.”
-	\item Provenance and trust: “Published content should be digitally signed or include attestation of publication/creation date, authenticity, and integrity.”
-	\item Public input: The public is in the best position to determine what information technologies will be best suited for the applications the public intends to create for itself.
-	\item Public review
-	\item Interagency coordination
+	\item Permanent: Data should be made available at a stable Internet location indefinitely;
+	\item Safe file formats: “Government bodies publishing data online should always seek to publish using data formats that do not include executable content.”;
+	\item Provenance and trust: “Published content should be digitally signed or include attestation of publication/creation date, authenticity, and integrity.”;
+	\item Public input: The public is in the best position to determine what information technologies will be best suited for the applications the public intends to create for itself;
+	\item Public review, i.e., data must be subject to public contestation; and
+	\item Interagency coordination: This means ``developing a shared data standard, or adopting an existing standard, possibly through coordination within government across agencies''. 
 \end{enumerate}
 
 Another widely accepted definition comes from the general Open Definition, which is currently on version 2.1\footnote{Available at \url{http://opendefinition.org/od/2.1/en/}}.
@@ -153,22 +162,24 @@ The scheme starts from a simple PDF file and finishes with the implementation of
 The key elements for each of the five stars are:
 
 \begin{enumerate}
-	\item Open License
-	\item Machine Readable
-	\item Open Format
-	\item Dereferenceable URIs
-	\item Linked Data
+	\item Open License;
+	\item Machine Readable;
+	\item Open Format;
+	\item Dereferenceable URIs; and
+	\item Linked Data.
 \end{enumerate}
 
 Though not so much cited, the Three Laws of Open Government Data developed by \citeonline{Eaves2009} has the advantage of being written in a colloquial way, supposedly more accessible for non-experts:
 
 \begin{enumerate}
-	\item If it can't be spidered or indexed, it doesn’t exist
-	\item If it isn’t available in open and machine readable format, it can’t engage
-	\item If a legal framework doesn’t allow it to be repurposed, it doesn’t empower
+	\item If it can't be spidered or indexed, it doesn’t exist;
+	\item If it isn’t available in open and machine readable format, it can’t engage; and
+	\item If a legal framework doesn’t allow it to be repurposed, it doesn’t empower.
 \end{enumerate}
 
-Finally, the Open Data Institute defines a Data Spectrum, which ranges from closed, through shared until open data. \autoref{fig:data_spectrum} pictures this definition.
+Finally, some recent works defined intermediate levels between close and open data.
+The Open Data Institute defines a Data Spectrum, which ranges from closed, through shared until open data. 
+\autoref{fig:data_spectrum} pictures this definition.
 
 \begin{figure*}[ht]
 \begin{center}
@@ -187,11 +198,12 @@ On the publicity dimension, the proposed levels are: ‘share with no one’, �
 \section{Open Data Landscape}
 \label{sec:opendatalandscape}
 
-While the number of open data initiatives around the world increases dramatically every year, several research projects driven from academy and/or civil society organizations seek to map the open data landscape.
+While the number of open data initiatives around the world increases dramatically every year, several research projects driven from academia and/or civil society organizations seek to map the open data landscape.
 In the following, some of these projects are summarized, and their main results are presented:
 
-\textbf{\href{http://index.okfn.org/}{Open Data Index}:} The Open Data Index is one of the most important platform for analysing the open data landscape in the world. In 2013, the first year, Open Data Index analysed 60 countries. In 2014 this number grew to 97, and in 2015 the evaluation covered 122 countries.
-The methodology consists basically in analysing datasets from 13 categories: 
+\textbf{\href{http://index.okfn.org/}{Open Data Index}:} Open Data Index is one of the most important platforms for analysing the worldwide open data landscape.
+Evaluations started in 2013, when the Open Data Index analysed 60 countries. In 2014 this number grew to 97, and in 2015 it covered 122 countries.
+Methodology consists basically in analysing datasets from 13 categories: 
 National Statistics, Government Budget, Legislation, Procurement tenders, Election Results, National Map, Weather forecast, Pollutant Emissions, Company Register, Location datasets, Water Quality, Land Ownership and Government Spending.
 For each category, 9 features are evaluated with yes or no answers: ``Openly licensed?'', ``Is the data machine readable?'', ``Is the data available for free'',  ``Available in bulk?'', ``Is the data provided on a timely and up to date basis?'', ``Is the data available online?'', ``Is data in digital form?'', ``Publicly available?'' and ``Does the data exist?''.
 From this analysis, a ranking is constituted according to each countries \emph{score}. 
@@ -199,7 +211,7 @@ This score is a weighted sum that reflects the performance of each category for 
 Considering all the countries, only 9\% of the datasets are open. 
 However, a strong inequality between the countries can be seen: while 25 of them have 50\% or more datasets open, 44 have less than 25\%.
 
-\textbf{\href{http://www.opendatabarometer.org/}{Open Data Barometer}:} The Open Data Barometer also focus on a comparison of the open data context between countries. However, a more complex methodology is used to analyse each country, including expert interviews and secondary data, apart from accessing the datasets in a similar way as the Open Data Index.
+\textbf{\href{http://www.opendatabarometer.org/}{Open Data Barometer}:} Open Data Barometer also focuses on a comparison of the open data context between countries. However, a more complex methodology is used to analyse each country, including expert interviews and secondary data, beyond from accessing the datasets in a similar way as the Open Data Index.
 The 2nd Edition of this research, released in January 2015, analysed 86 countries concluded that ``there is still a long way to go to put the power of data in the hands of citizens''\cite{Davies2015} .
 
 \textbf{\href{http://opendatamonitor.eu/}{Open Data Monitor}:} The Open Data Monitor is focused on looking at datasets from European countries. One interesting aspect of this project is the measurement of ``availability'', which considers the existence of ``a description, at least one resource with a functional link and an available email of the author'' for datasets in a catalogue.
@@ -294,7 +306,8 @@ However, it would be necessary a larger number of analysis and more iterations o
 \section{Evaluating Open Data Impacts and Value}
 \label{sec:impacts}
 
-Although mapping initiatives is a very important way of assessing the quality of published data between countries, very little is known about the final effects of these policies.
+As seen in \autoref{sec:opendatalandscape}, mapping open data initiatives is a very important way of assessing the amount of published data between countries.
+However, very little is known about the final effects of these policies.
 Almost a decade after the implementation in large scale of open data policies, researchers and practitioners start to pose the question: how to assess open data impacts on the society?
 
 In order to tackle this question, a theoretical background to analyse the impact of OGD was developed by~\citeonline{Granickas2013}. 
@@ -317,10 +330,10 @@ Thus, it is necessary to understand the chain of value addition over data, and s
 The framework walks through the complete Government Data Life Cycle Processes, namely: data creation, harmonisation, publishing, interlinking, exploitation and curation, and defines implementation and impact aspects related to each stage.
 
 Regarding open data economic value, some reports sought to estimate the amount of money that could be unlocked by open datasets.
-According to \citeonline{Manyika2013}, this value would be between U\$3 trillion to U\$5 trillion  annually, mainly on analysing consumer preferences to allow companies to improve their offers.
-A more conservative estimation from the World Bank \cite{TheWorldBank2014}, which compiles several estimations including the before mentioned, talks about U\$1  billion.
-According to them, there are certain types of data which posses a higher potential for generating economic value, such as geospatial reference data, weather, road and transports, and company registers.
-Report highlights four examples of companies that recently grew upon open data, on topics home and real estate (Zillow and Zoopla), land registry, maps (Waze) and soil quality based on weather observations (Climate Corp).
+According to \citeonline{Manyika2013}, this value would be between U\$3 trillion to U\$5 trillion  annually, mainly on using open data to analyse consumer preferences and allow companies to improve their offers.
+A compilation of several estimations by The World Bank \cite{TheWorldBank2014} presents most values around tens to a few hundreds of billions of dollars.
+According to them, there are certain types of data which possesses a higher potential for generating economic value, such as geospatial reference data, weather, road and transports, and company registers.
+The same report highlights four examples of companies that recently grew upon open data, on topics home and real estate (Zillow and Zoopla), land registry, maps (Waze) and soil quality based on weather observations (Climate Corp).
 Still according to the World Bank, there are several categories of open data based businesses, such as: suppliers (that charge only for special services, not for data), aggregators,  developers, enrichers and enablers.
 
 %\section{Open Data and Participation}
@@ -465,7 +478,7 @@ The same study also states that ``A lack of open data standards between (levels 
 When analysing open data of different contexts, language aspects quickly emerge: ``Language barriers and interoperability aspects need to be tackled so that information resources from different organizations and countries can be combined'' \cite{Zuiderwijk2012}.
 
 Organization is also problem for agents in the private sector willing to use open government data.
-According to~\citeonline{Roseira2016}, firm managers interviewed point out that most datasets have incomplete or nonexistent metadata.
+According to~\citeonline{Roseira2016}, firm managers interviewed point out that most datasets have incomplete or non-existent metadata.
 This lack of data quality generates a higher workload on cleaning and harmonizing data.
 The study included that firm managers desire to see advances on datasets standardization in order to boost open data economic value creation at national and international levels.
 
