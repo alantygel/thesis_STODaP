@@ -62,7 +62,7 @@ According to the authors, there are six categories of problems:
 \end{citacao}
 
 Around ten years ago, discussions about semantifying folksonomies started.
-Probably on of the most important work at that time was \emph{Ontology of Folksonomy: a mash-up of Apples and Oranges}~\cite{Grubber2007}.
+Probably one of the most important work at that time was \emph{Ontology of Folksonomy: a mash-up of Apples and Oranges}~\cite{Grubber2007}.
 This work, published first on the web in November of 2005, aimed to clear up a false contradiction between ontologies, as the enabling technology for sharing sharing information on the Semantic Web, and folksonomies, a typical phenomenon of the Social Web representing data emerged from shared information.
 It is perfectly reasonable that these two concepts could be understood as contradictory: while ontologies are formally built by domain experts and ontology engineers, folksonomies are freely constructed by users.
 After clarifying the role of each concept, Grubber defines the ontology of folksonomy, whose central element is \emph{Tagging}, which is an activity involving an object $O$, an user $U$, a tag $T$ and a system $S$.
@@ -168,11 +168,14 @@ The following step is called Lexical Normalisation, which aims to produce a list
 Although the focus of \citeonline{Specia2007} lies on creating tags clusters, their procedure to integrate folksonomies to the semantic web also includes a pre-processing phase.
 As in the previous work, the first step consists in removing tags with low chances of being mapped in an ontology.
 In the sequence, a series of heuristics are used to group morphologically very similar tags, including the Levenshtein distance \cite{Navarro2001}.
-In order to choose the more significant tag in a group, preference is given to terms that can be found in the WordNet base.
+In order to choose the most significant tag in a group, preference is given to terms that can be found in the WordNet base.
 The last step of the cleaning procedure is to eliminate tags with a low frequency, or appearing only in an isolated form.
 
 In the context of library metadata, \citeonline{VanHooland2013} describes as a first step for metadata reconciliation ``profiling and cleansing of metadata''.
 Using an open source tool, authors describe cleaning activities such as deduplication (remove duplicate entries), atomization (explode overloaded fields), applying facets and clustering.
+
+As we can see, metadata clean-up mostly consists in finding representations that are more suitable to serve as input to the next processing step.
+The ``cleaner'' metadata is, the higher are chances of finding a commonly agreed meaning to it, as we will see in the following. 
 
 
 \subsection{Metadata Reconciliation}

@@ -12,7 +12,7 @@ We first present a theoretical background on search engine evaluation methodolog
 Then, we show the experimental setup in \autoref{sec:setup}, the pre-evaluation procedure in \autoref{sec:pre_evaluation} and the results in \autoref{sec:eval_results}.
 Some concluding remarks are driven on the final section.
 
-\section{Methodology Evaluation Background}
+\section{Methodology Background}
 \label{sec:lit_review}
 
 As the amount of online available data gets bigger and bigger, search methodologies are increasingly necessary to allow users accessing relevant content.
@@ -315,7 +315,7 @@ English & 4.3\\ \hline
 \end{tabular}
 \end{table}
 
-The average age of the 34 participants was 25.7 years.
+The average age of the 37 participants was 25.9 years.
 Although all of them use internet every day, direct experience with data processing is mid-low, as well as with open data.
 As our tool is developed for non-experts, this sample is adequate to the experiment.
 
@@ -333,30 +333,157 @@ A screenshot of the evaluation tool is shown in \autoref{fig:eval_screenshot}.
 
 \subsection{Task Completion Time Analysis}
 
-\autoref{fig:tct} shows the general results for the Task Completion Time analysis.
-Each bar shows the average time, in seconds, for finding one dataset.
-The time taken to find one dataset is an average of the time taken to fully complete the task.
-This approximation was necessary because each question required a different number of datasets, and thus comparing times to complete the whole task would not be correct.
+As detailed above, TCT analysis evaluates the time each subject takes to complete a task.
+Although it may look simple to assess this metric, some practical questions arose while analysing data.
+First of all, the three questions defined for this evaluation required a different number of datasets to be found.
+Thus, because only the total time $T$ for each task is calculated, we divide $T$ by the number $N$ of required datasets to achieve TCT. Thus:
+
+\begin{equation}
+	\textrm{TCT} = \frac{T}{N},
+\end{equation}
+where $T$ is the amount of seconds a subject takes to finish a task, and $N$ is the number of datasets required be each task.
+
 In order to remove disturbing samples, we considered only answers with precision higher than 33\% and TCT lower than 1000 seconds.
 The first case is aimed to remove subjects who gave up without trying to complete the task, or who did not understand the task.
-Regarding the second case, since some evaluations were made online, we considered that subjects who took more than 1000 seconds to find a dataset, actually gave up and left the evaluation tool open.
-It is important to notice that TCT for wrong answers were also computed, since we expect that subjects dedicate efforts even if the answer was not correct.
-The discussion about which method resulted in more precise answers is driven in the next section. 
+Regarding the second case, since some evaluations were made online, we considered that subjects who took more than 1000 seconds to find a dataset actually gave up and left the evaluation tool open.
 
-\begin{figure}[h!]
+Another issue is related to the computation of wrong and blank answers.
+If a subject answers a question with a dataset that do not correspond to what was asked, there are two options: either an effort was taken, but the question was misunderstood, or no effort was taken at all and a random answer was given\footnote{In order to illustrate this case, one user answered ``www.google.com'' when asked for procurement datasets.}.
+The same reasoning applies to blank answers, but in this case the probability that no effort was taken looks higher.
+After these considerations, the issue remains: if a question requires 7 datasets, and 3 were correctly answered and 4 were left blank (or were wrong), is it fair to divide $T$ by $N=7$? Or should we divide it by 3, considering that effort was put only on those answers?
+
+In order to evaluate the impact of these considerations, we define:
+
+\begin{equation}
+	\textrm{TCT}_{nb} = \frac{T}{N_{nb}},
+\end{equation}
+where $T$ is the amount of seconds a subject takes to finish a task, and $N_{nb} \leq N$ is the number of not blank answers, and 
+
+\begin{equation}
+	\textrm{TCT}_{c} = \frac{T}{N_c},
+\end{equation}
+where $T$ is the amount of seconds a subject takes to finish a task, and $N_c \leq N$ is the number of datasets correctly answered.
+Note that TCT $\leq$ TCT$_{nb} \leq $ TCT$_{c}$.
+\autoref{tab:results_TCT}, \autoref{tab:results_TCT_nb} and \autoref{tab:results_TCT_c} present the results for TCT, TCT$_{nb}$ and TCT$_{c}$, respectively.
+
+\begin{table}[h]
+\ABNTEXfontereduzida
+\centering
+\caption[Evaluation Results - TCT.]{Evaluation Results - TCT. Table presents TCT median and standard deviation for each method and question. In brackets, the number of considered samples.}
+\label{tab:results_TCT}
+\begin{tabular}{|>{\bfseries}c|c|c|c|c|}
+\hline
+ 	& \bfseries{Q1: Water Quality} 	& \bfseries{Q2: Budget} 	& \bfseries{Q3: Procurement} 	& \bfseries{Aggregate} \\ \hline
+Exversion 	& 108 $\pm$ 92 (63) 	& 121 $\pm$ 94 (65) 	& 78 $\pm$ 72 (33) 	& 108 $\pm$ 87 (161) \\ \hline
+STODaP 	& 60 $\pm$ 49 (77) 	& 63 $\pm$ 170 (50) 	& 67 $\pm$ 80 (42) 	& 60 $\pm$ 109 (169) \\ \hline
+Free 	& 60 $\pm$ 126 (70) 	& 44 $\pm$ 37 (50) 	& 100 $\pm$ 96 (24) 	& 70 $\pm$ 99 (144) \\ \hline
+Aggregate & 68 $\pm$ 95 (210) 	& 60 $\pm$ 117 (165) 	& 78 $\pm$ 84 (99) 	& \\ \hline 
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\ABNTEXfontereduzida
+\centering
+\caption[Evaluation Results - TCT$_{nb}$.]{Evaluation Results - TCT$_{nb}$. Table presents TCT$_{nb}$ median and standard deviation for each method and question. In brackets, the number of considered samples.}
+\label{tab:results_TCT_nb}
+\begin{tabular}{|>{\bfseries}c|c|c|c|c|}
+\hline
+ 	& \bfseries{Q1: Water Quality} 	& \bfseries{Q2: Budget} 	& \bfseries{Q3: Procurement} 	& \bfseries{Aggregate} \\ \hline
+Exversion 	& 127 $\pm$ 112 (52) 	& 153 $\pm$ 120 (56) 	& 111 $\pm$ 128 (28) 	& 136 $\pm$ 121 (136) \\ \hline
+STODaP 	& 60 $\pm$ 49 (77) 	& 63 $\pm$ 170 (49) 	& 67 $\pm$ 80 (42) 	& 60 $\pm$ 109 (168) \\ \hline
+Free 	& 64 $\pm$ 146 (62) 	& 44 $\pm$ 37 (50) 	& 100 $\pm$ 96 (24) 	& 70 $\pm$ 109 (136) \\ \hline
+Aggregate 	& 74 $\pm$ 114 (191) 	& 60 $\pm$ 129 (155) 	& 83 $\pm$ 107 (94) 	& \\ \hline 
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\ABNTEXfontereduzida
+\centering
+\caption[Evaluation Results - TCT$_{c}$.]{Evaluation Results - TCT$_{c}$. Table presents TCT$_{c}$ median and standard deviation for each method and question. In brackets, the number of considered samples.}
+\label{tab:results_TCT_c}
+\begin{tabular}{|>{\bfseries}c|c|c|c|c|}
+\hline
+ 	& \bfseries{Q1: Water Quality} 	& \bfseries{Q2: Budget} 	& \bfseries{Q3: Procurement} 	& \bfseries{Aggregate} \\ \hline
+Exversion 	& 127 $\pm$ 112 (51) 	& 153 $\pm$ 120 (55) 	& 166 $\pm$ 126 (24) 	& 141 $\pm$ 121 (130) \\ \hline
+STODaP 	& 60 $\pm$ 54 (75) 	& 86 $\pm$ 168 (44) 	& 67 $\pm$ 80 (42) 	& 65 $\pm$ 110 (161) \\ \hline
+Free 	& 69 $\pm$ 146 (58) 	& 55 $\pm$ 49 (43) 	& 110 $\pm$ 339 (20) 	& 87 $\pm$ 215 (121) \\ \hline
+Aggregate 	& 74 $\pm$ 114 (184) 	& 89 $\pm$ 127 (142) 	& 85 $\pm$ 200 (86) 	& \\ \hline 
+\end{tabular}
+\end{table}
+
+\autoref{tab:results_TCT} shows the general results for TCT.
+On each cell, values represent the median, standard deviation and the number of samples in brackets.
+Columns represent the different questions, and rows, the search methods.
+The last row presents the aggregate results for questions, and the last column, for search methods.
+STODaP presents the lowest aggregate TCT median (60 s), followed by free search (70 s, or 17\% higher) and Exversion (108 s, or 80\% higher).
+Looking at each question individually, it can be seen that for Q2 (Budget data), free search was faster than STODaP, and for Q1 both were equivalent.
+A possible explanation for the budget case is the high availability of this kind of data over the web.
+As shortly explained in \autoref{sec:openbudget}, and in details in \citeonline{Tygel2016}, releasing budget data is of crucial importance, and this topic is being prioritized by most of the countries.
+Thus, the high availability enables web search engines to deliver faster and more accurate results.
+
+Regarding Q2, a possible explanation can be found on \autoref{tab:results_TCT_nb} and \autoref{tab:results_TCT_c}.
+Since Q2 required 7 answers, for this question there was a higher rate of blank answers both on Exversion and free search methods.
+Thus, it can be seen in the first column of \autoref{tab:results_TCT_nb} that, while STODaP remains with the same value as in the previous table, the other search methods increase their TCT$_{nb}$ because in those cases, $N_{nb} < N$.
+Interestingly, free search presented blank answers only for Q1.
+Q2 and Q3 have the same values in \autoref{tab:results_TCT} and \autoref{tab:results_TCT_nb}.
+The aggregate result also remained the same.
+
+\autoref{tab:results_TCT_c} presents results related to $TCT_c$.
+In this case, STODaP advantage is even higher related free search (34\% higher) and Exversion (117\% higher).
+However, in this scenario free search is still faster for Q2.
+Results in this table are strongly related to the precision of the answers, which is discussed in the following section.
+
+A last aspect must also be taken into account: standard deviation.
+As calculated here, this measure represents the average deviation of each value from the mean value.
+If we look to the standard deviations on the tables, it is possible to see that they are very close to the median, and in some cases even higher.
+Thus, we look at the TCT for STODaP/Q2 (\autoref{tab:results_TCT}), one could interpret as: ``When using STODaP to answer Q2, users usually take between -107 and 233 seconds to retrieve one dataset''.
+This obviously does not make sense.
+The two conclusions we can take are: (i) distribution are skewed, i.e., tails are not symmetric around the mean; and (ii) there might be outliers disturbing the standard deviation.
+Thus, we show in \autoref{fig:tct}, \autoref{fig:tct_nb} and \autoref{fig:tct_c} the boxplot of TCT, TCT$_{nb}$ and TCT$_c$, respectively.
+
+Boxplot pictures a more detailed view of a distribution, and is specially useful for skewed samples.
+Besides the median, marked with a red line in the centre of the box, \autoref{fig:tct} also shows the first and third quartiles, which are the lower and upper bounds of the box.
+They represent, respectively, the higher among the one quarter smaller samples, and the smaller among the one quarter higher samples.
+Thus, half of the samples are inside the box, whose size is called interquartile range (IQR).
+Boxplot shows also outliers: if the distance from an outlier to the median is between 1.5 and 3 IQR, it is pointed with a circle (o); if it is higher than IQR, it is marked with a plus (+).
+
+\autoref{fig:tct} shows that, although STODaP median is lower, IQR is almost at the same position.
+Free search lower bound is slightly smaller.
+STODaP presented higher outliers, while in Exversion outliers are less disperse.
+Moving to \autoref{fig:tct_nb}, where blank answers are not considered, STODaP keeps the lower median, and the lower bound in this case is smaller, meaning that 50\% of the samples are located in a lower region than on the free search method.
+
+Results shown in \autoref{fig:tct_c} strengthen this trend, and in this case STODaP distribution is lies on a lower region in all aspects: median, quartiles, whiskers and outliers.
+In all scenarios, distribution of Exversion samples are in a higher position in relation to the other methods.
+On the other side, this search engine presents a more better behaviour in relation to outliers.
+
+As commented before, the better performance of STODaP in \autoref{fig:tct_nb} and \autoref{fig:tct_c} has a direct relation to the precision of the answers.
+This aspect will be analysed in the following.
+
+
+\begin{figure}[hb]
 \begin{center}
-\includegraphics[width=\columnwidth]{images/tct.png}
-\caption[Task Completion Time analysis.]{Task Completion Time analysis. Bars show the average time in seconds to find one dataset for each question and for each search method.}
+\includegraphics[scale=1.2]{images/tct_boxplotresults.png}
+\caption[Boxplot for TCT.]{Boxplot for TCT. Figure shows, for each search method: median, in red; the first and third quartiles, as the bottom and top of the box, resp.; the lowest sample within 1.5 interquartile range (IQR) of the lower quartile, as the lower whisker; the highest sample within 1.5 IQR of the upper quartile, as the upper whisker; outliers between 1.5 and 3 IQR, as + (plus); and outliers higher than 3 IQR, as o (circle).}
 \label{fig:tct}
 \end{center}
 \end{figure}
 
-The graphic shows that, on average, task completion time was lower for subjects using STODaP than other methods.
-Specifically, STODaP TCT was 22\% faster than Exversion Data Search Engine, and 17\% faster than free search, for the specified questions.
-Looking at each question individually, it can be seen that for Q2 (Budget data), free search was faster than STODaP.
-A possible explanation is the current high availability of budget data over the web.
-As shortly explained in \autoref{sec:openbudget}, and in details in \citeonline{Tygel2016}, releasing budget data is of crucial importance, and this topic is being prioritized by most of the countries.
-Thus, the high availability enables web search engines to deliver faster and more accurate results.
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.2]{images/tct_boxplotresults_notnull.png}
+\caption[Boxplot for TCT$_{nb}$.]{Boxplot for TCT$_{nb}$. Elements of the plot are described in \autoref{fig:tct}.}
+\label{fig:tct_nb}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=1.2]{images/tct_boxplotresults_correct.png}
+\caption[Boxplot for TCT$_{c}$.]{Boxplot for TCT$_{c}$. Elements of the plot are described in \autoref{fig:tct}.}
+\label{fig:tct_c}
+\end{center}
+\end{figure}
+
 
 
 \subsection{Precision Analysis}
@@ -483,18 +610,18 @@ As before, for this analysis, we considered only subjects with more than 33\% of
 \centering
 \caption[Correlation analysis of the results.]{Correlation analysis of the results.}
 \label{tab:correlations}
-\begin{tabular}{|>{\arraybackslash}m{1.8cm}||>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.2cm}|>{\centering\arraybackslash}m{1.2cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}||>{\centering\arraybackslash}m{1.7cm}|>{\centering\arraybackslash}m{1.6cm}||>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.4cm}|}
+\begin{tabular}{|>{\arraybackslash}m{1.7cm}||>{\centering\arraybackslash}m{0.8cm}|>{\centering\arraybackslash}m{1.4cm}|>{\centering\arraybackslash}m{1.2cm}|>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.0cm}||>{\centering\arraybackslash}m{1.7cm}|>{\centering\arraybackslash}m{1.6cm}||>{\centering\arraybackslash}m{1.0cm}|>{\centering\arraybackslash}m{1.5cm}|}
  \hline 
  Variables & \textbf{Age} & \textbf{Internet} &	\textbf{English} & \textbf{Data} & \textbf{Open Data} & \textbf{Absolute Satisfaction} &	\textbf{Relative Satisfaction} & \textbf{TCT} &	\textbf{Precision} \\ \hline \hline
-\textbf{Age} & 1.0 	& nan 	& 0.18 	& 0.52 	& 0.41 	& -0.11 	& -0.42 	& -0.16 	& 0.13 	\\ \hline
-\textbf{Internet} & nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	& nan 	\\ \hline
-\textbf{English} & 0.18 	& nan 	& 1.0 	& 0.39 	& 0.43 	& -0.22 	& -0.31 	& 0.11 	& 0.28 	\\ \hline
-\textbf{Data} & 0.52 	& nan 	& 0.39 	& 1.0 	& 0.45 	& -0.18 	& -0.28 	& -0.32 	& 0.41 	\\ \hline
-\textbf{Open Data} & 0.41 	& nan 	& 0.43 	& 0.45 	& 1.0 	& -0.21 	& -0.44 	& -0.13 	& 0.15 	\\ \hline
-\textbf{Absolute Satisfaction} & -0.11 	& nan 	& -0.22 	& -0.18 	& -0.21 	& 1.0 	& 0.56 	& 0.15 	& 0.14 	\\ \hline
-\textbf{Relative Satisfaction} & -0.42 	& nan 	& -0.31 	& -0.28 	& -0.44 	& 0.56 	& 1.0 	& 0.15 	& 0.08 	\\ \hline
-\textbf{TCT} & -0.16 	& nan 	& 0.11 	& -0.32 	& -0.13 	& 0.15 	& 0.15 	& 1.0 	& 0.09 	\\ \hline
-\textbf{Precision} & 0.13 	& nan 	& 0.28 	& 0.41 	& 0.15 	& 0.14 	& 0.08 	& 0.09 	& 1.0 	\\ \hline 
+\textbf{Age} & 1.0 	&--	& 0.18 	& 0.52 	& 0.41 	& -0.11 	& -0.42 	& -0.16 	& 0.13 	\\ \hline
+\textbf{Internet} &--	&--	&--	&--	&--	&--	&--	&--	&--	\\ \hline
+\textbf{English} & 0.18 	&--	& 1.0 	& 0.39 	& 0.43 	& -0.22 	& -0.31 	& 0.11 	& 0.28 	\\ \hline
+\textbf{Data} & 0.52 	&--	& 0.39 	& 1.0 	& 0.45 	& -0.18 	& -0.28 	& -0.32 	& 0.41 	\\ \hline
+\textbf{Open Data} & 0.41 	&--	& 0.43 	& 0.45 	& 1.0 	& -0.21 	& -0.44 	& -0.13 	& 0.15 	\\ \hline
+\textbf{Absolute Satisfaction} & -0.11 	&--	& -0.22 	& -0.18 	& -0.21 	& 1.0 	& 0.56 	& 0.15 	& 0.14 	\\ \hline
+\textbf{Relative Satisfaction} & -0.42 	&--	& -0.31 	& -0.28 	& -0.44 	& 0.56 	& 1.0 	& 0.15 	& 0.08 	\\ \hline
+\textbf{TCT} & -0.16 	&--	& 0.11 	& -0.32 	& -0.13 	& 0.15 	& 0.15 	& 1.0 	& 0.09 	\\ \hline
+\textbf{Precision} & 0.13 	&--	& 0.28 	& 0.41 	& 0.15 	& 0.14 	& 0.08 	& 0.09 	& 1.0 	\\ \hline 
 \end{tabular}
 \end{table}
 
