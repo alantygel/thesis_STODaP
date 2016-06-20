@@ -441,26 +441,7 @@ This obviously does not make sense.
 The two conclusions we can take are: (i) distribution are skewed, i.e., tails are not symmetric around the mean; and (ii) there might be outliers disturbing the standard deviation.
 Thus, we show in \autoref{fig:tct}, \autoref{fig:tct_nb} and \autoref{fig:tct_c} the boxplot of TCT, TCT$_{nb}$ and TCT$_c$, respectively.
 
-Boxplot pictures a more detailed view of a distribution, and is specially useful for skewed samples.
-Besides the median, marked with a red line in the centre of the box, \autoref{fig:tct} also shows the first and third quartiles, which are the lower and upper bounds of the box.
-They represent, respectively, the higher among the one quarter smaller samples, and the smaller among the one quarter higher samples.
-Thus, half of the samples are inside the box, whose size is called interquartile range (IQR).
-Boxplot shows also outliers: if the distance from an outlier to the median is between 1.5 and 3 IQR, it is pointed with a circle (o); if it is higher than IQR, it is marked with a plus (+).
-
-\autoref{fig:tct} shows that, although STODaP median is lower, IQR is almost at the same position.
-Free search lower bound is slightly smaller.
-STODaP presented higher outliers, while in Exversion outliers are less disperse.
-Moving to \autoref{fig:tct_nb}, where blank answers are not considered, STODaP keeps the lower median, and the lower bound in this case is smaller, meaning that 50\% of the samples are located in a lower region than on the free search method.
-
-Results shown in \autoref{fig:tct_c} strengthen this trend, and in this case STODaP distribution is lies on a lower region in all aspects: median, quartiles, whiskers and outliers.
-In all scenarios, distribution of Exversion samples are in a higher position in relation to the other methods.
-On the other side, this search engine presents a more better behaviour in relation to outliers.
-
-As commented before, the better performance of STODaP in \autoref{fig:tct_nb} and \autoref{fig:tct_c} has a direct relation to the precision of the answers.
-This aspect will be analysed in the following.
-
-
-\begin{figure}[hb]
+\begin{figure}[t]
 \begin{center}
 \includegraphics[scale=1.2]{images/tct_boxplotresults.png}
 \caption[Boxplot for TCT.]{Boxplot for TCT. Figure shows, for each search method: median, in red; the first and third quartiles, as the bottom and top of the box, resp.; the lowest sample within 1.5 interquartile range (IQR) of the lower quartile, as the lower whisker; the highest sample within 1.5 IQR of the upper quartile, as the upper whisker; outliers between 1.5 and 3 IQR, as + (plus); and outliers higher than 3 IQR, as o (circle).}
@@ -485,32 +466,72 @@ This aspect will be analysed in the following.
 \end{figure}
 
 
+Boxplot pictures a more detailed view of a distribution, and is specially useful for skewed samples.
+Besides the median, marked with a red line in the centre of the box, \autoref{fig:tct} also shows the first and third quartiles, which are the lower and upper bounds of the box.
+They represent, respectively, the higher among the one quarter smaller samples, and the smaller among the one quarter higher samples.
+Thus, half of the samples are inside the box, whose size is called interquartile range (IQR).
+Boxplot shows also outliers: if the distance from an outlier to the median is between 1.5 and 3 IQR, it is pointed with a circle (o); if it is higher than IQR, it is marked with a plus (+).
+
+\autoref{fig:tct} shows that, although STODaP median is lower, IQR is almost at the same position.
+Free search lower bound is slightly smaller.
+STODaP presented higher outliers, while in Exversion outliers are less disperse.
+Moving to \autoref{fig:tct_nb}, where blank answers are not considered, STODaP keeps the lower median, and the lower bound in this case is smaller, meaning that 50\% of the samples are located in a lower region than on the free search method.
+
+Results shown in \autoref{fig:tct_c} strengthen this trend, and in this case STODaP distribution lies on a lower region in all aspects: median, quartiles, whiskers and outliers.
+In all scenarios, distribution of Exversion samples are in a higher position in relation to the other methods.
+On the other side, this search engine presents a better behaviour in relation to outliers.
+
+As commented before, the better performance of STODaP in \autoref{fig:tct_nb} and \autoref{fig:tct_c} has a direct relation to the precision of the answers.
+This aspect will be analysed in the following.
+
 
 \subsection{Precision Analysis}
 
-\autoref{fig:precision} presents an analysis of the answer precision for each search method and task.
+
 As stated before, each answer given by participants was validated against the specified task.
 Thus, we were able to compute the precision of each task as:
-
 \begin{equation}
-	P = \frac{a_v}{A_T} * 100,
+	P = \frac{a_v}{N} 100,
 \end{equation}
-
-where $A_T$ is the number of required answers for each task, and $a_v$ is the number of valid answer given by a subject.
+where $N$ is the number of required answers for each task, and $a_v$ is the number of correct answers given by a subject.
+In order to estimate the performance of each search method in terms of precision, we calculate the average precision for each question, and the aggregate result for each search method.
+Reasons for using average and not median, as before, are the following.
+When measuring precision, range is limited to $33 \leq P \leq 100$ (values under 33 were discarded), and thus outliers are less troublesome than in TCT.
+Moreover, since some samples have many $P = 100$, median can give a less precise picture of the distribution.
+\autoref{fig:precision} presents a bar plot of the precision averages.
+In order to verify the distribution behaviour, a boxplot is presented in \autoref{fig:precision_boxplot}.
 
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=\columnwidth]{images/precision.png}
-\caption[Precision analysis.]{Precision analysis. Bars show the average precision for subjects answers, for each question and for each search method.}
+\includegraphics[scale=1.2]{images/precision.png}
+\caption[Precision analysis: Average.]{Precision analysis. Bars show the average precision for subjects answers, for each question/search method combination, and aggregated for each search method.}
 \label{fig:precision}
 \end{center}
 \end{figure}
 
-A parallel behaviour as in TCT analysis can be observed.
-STODaP exhibits a better performance on average, but is slightly worse regarding the Budget task.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=\columnwidth]{images/precision_boxplot.png}
+\caption[Precision analysis: Boxplot.]{Precision analysis. Figure shows a boxplot for each search method / question combinations, and aggregated for each search method.}
+\label{fig:precision_boxplot}
+\end{center}
+\end{figure}
+
+A parallel behaviour as in TCT analysis can be observed in \autoref{fig:precision}.
+STODaP exhibits a better performance on average, but is almost equivalent to free search regarding the Budget question.
 A 100\% rate can be observed in the STODaP performance for the Procurement task.
 In this case, where the task required datasets in three different languages, semantic tag Public Procurement (\url{http://stodap.org/semantictag/4321/}) could directly connect datasets in English, Russian, Spanish, Finish, Portuguese, Danish, German and Italian using the keyword ``procurement''.
-Thus, this task presents the better performance for STODaP, and also the worse using other methods.
+Thus, this task presents the better performance for STODaP, and the worse using other methods.
+
+\autoref{fig:precision_boxplot} also presents some useful information.
+For all questions, and in the aggregated analysis, median of STODaP is 100\%.
+The same can be stated about free search, except for Q1.
+IQR of STODaP is zero for Q1 and Q3 and in the aggregated result, where only 3 samples are not 100\%.
+
+High precision of STODaP can be explained by questions tailored to take advantage of its features.
+Particularly, asking for different countries and languages matches some of the STODaP facets.
+Results show that these features of the STODaP architecture work as expected, turning STODaP into a better search engine than the powerful generic ones, at least for these particular cases.
+Further discussions are driven in the conclusions of this chapter and in the next chapter.
 
 \subsection{Subjective Evaluation}
 
@@ -531,14 +552,14 @@ STODaP fits more the needs of non-experts, by providing a generic starting point
 \label{tab:subj_eval}
 \begin{tabular}{|m{4cm}|>{\centering}m{3cm}|>{\centering\arraybackslash}m{3cm}|>{\centering\arraybackslash}m{3cm}|}
 \hline
-\textbf{Question} & \textbf{Global Average} ($n=34$) & \textbf{Non-experts} ($n=25$) & \textbf{Experts} ($n=9$) \\ \hline
-Absolute Satisfaction & 4.3 & 4.4 & 4.2 \\ \hline
-Relative Satisfaction & 4.2 & 4.4 & 3.9\\ \hline
+\textbf{Question} & \textbf{Global Average} ($n=37$) & \textbf{Non-experts} ($n=27$) & \textbf{Experts} ($n=10$) \\ \hline
+Absolute Satisfaction & 4.3 & 4.3 & 4.3 \\ \hline
+Relative Satisfaction & 4.2 & 4.3 & 4.0\\ \hline
 \end{tabular}
 \end{table}
 
 The evaluation questionnaire included also a free comment section, in order to let subjects write their impressions.
-Unfortunately, only 14 subjects out of 34 wrote comments.
+Unfortunately, only 14 subjects out of 37 wrote comments.
 Comments can be categorized in the following categories:
 
 \noindent \textbf{Design/Layout:} Six subjects complained about the user interface, both visually and in terms of usability: \emph{``The user interface is not intuitive nor pleasant. It should be further worked to help the visualization of results.''} was one the comments.
